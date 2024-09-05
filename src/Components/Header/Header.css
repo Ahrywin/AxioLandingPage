@@ -1,110 +1,113 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Estilos iniciales del header */
+.header {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-right: 80px;
+  margin-left: 80px;
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que esté por encima del resto del contenido */
+  background-color: transparent; /* Color de fondo inicial */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+.logo {
+  height: 52px;
+  width: 51px;
+}
+/* Cambios en el color de fondo del header cuando se hace scroll */
+.header.scrolled {
+  background-color: white; /* Color de fondo cuando se hace scroll */
+  margin-right: 0px;
+  margin-left: 0px;
+  color: #515151;
+  box-shadow: 0 9px 12px rgba(0, 0, 0, 0.15);
+}
+.header.scrolled a {
+  color: #515151; /* Color negro para los enlaces */
+}
+.header.scrolled.navbar{
+  margin-right: 8%;
 }
 
-.header{
-    position: absolute;
+/* Otros estilos existentes */
+.navbar {
+  display: flex;
+  gap: 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffff; /* Ajusta el color según tu diseño */
+  font-weight: bold;
+  padding-bottom: 5px; /* Espacio para la línea azul */
+  position: relative; /* Necesario para la línea debajo */
+}
+
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 5px;
+  background-color: #4285F4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width .5s ease;
+  border-radius: 20px;
+}
+
+.navbar a.active::after {
+  width: 100%;
+}
+.menu-toggle {
+  display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: fixed; /* Cambia a fixed para que ocupe toda la pantalla */
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo con algo de transparencia */
+    z-index: 999; /* Asegura que esté por encima de todo */
+    padding: 20px;
+    justify-content: center; /* Centra verticalmente los enlaces */
+    align-items: center; /* Centra horizontalmente los enlaces */
+  }
+
+  .navbar a {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
     width: 100%;
-    padding: 10px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    z-index: 100;
-}
-
-.header a{
-  margin-left: 10%;
-}
-
-.logo{
-  height: 54px;
-  width: 54px;
-}
-
-.navbar{
-  margin-left: 2%;
-}
-
-.navbar a{
-    text-decoration: none;
-    position: relative;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    font-family: "Poppins", sans-serif;
-}
-
-@media (max-width: 1024px) and (min-width: 768px) {
-  .header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    z-index: 100;
+    color: #353535;
   }
 
-  .header a{
-    margin-left: 5%;
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que el icono esté sobre el menú */
   }
 
-  .navbar{
-    margin-left: 2%;
-  }
-  
-  .navbar a{
-      text-decoration: none;
-      position: relative;
-      font-size: 10px;
-      color: #fff;
-      font-weight: 500;
-      margin-left: 20px;
-      font-family: "Poppins", sans-serif;
+  .logo {
+    height: 52px;
+    width: 51px;
   }
 
-}
-
-@media (max-width: 480px) and (min-width: 320px) {
-  .header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    z-index: 100;
-  }
-
-  .logo{
-    height: 27px;
-    width: 27px;
-  }
-
-  .header a{
-    margin-left: 2%;
-  }
-
-  .navbar{
-    margin-left: 1%;
-  }
-  
-  .navbar a{
-      text-decoration: none;
-      position: relative;
-      font-size: 8px;
-      color: #fff;
-      font-weight: 500;
-      margin-left: 8px;
-      font-family: "Poppins", sans-serif;
+  .header {
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
+
