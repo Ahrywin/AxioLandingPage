@@ -1,16 +1,23 @@
-import React from 'react'
-import BannerComp from '../Components/BannerComp/BannerComp'
-import ImgService1 from '../assets/images/service-1.png'
-import { LottieAnim } from '../Components/LottieComp/LottieAnim'
-import animacionservice1 from '../Components/LottieComp/animations/animationservice1.json'
-import animacionservice2 from '../Components/LottieComp/animations/animationservice2.json'
-import animacionservice3 from '../Components/LottieComp/animations/animationservice3.json'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import BannerComp from '../Components/BannerComp/BannerComp';
+import ImgService1 from '../assets/images/service-1.png';
+import { LottieAnim } from '../Components/LottieComp/LottieAnim';
+import animacionservice1 from '../Components/LottieComp/animations/animationservice1.json';
+import animacionservice2 from '../Components/LottieComp/animations/animationservice2.json';
+import animacionservice3 from '../Components/LottieComp/animations/animationservice3.json';
 
-
-const services = () => {
+const Services = () => {
   return (
     <div>
-      <BannerComp title={"Servicios"} image={ImgService1}/>
+      <Helmet>
+        <title>Servicios - Fundación Axio</title>
+        <meta name="description" content="Descubre los servicios de la Fundación Axio, incluyendo diagnóstico de cultura de integridad, formación y más." />
+        <meta name="keywords" content="Servicios, Fundación Axio, ética, formación, cultura de integridad, desarrollo organizacional" />
+        <meta name="author" content="Fundación Axio" />
+        <link rel="canonical" href="https://tu-sitio-web.com/services" />
+      </Helmet>
+      <BannerComp title={"Servicios"} image={ImgService1} />
       <section className="service-section-a">
         <h2>Diagnóstico De Cultura De Integridad</h2>
         <div className="container-services-a">
@@ -33,7 +40,7 @@ const services = () => {
             promovido instrumentos de gestión como: </p>
         <ul className="service-card-list">
           <li className="card-service-a">Códigos de ética</li>
-          <li className="card-service-b">Códigos de conduca</li>
+          <li className="card-service-b">Códigos de conducta</li>
           <li className="card-service-c">Declaración de valores</li>
         </ul>
         <p>que buscan ser un referente próximo de la conducta de las personas. Para garantizar 
@@ -84,13 +91,13 @@ const services = () => {
           <li className="color-card-j">Ontología</li>
           <li className="color-card-j">Gnoseología</li>
           <li className="color-card-k">Cultura Organizacional</li>
-          <li className="color-card-k">Dirección Y Desarrollo De Equipos De Alto Renrendimiento</li>
+          <li className="color-card-k">Dirección Y Desarrollo De Equipos De Alto Rendimiento</li>
           <li className="color-card-l">El Papel Docente</li>
           <li className="color-card-l">Desarrollo De La Inteligencia</li>
         </ul>
       </section>
     </div>
-  )
+  );
 }
 
-export default services
+export default Services;
