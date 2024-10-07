@@ -11,6 +11,7 @@ import emailjs from 'emailjs-com';
 const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +27,12 @@ const ContactForm = () => {
         // Limpiar el formulario
         setEmail('');
         setMessage('');
+        
+        // Mostrar el snackbar
+        setSnackbarVisible(true);
+        setTimeout(() => {
+          setSnackbarVisible(false);
+        }, 3000); // Ocultar después de 3 segundos
       }, (error) => {
         console.error('Failed to send email:', error);
       });
@@ -33,6 +40,11 @@ const ContactForm = () => {
 
   return (
     <div>
+      {snackbarVisible && (
+        <div className="snackbar">
+          ¡Te has puesto en contacto exitosamente!
+        </div>
+      )}
       <div className="contact-section">
         {/* Div izquierdo - Formulario */}
         <div className="left-section">
