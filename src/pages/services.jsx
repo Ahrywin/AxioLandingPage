@@ -43,7 +43,8 @@ const Services = () => {
           <li className="card-service-b">Códigos de conducta</li>
           <li className="card-service-c">Declaración de valores</li>
         </ul>
-        <p>que buscan ser un referente próximo de la conducta de las personas. Para garantizar 
+        
+        <p>Que buscan ser un referente próximo de la conducta de las personas. Para garantizar 
           la eficacia de estos instrumentos de gestión, es necesario que reúnan las condiciones 
           mínimas y necesarias para que sin ambigüedades y sólidos fundamentos se constituyan en 
           un referente del actuar basado en la ética.</p>
