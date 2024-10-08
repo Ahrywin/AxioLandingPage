@@ -31,7 +31,7 @@ const Services = () => {
         <div className="container-services-b">
           <p>Nuestro instrumento SA-92 permite develar la cultura de una organización en 
             temas de ética e integridad.</p>
-          <p className="distinction-green">¡Conoce como puedes diagnosticar tu organización!</p>
+          <p >¡Conoce como puedes diagnosticar tu organización!</p>
         </div>
       </section>
       <section className="service-section-b">

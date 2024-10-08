@@ -26,7 +26,7 @@ const GestionVal = () => {
           <p>El compromiso ético de la empresa es ahora un gran diferenciador apreciado por un 
               mercado sensible a la necesidad de transformar la sociedad y solidario con las 
               iniciativas encaminadas a fortalecer el tejido social desde la cultura empresarial.</p>
-          <p className="gestion-distinction">¡Certifica a tu empresa!</p>
+          <p >¡Certifica a tu empresa!</p>
         </div>
         <div className="lottie-gestion-a">
           <LottieAnim animacion={animationcertif4} />

@@ -31,15 +31,14 @@ const Digital = () => {
             <LottieAnim animacion={animacioneco1} />
           </div>
           <p>Consta de una <span className="distinction-blue">aplicación para dispositivos móviles</span> con 
-            múltiples recursos formativos en valores para <span className="distinction-green">alumnos</span>, 
-            <span className="distinction-green"> padres de familia</span>, <span className="distinction-green"> docentes</span>, 
-            <span className="distinction-green"> servidores públicos</span> y <span className="distinction-green"> trabajadores </span> 
+            múltiples recursos formativos en valores para alumnos, padres de familia, docentes, 
+             servidores públicos y trabajadores
              de la empresa privada.</p>
         </div>
         <div className="digital-container-b">
           <p>Así como de una <span className="distinction-blue">plataforma</span> que permite la 
           implementación de un modelo de gestión basado en valores y así obtener la 
-          <span className="distinction-green"> certificación</span> en la norma correspondiente.</p>
+           certificación en la norma correspondiente.</p>
           <div className="lottie-digital-b">
             <LottieAnim animacion={animacioneco2} />
           </div>
@@ -64,9 +63,8 @@ const Digital = () => {
           <div className="img-list-contain-b">
             <ul>
               <li>Un instrumento que te permitirá diagnosticar el desarrollo ético de tu institución.</li>
-              <li>Acompañamiento para el desarrollo de una <span className="distinction-green">misión</span>, 
-                <span className="distinction-green"> visión</span>, <span className="distinction-green"> declaración de valores</span> y 
-                <span className="distinction-green"> códigos de ética</span>.</li>
+              <li>Acompañamiento para el desarrollo de una misión, 
+                 visión, declaración de valores y códigos de ética.</li>
               <li>Instrumentos para orientar las políticas de recursos humanos hacia el comportamiento ético de sus miembros.</li>
               <li>Acompañamiento para la implementación de un modelo de gestión que hace vida los valores en la cotidianidad.</li>
             </ul>

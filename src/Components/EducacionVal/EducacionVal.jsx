@@ -26,8 +26,8 @@ const EducacionVal = () => {
                 no están siendo suficientes para hacer frente a los complejos fenómenos sociales que 
                 lastiman a nuestra sociedad, pero principalmente la evidente realidad nos demanda una 
                 transformación de la educación y una revisión de los paradigmas que sostienen los modelos 
-                educativos actuales. En otras palabras, <span className="certif-distinction">no existe mejor 
-                evaluación de la educación que la cruda realidad social y no tenemos buenos resultados</span>. Altos índices de</p>
+                educativos actuales. En otras palabras, no existe mejor 
+                evaluación de la educación que la cruda realidad social y no tenemos buenos resultados Altos índices de</p>
             <ul className="list-certif"> 
                 <li><img src={ImgVio} alt="" className="img-list" /> Violencia Escolar</li>
                 <li><img src={ImgSui} alt="" className="img-list"/> Suicidios</li>
@@ -71,7 +71,7 @@ const EducacionVal = () => {
                     y a la coordinación de las acciones bajo la implementación de una metodología de gestión escolar 
                     que logra el esfuerzo coordinado de padres, directivos y docentes para que en la escuela se hagan 
                     vida los valores en la cotidianidad.</p>
-                <p><span className="certif-distinction"> ¡Certifica a tu institución educativa! </span> </p>
+                <p> ¡Certifica a tu institución educativa! </p>
             </div>
         </section>
     </div>

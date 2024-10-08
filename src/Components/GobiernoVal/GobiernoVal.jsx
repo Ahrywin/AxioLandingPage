@@ -26,7 +26,7 @@ const GobiernoVal = () => {
           <p>La certificación en la norma <span className="gob-distinction-blue"> “Gobierno con Valores” </span> tiene como objetivo acreditar, 
             reconocer y promover un modelo de gestión pública que tiene como eje la conducta íntegra 
             de los funcionarios gubernamentales.</p>
-          <p className="gob-distinction">¡Certifica a tu institución de gobierno!</p>
+          <p >¡Certifica a tu institución de gobierno!</p>
           </div>
       </section>
     </div>
