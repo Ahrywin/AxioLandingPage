@@ -97,6 +97,7 @@ const ContactForm = () => {
                 <img src={imgPhone} alt="icon" className="icon" />
                 <h3 className="contact-item-title">Teléfono</h3>
               </div>
+              //modificación 1 que nos lleva directo a la app de telefono
               <a className="contact-item-text" href="tel:+527711486170">+52 771 148 6170</a>
             </div>
             
@@ -105,6 +106,7 @@ const ContactForm = () => {
                 <img src={imgMail} alt="icon" className="icon" />
                 <h3 className="contact-item-title">Correo electrónico</h3>
               </div>
+              //modificación 2 con mailto que nos lleva directo a la app de correo 
               <a className="contact-item-text" href="mailto:fundacionaxiomexico@gmail.com">fundacionaxiomexico@gmail.com</a>
             </div>
           </div>
@@ -129,6 +131,7 @@ const ContactForm = () => {
               <img src={imgMail} alt="icon" className="icon" />
               <h3 className="contact-item-title">Correo electrónico</h3>
             </div>
+            //modificación 3 con mailto que nos lleva directo a la app de correo 
             <a className="contact-item-text" href="mailto:axio.valores@gmail.com">axio.valores@gmail.com</a>
           </div>
 
@@ -137,6 +140,7 @@ const ContactForm = () => {
               <img src={imgPhone} alt="icon" className="icon" />
               <h3 className="contact-item-title">Teléfono</h3>
             </div>
+            //modificación 4 con mailto que nos lleva directo a la app de telefono
             <a className="contact-item-text" href="tel:+527711486170">+52 771 148 6170</a>
           </div>
         </div>
