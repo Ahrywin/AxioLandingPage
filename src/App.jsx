@@ -8,10 +8,10 @@ import Certifications from './pages/certifications'
 import Digital from './pages/digital'
 import Services from './pages/services'
 import Contact from './pages/contact'
-
 function App() {
   
   return (
+    
       <BrowserRouter>
         <HeaderComp />
         <Routes>
