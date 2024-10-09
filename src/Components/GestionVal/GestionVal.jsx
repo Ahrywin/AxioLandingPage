@@ -3,16 +3,20 @@ import './GestionVal.css'
 import ImgGest from '../../assets/images/ImgGestion.png'
 import { LottieAnim } from '../LottieComp/LottieAnim'
 import animationcertif4 from '../LottieComp/animations/animationcertif4.json'
+import VideoPlayer from '../VideoComp/VideoPlayer'
 
 const GestionVal = () => {
   return (
     <div>
-      <section className="section-gestion-a">
+      <section className="certif-section-a">
+      
         <p>Los problemas de corrupción e inseguridad afectan a 
             toda la sociedad y la empresa no es la excepción. 
             El complejo organizacional de la industria privada cumple 
             con un rol fundamental en la transformación social. Su objetivo 
             no puede reducirse a la producción de riqueza; aporta cultura, desarrollo social y humano.</p>
+           
+            <VideoPlayer videoSrc="/src/assets/videos/video6.mp4"/>
       </section>
       <section className="section-gestion-b">
         <img src={ImgGest} alt="" />
