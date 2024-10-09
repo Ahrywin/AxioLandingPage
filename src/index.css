@@ -67,9 +67,14 @@
     color: #9AD74D;
 }
 
+.text-home-axio-principal{
+    margin-top: 10%;
+}
+
 .home-text{
     width: 60%;
     margin-left: 10%;
+    margin-top: -20%;
 }
 
 .view-home-container{
@@ -256,41 +261,52 @@
     font-family: "Poppins", sans-serif;
 }
 
-.digital-card-list{
+/*new cards valores service and digital*/
+
+.service-card-list {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    gap: 2%;
+    margin: 5%;
+    margin-right: 10%;
+    list-style: none;
+    
 }
 
-.digital-card-list li{
-    width: 300px;
+.card-service-a,
+.card-service-b,
+.card-service-c {
+    width: 270px;
+    height: auto; /* Cambiado a auto para permitir contenido variable */
     font-size: 20px;
-    list-style: none;
     text-align: center;
     font-weight: 600;
     color: #fff;
     font-family: "Poppins", sans-serif;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    margin: 10px;
+    border: 1px solid transparent; /* Agrega un borde sutil si lo deseas */
+    border-radius: 15px; /* Cambiado a 15px para una forma más suave */
+    padding: 10px; /* Reducido el padding */
+    margin: 10px 0; /* Espaciado entre las tarjetas */
+    background-color: transparent; /* Eliminar el fondo */
+    box-shadow: none; /* Eliminar la sombra */
+    cursor: default; /* Cambiar el cursor a default */
 }
 
-.card-a{
-    padding: 15px;
-    background-color: #E37F0A;
+/* Diferenciar los colores de las tarjetas */
+.card-service-a {
+    color: #E37F0A; /* Cambia el color del texto si es necesario */
 }
 
-.card-b{
-    padding: 15px;
-    background-color: #E3CD0A;
+.card-service-b {
+    color: #E3CD0A;
 }
 
-.card-c{
-    background-color: #0AE354;
+.card-service-c {
+    color: #0AE354;
 }
 
+/*new cards valores service and digital final*/
 
 .digital-container-a{
     display: flex;
@@ -317,6 +333,7 @@
 .lottie-digital-b{
     width: 360px;
     height: 360px;
+    
 }
 
 .digital-container-b p{
@@ -401,7 +418,7 @@
 
 .img-lap{
     width: 522px;
-    height: 600px;
+    height: 400px;
 }
 
 .service-section-a{
@@ -462,55 +479,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-.service-card-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2%;
-    margin: 5%;
-    margin-right: 10%;
-    list-style: none;
-}
 
-.card-service-a{
-    width: 270px;
-    height: 65px;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    padding: 15px;
-    background-color: #E37F0A;
-}
-
-.card-service-b{
-    width: 270px;
-    height: 65px;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    padding: 15px;
-    background-color: #E3CD0A;
-}
-
-.card-service-c{
-    width: 270px;
-    font-size: 23px;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    background-color: #0AE354;
-}
 
 .service-section-c{
     display: flex;
@@ -919,3 +888,48 @@
         height: auto;
     }
 }
+
+.videohome {
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 100%; /* Asegura que el video no sea más grande que su contenedor */
+    height: auto; /* Mantiene la proporción del video */
+}
+
+.vhcontenedor-video {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Asegura que el contenedor cubra el 100% del viewport */
+    padding: 20px; /* Espacio alrededor en pantallas pequeñas */
+    margin-top: -20%;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .vhcontenedor-video {
+        height: auto; /* Permite que el contenedor crezca automáticamente en pantallas pequeñas */
+        padding: 10px;
+        margin-top: 0%;
+    }
+
+    .videohome {
+        width: 100%; /* Se asegura de que el video ocupe todo el ancho en pantallas pequeñas */
+        height: auto; /* Mantiene la proporción */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas, como teléfonos */
+@media (max-width: 480px) {
+    .vhcontenedor-video {
+        padding: 5px;
+        margin-top: 0%;
+    }
+
+    .videohome {
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        max-width: 100%; /* Asegura que no se desborde */
+        height: auto;
+    }
+}
+

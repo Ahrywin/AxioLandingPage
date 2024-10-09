@@ -21,11 +21,17 @@ const Digital = () => {
       <BannerDigital title={"Ecosistema Digital"} image={ImgDigital1} />
       <section className="digital-section-a">
         <p>El <span className="distinction-blue">Ecosistema digital Axio</span> es un conjunto de recursos y estrategias que permiten la formación en:</p>
-        <ul className="digital-card-list">
-          <li className="card-a">Ética</li>
-          <li className="card-b">Valores</li>
-          <li className="card-c">Habilidades Socioemocionales</li>
+        <div className="digital-container-v">
+        <ul className="service-card-list">
+      
+          <li className="card-service-a">Ética
+            </li>
+          <li className="card-service-b">Valores<br />
+          </li>
+          <li className="card-service-c">Habilidades Socioemocionales
+          </li>
         </ul>
+        </div>
         <div className="digital-container-a">
           <div className="lottie-digital-a">
             <LottieAnim animacion={animacioneco1} />
