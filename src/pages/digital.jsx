@@ -7,6 +7,9 @@ import animacioneco2 from '../Components/LottieComp/animations/animationeco2.jso
 import ImgDigital1 from '../assets/images/eco.jpg';
 import ImgCirPhone from '../assets/images/CirPhone.png';
 import ImgLap from '../assets/images/laptop.png';
+import etica from '../assets/images/etica.png';
+import valores from '../assets/images/valores.png';
+import intemo from '../assets/images/inteligencia_emocional.png';
 
 const Digital = () => {
   return (
@@ -27,16 +30,16 @@ const Digital = () => {
               <li className="card-service-a">
                 Ética
                 <br/>
-                <img src="../src/assets/images/etica.png" alt="Icono de Ética" className="imgvalores" />
+                <img src={etica} alt="Icono de Ética" className="imgvalores" />
               </li>
               <li className="card-service-b">
                 Valores
                 <br/>
-                <img src="../src/assets/images/valores.png" alt="Icono de Valores" className="imgvalores" />
+                <img src={valores} alt="Icono de Valores" className="imgvalores" />
               </li>
               <li className="card-service-c">
                 Habilidades Socioemocionales
-                <img src="../src/assets/images/inteligencia_emocional.png" alt="Icono de Habilidades" className="imgvalores" />
+                <img src={intemo} alt="Icono de Habilidades" className="imgvalores" />
               </li>
             </ul>
          

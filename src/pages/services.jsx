@@ -6,6 +6,11 @@ import { LottieAnim } from '../Components/LottieComp/LottieAnim';
 import animacionservice1 from '../Components/LottieComp/animations/animationservice1.json';
 import animacionservice2 from '../Components/LottieComp/animations/animationservice2.json';
 import animacionservice3 from '../Components/LottieComp/animations/animationservice3.json';
+import etica from '../assets/images/etica.png';
+import codcoun from '../assets/images/codigo_conducta.png';
+import decvar from '../assets/images/declaracion_valores.png';
+
+
 
 const Services = () => {
   return (
@@ -50,20 +55,20 @@ const Services = () => {
               <li className="card-service-a">
               Códigos de ética
                 <br/>
-                <img src="../src/assets/images/etica.png" alt="Icono de Ética" className="imgvalores" />
+                <img src={etica} alt="Icono de Ética" className="imgvalores" />
               </li>
               <li className="card-service-b">
               Códigos de conducta
                 <br/>
-                <img src="../src/assets/images/codigo_conducta.png" alt="Icono de Valores" className="imgvalores" />
+                <img src={codcoun} alt="Icono de Valores" className="imgvalores" />
               </li>
               <li className="card-service-c">
               Declaración de valores
-                <img src="../src/assets/images/declaracion_valores.png" alt="Icono de Habilidades" className="imgvalores" />
+                <img src={decvar} alt="Icono de Habilidades" className="imgvalores" />
               </li>
             </ul>
             </div>
-            <br/><br/>
+            <br/><br/>  
         <p>Que buscan ser un referente próximo de la conducta de las personas. Para garantizar 
           la eficacia de estos instrumentos de gestión, es necesario que reúnan las condiciones 
           mínimas y necesarias para que sin ambigüedades y sólidos fundamentos se constituyan en 
