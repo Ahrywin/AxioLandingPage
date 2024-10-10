@@ -109,7 +109,7 @@ text-align-last: center;
   }
   
   .contact-item-text {
-    font-size: 14px;
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
     color: #0072bc;
     margin-top: 5px; /* Separación entre el título y el texto */
@@ -169,6 +169,7 @@ text-align-last: center;
   
     .contact-item-text {
       margin-left: 0; /* Alinea el texto con el borde izquierdo del contenedor en móvil */
+      font-size: 15px;
     }
     .right-title{
         text-align-last: left;

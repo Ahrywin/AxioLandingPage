@@ -298,6 +298,7 @@
     background-color: transparent; /* Eliminar el fondo */
     box-shadow: none; /* Eliminar la sombra */
     cursor: default; /* Cambiar el cursor a default */
+    margin-top: -10%;
 }
 
 /* Diferenciar los colores de las tarjetas */
@@ -313,13 +314,20 @@
     color: #0AE354;
 }
 
+
+.imgvalores{
+    width: 160px;
+    height: 160px;
+}
+
 /*new cards valores service and digital final*/
 
 .digital-container-a{
     display: flex;
     align-items: center;
-    margin-left: 10%;
+    margin-left: 10%;   
     margin-right: 10%;
+    margin-top: -5%;
 }
 
 .lottie-digital-a{
@@ -472,7 +480,9 @@
 .container-services-b{
     width: 100%;
 }
-
+.servicedumb{
+    margin-top: 10%;
+}
 .service-section-b{
     display: flex;
     flex-direction: column;
@@ -743,6 +753,7 @@
     .img-cir-phone{
         width: 230px;
         height: auto;
+        
     }
     
     .img-list-contain-a ul{
@@ -780,6 +791,12 @@
         height: auto;
     }
 
+
+    .imgvalores{
+        width: 100px;
+        height: 100px;
+        
+    }
 }
   
 @media (max-width: 480px) and (min-width: 320px) {
@@ -916,7 +933,7 @@
     }
     
     .img-lap{
-        width: 160px;
+        width: 100px;
         height: auto;
     }
 
@@ -1012,6 +1029,25 @@
         width: 240px;
         height: auto;
     }
+
+
+    .imgvalores{
+        margin-top: 10%;
+        width: 40px;
+        height: 40px;
+        
+    }
+    .img-phone-1{
+        width: 100px;
+        height: 150px;
+        margin-top: 35px;
+        margin-left: -22%;
+    }
+    .digital-container-a{
+        
+        margin-top: 10%;
+    }
+ 
 }
 
 .videohome {

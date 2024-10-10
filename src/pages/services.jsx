@@ -38,12 +38,32 @@ const Services = () => {
         <h2>Dictamen Técnico De Códigos De Ética</h2>
         <p>Con el afán de promover una nueva cultura ética en las organizaciones se han 
             promovido instrumentos de gestión como: </p>
-        <ul className="service-card-list">
+            <div className='servicedumb'>
+       {/*<ul className="service-card-list">
           <li className="card-service-a">Códigos de ética</li>
           <li className="card-service-b">Códigos de conducta</li>
           <li className="card-service-c">Declaración de valores</li>
         </ul>
         
+ */} 
+        <ul className="service-card-list">
+              <li className="card-service-a">
+              Códigos de ética
+                <br/>
+                <img src="../src/assets/images/etica.png" alt="Icono de Ética" className="imgvalores" />
+              </li>
+              <li className="card-service-b">
+              Códigos de conducta
+                <br/>
+                <img src="../src/assets/images/codigo_conducta.png" alt="Icono de Valores" className="imgvalores" />
+              </li>
+              <li className="card-service-c">
+              Declaración de valores
+                <img src="../src/assets/images/declaracion_valores.png" alt="Icono de Habilidades" className="imgvalores" />
+              </li>
+            </ul>
+            </div>
+            <br/><br/>
         <p>Que buscan ser un referente próximo de la conducta de las personas. Para garantizar 
           la eficacia de estos instrumentos de gestión, es necesario que reúnan las condiciones 
           mínimas y necesarias para que sin ambigüedades y sólidos fundamentos se constituyan en 

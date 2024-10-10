@@ -88,7 +88,7 @@ const ContactForm = () => {
                 <img src={imgGps} alt="icon" className="icon" />
                 <h3 className="contact-item-title">Dirección</h3>
               </div>
-              <a className="contact-item-text" href="https://www.google.com.mx/maps/place/Torres+de+La+Fuente/@20.0652137,-98.7903439,17z/data=!4m7!3m6!1s0x85d1a0fe10c376cd:0x850389c4bcd28ec6!4b1!8m2!3d20.0652137!4d-98.787769!16s%2Fg%2F1tg35khj?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Privada, Torres de La Fuente, Plaza las Torres, 42082 Pachuca de Soto, Hidalgo, México.</a>
+              <a   className="contact-item-text" href="https://www.google.com.mx/maps/place/Torres+de+La+Fuente/@20.0652137,-98.7903439,17z/data=!4m7!3m6!1s0x85d1a0fe10c376cd:0x850389c4bcd28ec6!4b1!8m2!3d20.0652137!4d-98.787769!16s%2Fg%2F1tg35khj?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Privada, Torres de La Fuente, Plaza las Torres, 42082 Pachuca de Soto, Hidalgo, México.</a>
 
             </div>
 
