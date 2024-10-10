@@ -10,7 +10,8 @@
     text-align: justify;
     font-weight: 500;
     margin-right: 4%;
-    font-size: 16px;
+    font-size: 23px;
+    line-height: 200%;
     font-family: "Poppins", sans-serif;
 }
 
@@ -29,7 +30,8 @@
     width: 100%;
     text-align: justify;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 23px;
+    line-height: 200%;
     font-family: "Poppins", sans-serif;
 }
 
@@ -90,7 +92,8 @@
 .certif-container-a p{
     text-align: justify;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 23px;
+    line-height: 200%;
     margin-bottom: 5%;
     font-family: "Poppins", sans-serif;
 }
@@ -110,7 +113,8 @@
     width: 70%;
     text-align: justify;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 23px;
+    line-height: 200%;
     font-family: "Poppins", sans-serif;
 }
 
@@ -137,19 +141,75 @@
 .certif-container-b p{
     text-align: justify;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 23px;
+    line-height: 200%;
     font-family: "Poppins", sans-serif;
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {}
+@media (max-width: 1024px) and (min-width: 768px) {
+    .certif-section-a p{
+        font-size: 18px;
+        line-height: 170%;
+    }
+
+    .certif-section-b p{
+        font-size: 18px;
+        line-height: 185%;
+    }
+
+    .list-certif li{
+        margin-top: 20%;
+        font-size: 18px;
+        margin: 4px;
+    }
+
+    .img-list{
+        height: 15px;
+        width: 15px;
+        margin-right: 7px;
+        margin-bottom: 5px;
+    }
+
+    .certif-container-a p{
+        font-size: 18px;
+        line-height: 185%;
+    }
+
+    .lottie-certif-a{
+        width: 195px;
+        height: auto;
+    }
+
+    .certif-section-d p{
+        font-size: 20px;
+        line-height: 185%;
+    }
+
+    .lottie-certif-b{
+        width: 110px;
+        height: auto;
+    }
+
+    .certif-section-e img{
+        width: 120px;
+        height: auto;
+    }
+    
+    .certif-container-b p{
+        font-size: 20px;
+        line-height: 185%;
+    }
+}
 
 @media (max-width: 480px) and (min-width: 320px) {
     .certif-section-a p{
         font-size: 8px;
+        line-height: 150%;
     }
 
     .certif-section-b p{
         font-size: 8px;
+        line-height: 150%;
     }
 
     .list-certif li{
@@ -166,6 +226,7 @@
 
     .certif-container-a p{
         font-size: 8px;
+        line-height: 150%;
     }
 
     .lottie-certif-a{
@@ -175,6 +236,7 @@
 
     .certif-section-d p{
         font-size: 8px;
+        line-height: 150%;
     }
 
     .lottie-certif-b{
@@ -189,5 +251,6 @@
     
     .certif-container-b p{
         font-size: 8px;
+        line-height: 150%;
     }
 }

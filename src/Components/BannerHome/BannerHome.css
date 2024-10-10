@@ -14,6 +14,7 @@
     font-weight: 800;
     font-size: 90px;
     color: #fff;
+
 }
 
 .banner-home p{
@@ -46,18 +47,21 @@
     .banner-home {
       height: auto;
       padding: 20px;
+      
     }
   
     .banner-home h1 {
       font-size: 25px;
+      margin-top: -10%;
+      
     }
   
     .banner-home p {
-      font-size: 10px;
+      font-size: 18px;
     }
   
     .banner-home-btn {
-      font-size: 7px;
+      font-size: 12px;
     }
   }
 
@@ -65,18 +69,20 @@
    .banner-home {
        height: 160px;
        padding: 20px;
+       
    }
 
    .banner-home h1 {
     font-size: 25px;
+    margin-top: 18%;
     }
 
     .banner-home p {
-        font-size: 5px;
+        font-size: 7px;
     }
 
     .banner-home-btn {
-        font-size: 7px;
+        font-size: 8px;
         padding: 2px 12px;
     }
 }
