@@ -12,6 +12,7 @@
   .left-section {
     width: 50%;
     text-align-last: left;  
+    
 }
   
   .left-title {
@@ -25,7 +26,8 @@
   .left-text {
     color: #515151;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
+    line-height: 160%;
     margin-bottom: 20px;
     text-align: left;
   }
@@ -156,6 +158,13 @@ text-align-last: center;
     .left-section,
     .right-section {
       width: 100%;
+    }
+
+    .left-text {
+      
+      font-size: 15px;
+      line-height: 160%;
+      
     }
   
     .contact-item-text {

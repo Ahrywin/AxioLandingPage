@@ -4,6 +4,7 @@
     background-size: cover;
     background-position: center;
     display: flex;
+    
     align-items: center;
 }
 
@@ -13,7 +14,7 @@
 
     font-size: 88px;
     font-weight: 700;
-    margin-top: 4%;
+    margin-top: -10%;
     font-family: "Poppins", sans-serif;
 }
 
@@ -73,11 +74,11 @@
 
     .banner-digital-title{
         font-size: 20px;
-        margin-top: 20%;
+        margin-top: -10%;
     }
 
     .banner-digital-container-a p{
-        font-size: 8px;
+        font-size: 12px;
         width: 90%;
     }
 
@@ -86,8 +87,8 @@
     }
 
     .btn-store{
-        width: 68px;
-        height: 20px;
+        width: 80px;
+        height: 25px;
     }
 
     .img-phone-2{
