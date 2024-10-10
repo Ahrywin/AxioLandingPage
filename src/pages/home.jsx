@@ -50,7 +50,7 @@ const Home = () => {
        
       </section>
       <div className='videohome vhcontenedor-video '>
-       <VideoPlayer videoSrc="/src/assets/videos/video6.mp4"/>
+       <VideoPlayer videoSrc="../src/assets/videos/video6.mp4"/>
        </div>
     </div>
   );

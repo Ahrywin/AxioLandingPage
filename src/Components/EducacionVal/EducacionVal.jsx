@@ -19,7 +19,7 @@ const EducacionVal = () => {
             <p>En la educación descansan las esperanzas de un mundo mejor. 
              Un mundo libre del cáncer de la corrupción, del azote de la violencia 
              y de la tragedia de las desigualdades sociales.</p>
-            <VideoPlayer videoSrc="/src/assets/videos/video2.mp4" />
+           <VideoPlayer videoSrc="../src/assets/videos/video2.mp4" />
         </section>
         <section className="certif-section-b">
             <p>Múltiples y variados diagnósticos develan que los esfuerzos de los sistemas educativos 

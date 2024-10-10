@@ -16,7 +16,7 @@ const GobiernoVal = () => {
           <p>Prevenir actos de corrupción e ineficacia en el gobierno son 
             las acciones más valoradas por una sociedad cansada de escándalos de abusos y deshonestidad.</p>
         </div>
-        <VideoPlayer videoSrc="/src/assets/videos/gobiernos.mp4" />
+        <VideoPlayer videoSrc="../src/assets/videos/gobiernos.mp4" />
       </section>
       <section className="section-gob-b">
         <div className="lottie-gob-a">

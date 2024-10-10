@@ -16,7 +16,7 @@ const GestionVal = () => {
             con un rol fundamental en la transformación social. Su objetivo 
             no puede reducirse a la producción de riqueza; aporta cultura, desarrollo social y humano.</p>
            
-            <VideoPlayer videoSrc="/src/assets/videos/video6.mp4"/>
+            <VideoPlayer videoSrc="../src/assets/videos/video6.mp4"/>
       </section>
       <section className="section-gestion-b">
         <img src={ImgGest} alt="" />
