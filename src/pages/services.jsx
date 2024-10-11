@@ -9,6 +9,7 @@ import animacionservice3 from '../Components/LottieComp/animations/animationserv
 import etica from '../assets/images/etica.png';
 import codcoun from '../assets/images/codigo_conducta.png';
 import decvar from '../assets/images/declaracion_valores.png';
+import chs from '../assets/images/chicos.gif';
 
 
 
@@ -96,32 +97,36 @@ const Services = () => {
       <section className="service-section-d">
         <h2>Temas</h2>
         <ul className="card-list-temas">
-          <li className="color-card-a">Sistemas Axiomaticos</li>
-          <li className="color-card-a">La Naturaleza De Los Valores</li>
-          <li className="color-card-b">Ética General</li>
-          <li className="color-card-b">Ética Especial</li>
-          <li className="color-card-c">Liderazgo Basado En Valores</li>
-          <li className="color-card-c">Equipos De Trabajo Con Valores</li>
-          <li className="color-card-d">Filosofía De La Educación</li>
-          <li className="color-card-d">Combate A La Corrupción</li>
-          <li className="color-card-e">Prevención De La Violencia En Entornos Escolares</li>
-          <li className="color-card-e">Valores Y Virtudes</li>
-          <li className="color-card-f">Inteligencia Y Valores</li>
-          <li className="color-card-f">Valores En El Hogar</li>
-          <li className="color-card-g">Autoestima</li>
-          <li className="color-card-g">El Poder De La Palabra</li>
-          <li className="color-card-h">Comunicación En El Hogar</li>
-          <li className="color-card-h">La Naturaleza Humana</li>
-          <li className="color-card-i">Axiología</li>
-          <li className="color-card-i">Metafísica</li>
-          <li className="color-card-j">Ontología</li>
-          <li className="color-card-j">Gnoseología</li>
-          <li className="color-card-k">Cultura Organizacional</li>
-          <li className="color-card-k">Dirección Y Desarrollo De Equipos De Alto Rendimiento</li>
-          <li className="color-card-l">El Papel Docente</li>
-          <li className="color-card-l">Desarrollo De La Inteligencia</li>
+          <li className="word-1">Sistemas Axiomáticos</li>
+          <li className="word-1">La Naturaleza de los Valores</li>
+          <li className="word-2">Ética General</li>
+          <li className="word-2">Ética Especial</li>
+          <li className="word-3">Liderazgo Basado en Valores</li>
+          <li className="word-3">Equipos de Trabajo con Valores</li>
+          <li className="word-4">Filosofía de la Educación</li>
+          <li className="word-4">Combate a la Corrupción</li>
+          <li className="word-5">Prevención de la Violencia en Entornos Escolares</li>
+          <li className="word-5">Valores y Virtudes</li>
+          <li className="word-6">Inteligencia y Valores</li>
+          <li className="word-6">Valores en el Hogar</li>
+          <li className="word-7">Autoestima</li>
+          <li className="word-7">El Poder de la Palabra</li>
+          <li className="word-8">Comunicación en el Hogar</li>
+          <li className="word-8">La Naturaleza Humana</li>
+          <li className="word-9">Axiología</li>
+          <li className="word-9">Metafísica</li>
+          <li className="word-10">Ontología</li>
+          <li className="word-10">Gnoseología</li>
+          <li className="word-11">Cultura Organizacional</li>
+          <li className="word-11">Dirección y Desarrollo de Equipos de Alto Rendimiento</li>
+          <li className="word-12">El Papel Docente</li>
+          <li className="word-12">Desarrollo de la Inteligencia</li>
         </ul>
+        
       </section>
+      <div className='imajv'>
+      <img src={chs}  className="imgjovenes" />
+      </div>
     </div>
   );
 }

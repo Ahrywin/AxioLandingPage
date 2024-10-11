@@ -23,7 +23,7 @@ const Home = () => {
           <h2 className='home-title'>Fundación Axio</h2>
           <div className='text-home-axio-principal'>
           <p>Es una organización sin fines de lucro fundada en 2013 que agrupa a
-            académicos,investigadores,
+            académicos, investigadores,
             líderes de opinión y personas comprometidas 
             en coadyuvar en la creación de una mejor sociedad, libre de violencia,
             corrupción, desigualdad y discriminación.</p>

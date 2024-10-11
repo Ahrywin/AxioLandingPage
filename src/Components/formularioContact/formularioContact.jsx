@@ -6,6 +6,7 @@ import imgMail from '../../assets/images/mail.png';
 import imgPhone from '../../assets/images/phone.png';
 import facebookIcon from '../../assets/images/facebookIcon.png';
 import xIcon from '../../assets/images/xIcon.png';
+import ytIcon from '../../assets/images/yticon.png';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -98,7 +99,7 @@ const ContactForm = () => {
                 <h3 className="contact-item-title">Teléfono</h3>
               </div>
               {/*modificación 1 que nos lleva directo a la app de telefono*/}
-              <a className="contact-item-text" href="tel:+527711486170">+52 771 148 6170</a>
+              <a className="contact-item-text" href="tel:+52 7711486170">+52 771 148 6170</a>
             </div>
             
             <div className="contact-item">
@@ -117,8 +118,15 @@ const ContactForm = () => {
       <div className="find-us-section">
         <h2 className="find-us-title">Encuéntranos</h2>
         <div className="social-icons">
+        <a href="https://www.facebook.com/axiomexico" target="_blank" rel="noopener noreferrer">
           <img src={facebookIcon} alt="Facebook" className="social-icon" />
+          </a>
+          <a href="https://x.com/AxioMexico" target="_blank" rel="noopener noreferrer">
           <img src={xIcon} alt="X" className="social-icon" />
+          </a>
+          <a href="https://www.youtube.com/@axioeducacionconvalores4051" target="_blank" rel="noopener noreferrer">
+          <img src={ytIcon} alt="Youtube" className="social-icon" />
+          </a>
         </div>
       </div>
 
@@ -141,7 +149,7 @@ const ContactForm = () => {
               <h3 className="contact-item-title">Teléfono</h3>
             </div>
             {/*modificación 4 con mailto que nos lleva directo a la app de telefono*/}
-            <a className="contact-item-text" href="tel:+527711486170">+52 771 148 6170</a>
+            <a className="contact-item-text" href="tel:+52 7717121668">+52 771 148 6170</a>
           </div>
         </div>
       </div>
