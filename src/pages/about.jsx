@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import BannerComp from '../Components/BannerComp/BannerComp';
 import CardComp from '../Components/CardComp/CardComp';
@@ -10,25 +10,68 @@ import valor2 from '../assets/images/valor2.png';
 import valor3 from '../assets/images/valor3.png';
 
 const About = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const cardsRef = useRef(null);
 
   const cards = [
     {
-      image: valor1,
-      title: 'Card 1',
-      text: 'Este es el primer valor.',
+      icono: valor1,
+      titulo: 'Veracidad',
+      descripcion: 'Hablamos siempre con la verdad con todas las personas con las que tenemos alguna relación. Preferimos una verdad incómoda que a la mentira.',
     },
     {
-      image: valor2,
-      title: 'Card 2',
-      text: 'Este es el segundo valor.',
+      icono: valor2,
+      titulo: 'Prudencia',
+      descripcion: 'Somos cuidadosos con nuestras decisiones, evitamos la precipitación que conlleva al error, observamos el entorno para ver como impactan nuestras decisiones y somos precavidos.',
     },
     {
-      image: valor3,
-      title: 'Card 3',
-      text: 'Este es el tercer valor.',
+      icono: valor3,
+      titulo: 'Justicia',
+      descripcion: 'Reconocemos que las buenas relaciones se construyen trabajando para que cada quien reciba lo que merece.',
+    },
+    {
+      icono: valor1,
+      titulo: 'Legalidad',
+      descripcion: 'Somos respetuosos de las leyes y normas que regulan nuestro actuar.',
+    },
+    {
+      icono: valor2,
+      titulo: 'Estudiosidad',
+      descripcion: 'Reconocemos que la eficacia de nuestra labor depende de la veracidad de nuestros pensamientos, por ello, buscamos formarnos permanentemente para ofrecer los mejores servicios.',
+    },
+    {
+      icono: valor3,
+      titulo: 'Respeto',
+      descripcion: 'Reconocemos la valiosa esencia humana que compartimos hombres y mujeres y evitamos cualquier acto de discriminación o atentado a su dignidad.',
+    },
+    {
+      icono: valor1,
+      titulo: 'Fidelidad',
+      descripcion: 'Cumplimos a cabalidad los compromisos contraídos sin excusas ni demoras. ¡Nuestra palabra vale mucho!',
+    },
+    {
+      icono: valor2,
+      titulo: 'Perseverancia',
+      descripcion: 'Reconocemos que los grandes objetivos implican grandes obstáculos y trabajamos duro para superarlos.',
+    },
+    {
+      icono: valor3,
+      titulo: 'Gratitud',
+      descripcion: 'Agradecemos sinceramente todo lo bueno y lo malo que de diferente manera nos reta a superarnos.',
+    },
+    {
+      icono: valor1,
+      titulo: 'Honradez',
+      descripcion: 'Somos profundamente respetuosos de la propiedad privada y de la confianza que otras personas nos brindan.',
     },
   ];
+
+  const scrollLeft = () => {
+    cardsRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    cardsRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+  };
 
   return (
     <div>
@@ -39,13 +82,11 @@ const About = () => {
         <meta name="author" content="Fundación Axio" />
         <link rel="canonical" href="https://tu-sitio-web.com/about" />
       </Helmet>
-      <BannerComp title={"¿Quíenes Somos?"} image={ImgQuienes} />
-      <section className='mission'>        
+      <BannerComp title={"¿Quiénes Somos?"} image={ImgQuienes} />
+      <section className='mission'>
         <div className="txt-container-a">
           <h2>Misión</h2>
-          <p>Nuestra misión es impulsar una agenda de ética y valores en el gobierno, la empresa privada 
-           y la educación que coadyuve a prevenir el fenómeno de la corrupción, la injusticia, la delincuencia, 
-           la violencia y todos aquellos males que lastiman a la sociedad.</p>
+          <p>Nuestra misión es impulsar una agenda de ética y valores en el gobierno, la empresa privada y la educación que coadyuve a prevenir el fenómeno de la corrupción, la injusticia, la delincuencia, la violencia y todos aquellos males que lastiman a la sociedad.</p>
         </div>
         <img src={ImgMission} alt="Imagen de Misión" />
       </section>
@@ -53,22 +94,24 @@ const About = () => {
         <img src={ImgVision} alt="Imagen de Visión" />
         <div className="txt-container-b">
           <h2>Visión</h2>
-          <p>Para 2030 lograremos implementar nuestro ecosistema Axio, nuestra metodología de gestión basada en 
-           la integridad y nuestros diagnósticos de cultura de integridad en más de cinco países de Latinoamérica.</p>
+          <p>Para 2030 lograremos implementar nuestro ecosistema Axio, nuestra metodología de gestión basada en la integridad y nuestros diagnósticos de cultura de integridad en más de cinco países de Latinoamérica.</p>
         </div>
       </section>
 
       <section className="values">
         <h2>Nuestros Valores</h2>
-        <div className="cards-container">
+        <button onClick={scrollLeft}>←</button>
+        <div className="cards-container" ref={cardsRef}>
           {cards.map((card, index) => (
-            <div key={index} className="card">
-              <img src={card.image} alt={card.title} />
-              <h2>{card.title}</h2>
-              <p>{card.text}</p>
-            </div>
+            <CardComp 
+              key={index} 
+              icono={card.icono} 
+              titulo={card.titulo} 
+              descripcion={card.descripcion} 
+            />
           ))}
         </div>
+        <button onClick={scrollRight}>→</button>
       </section>
     </div>
   );

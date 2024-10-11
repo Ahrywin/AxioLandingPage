@@ -1,20 +1,59 @@
-.card-component{
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en filas */
+    justify-content: center; /* Centrar las tarjetas */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px; /* Espacio alrededor de la galería */
+}
+
+.card-component {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #ccc; /* Bordes opcionales */
+    border-radius: 16px; /* Esquinas más redondeadas */
+    padding: 24px; /* Espaciado interno ajustado */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave */
+    width: 350px; /* Ancho fijo para todas las tarjetas */
+    height: 500px; /* Altura fija para todas las tarjetas */
+    overflow: hidden; /* Ocultar contenido desbordante */
+    text-align: center; /* Alinear todo al centro */
 }
 
-.card-component h3{
-    font-weight: 700;
-    font-size: 25px;
-    color: #4285F4;
-    font-family: "Poppins", sans-serif;
+.card-component:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Aumentar sombra al pasar el ratón */
 }
 
-.card-component p{
-    font-weight: 500;
-    font-size: 16px;
-    text-align: justify;
-    margin-right: 10%;
+.card-component img {
+    width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    max-width: 150px; /* Limitar el tamaño máximo de la imagen */
+    border-radius: 50%; /* Esquinas redondeadas para la imagen */
+    margin-bottom: 20px; /* Espacio inferior para separar la imagen del título */
+}
+
+.card-component h3 {
+    font-weight: 600; /* Peso más ligero que el original */
+    font-size: 24px; /* Tamaño de fuente ligeramente aumentado */
+    color: #4285F4; /* Color del título */
     font-family: "Poppins", sans-serif;
+    margin: 10px 0; /* Margen alrededor del título */
+    text-align: center; /* Centrar el título */
+}
+
+.card-component p {
+    font-weight: 400; /* Peso de fuente más ligero */
+    font-size: 16px; /* Tamaño de fuente ajustado */
+    text-align: center; /* Alinear el texto al centro */
+    margin: 0; /* Sin margen */
+    line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
+    color: #333; /* Color del texto más oscuro para mejor contraste */
+    font-family: "Poppins", sans-serif;
+    overflow: hidden; /* Ocultar el texto desbordante */
+    text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es demasiado largo */
+    display: -webkit-box; /* Soporte para mostrar solo un número limitado de líneas */
+    -webkit-line-clamp: 15; /* Mostrar solo 5 líneas de texto */
+    -webkit-box-orient: vertical;
 }
