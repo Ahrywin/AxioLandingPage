@@ -17,8 +17,7 @@ const GestionVal = () => {
             no puede reducirse a la producción de riqueza; aporta cultura, desarrollo social y humano.</p>
            
             
-            <iframe src="https://drive.google.com/file/d/1XZEHpQJcu6-W8aMEs-ewWxmBpmiiP7O3/view?usp=sharing" 
-        width="640" height="480" allow="autoplay"></iframe>
+            <VideoPlayer videoSrc="../src/assets/videos/video6.mp4" />
       </section>
       <section className="section-gestion-b">
         <img src={ImgGest} alt="" />

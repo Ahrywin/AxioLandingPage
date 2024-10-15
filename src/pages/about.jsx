@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import BannerComp from '../Components/BannerComp/BannerComp';
 import CardComp from '../Components/CardComp/CardComp';
@@ -65,13 +65,15 @@ const About = () => {
     },
   ];
 
-  const scrollLeft = () => {
-    cardsRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (cardsRef.current) {
+        cardsRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      }
+    }, 3000); // Cambiar cada 3 segundos
 
-  const scrollRight = () => {
-    cardsRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -97,10 +99,9 @@ const About = () => {
           <p>Para 2030 lograremos implementar nuestro ecosistema Axio, nuestra metodología de gestión basada en la integridad y nuestros diagnósticos de cultura de integridad en más de cinco países de Latinoamérica.</p>
         </div>
       </section>
-
+<br/><br/>
       <section className="values">
         <h2>Nuestros Valores</h2>
-        <button onClick={scrollLeft}>←</button>
         <div className="cards-container" ref={cardsRef}>
           {cards.map((card, index) => (
             <CardComp 
@@ -111,7 +112,6 @@ const About = () => {
             />
           ))}
         </div>
-        <button onClick={scrollRight}>→</button>
       </section>
     </div>
   );

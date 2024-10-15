@@ -21,6 +21,7 @@ function App() {
           <Route path='/digital' element={<Digital />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
+         
         </Routes>
       </BrowserRouter>
   )

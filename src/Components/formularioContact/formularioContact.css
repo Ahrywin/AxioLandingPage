@@ -189,3 +189,16 @@ text-align-last: center;
     transition: opacity 0.5s ease-in-out;
   }
   
+  .snackbar-error {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Color rojo */
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegúrate de que se vea sobre otros elementos */
+    transition: opacity 0.5s ease-in-out;
+  }
