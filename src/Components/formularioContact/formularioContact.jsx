@@ -34,7 +34,7 @@ const ContactForm = () => {
     }
 
     const templateParams = {
-      from_email: email,
+      email: email,
       message: message,
     };
 
