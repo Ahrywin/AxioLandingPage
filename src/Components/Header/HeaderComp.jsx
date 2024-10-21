@@ -55,7 +55,7 @@ const HeaderComp = () => {
                 onClick={() => handleLinkClick("/about")}
                 className={activeLink === "/about" ? "active" : ""}
             >
-                Quienes Somos
+                ¿Quiénes somos?
             </Link>
             <Link 
                 to="/certifications" 
