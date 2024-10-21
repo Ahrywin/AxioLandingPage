@@ -3,7 +3,7 @@ import BannerComp from '../Components/BannerComp/BannerComp'
 import EducacionVal from '../Components/EducacionVal/EducacionVal'
 import GobiernoVal from '../Components/GobiernoVal/GobiernoVal'
 import GestionVal from '../Components/GestionVal/GestionVal'
-import CertifVal from '../Components/CertifVal/CertifVal'
+import CertifVal from '../Components/Eticaprof/Eticaprof'
 import ImgCertif1 from '../assets/images/certif-1.png'
 
 const certifications = () => {
@@ -31,7 +31,7 @@ const certifications = () => {
         </button>
         <button className={`btn-certif ${activeSection === 'certificacionIndividual' ? 'active' : ''}`}
         onClick={() => handleButtonClick('certificacionIndividual')}>
-        Certificación Individual
+        Ética profesional
         </button>
       </div>
       <div className="section-container">
