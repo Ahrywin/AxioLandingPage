@@ -1,0 +1,203 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; 
+    padding: 30px;
+    
+  }
+ 
+  .question-container {
+    padding: 5%;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    max-width: 80%;
+    background-color: #fff;
+    color: #333;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  h3 {
+    font-size:25px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  .option {
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0072BC;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  input[type="radio"]:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0072BC;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  input[type="radio"]:checked:before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  input[type="radio"]:checked + label {
+    color: #0072BC;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+  }
+  
+  /* Hover effect for the entire div that contains the radio button and label */
+  .divinpt {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #222;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .divinpt:hover {
+    background-color: #E6F4FA; /* Light blue background on hover */
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Change the text and border color on hover */
+  .divinpt:hover input[type="radio"] {
+    border-color: #0072BC;
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .divinpt:hover label {
+    color: #0072BC;
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  
+  .progress-bar {
+    height: 8px;
+    background-color: #0072BC; 
+    border-radius: 4px;
+    width: 80%;
+    margin-bottom: 20px;
+    transition: width 0.3s;
+  }
+  .divinpt{
+    margin-bottom: 20px;
+    font-size: 19px;
+  }
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .qzbutton {
+    padding: 13px 23px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    background-color: #0072BC;
+    color: white;
+    transition: background-color 0.3s;
+    border-radius: 2rem;
+  }
+  
+  .qzbutton:disabled {
+    background-color: #ffffff;
+    cursor: not-allowed;
+    color: #0072BC;
+    border-radius: 22px;
+    padding: 13px 23px;
+    font-size: 1rem;
+  }
+  .qzbutton:enabled {
+  background-color: #0072BC;
+  border-radius: 22px;
+    color: #ffffff;
+    padding: 13px 23px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .qzbutton:not(:disabled):hover {
+    background-color: #0072BC;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  /* Styles for the email input container */
+  .email-container {
+    padding: 5%;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    max-width: 80%;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .email-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .ema{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #0072BC;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .email-container input[type="email"]:focus {
+    border-color: #0072BC;
+  }

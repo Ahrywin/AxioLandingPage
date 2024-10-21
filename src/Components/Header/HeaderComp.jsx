@@ -85,6 +85,13 @@ const HeaderComp = () => {
             >
                 Contacto
             </Link>
+            <Link 
+                to="/quiz" 
+                onClick={() => handleLinkClick("/quiz")}
+                className={activeLink === "/quiz" ? "active" : ""}
+            >
+                Quiz
+            </Link>
         </nav>
     </header>
 );

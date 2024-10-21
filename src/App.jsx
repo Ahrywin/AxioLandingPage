@@ -8,6 +8,7 @@ import Certifications from './pages/certifications'
 import Digital from './pages/digital'
 import Services from './pages/services'
 import Contact from './pages/contact'
+import Quiz from './pages/quiz'
 function App() {
   
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path='/digital' element={<Digital />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
-         
+          <Route path='/quiz' element={<Quiz />} />
         </Routes>
       </BrowserRouter>
   )
