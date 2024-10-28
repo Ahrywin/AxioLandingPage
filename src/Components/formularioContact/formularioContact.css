@@ -6,6 +6,7 @@
     gap: 50px;
     margin-left: 10%;
     margin-right: 10%;
+    color: black;
   }
   
   /* Sección izquierda - Formulario */
@@ -33,7 +34,7 @@
   }
   
   .contact-form label {
-    color: #0072bc;
+    color: black;
     display: block;
     font-family: 'Poppins', sans-serif;
     margin-bottom: 5px;
@@ -146,6 +147,13 @@ text-align-last: center;
     height: 81px;
   }
   
+  .contact-section-a h1 {
+    font-weight: 700;
+    font-size: 50px;
+   
+    font-family: "Poppins", sans-serif;
+}
+
   /* Media queries para dispositivos móviles */
   @media (max-width: 768px) {
     .contact-section {

@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+
+
 .distinction-green{
     color: #9AD74D;
 }
@@ -669,7 +671,7 @@
 .contact-section-a h1{
     font-weight: 700;
     font-size: 50px;
-    color: #4285F4;
+   
     font-family: "Poppins", sans-serif;
 }
 

@@ -7,6 +7,7 @@ import imgPhone from '../../assets/images/phone.png';
 import facebookIcon from '../../assets/images/facebookIcon.png';
 import xIcon from '../../assets/images/xIcon.png';
 import ytIcon from '../../assets/images/yticon.png';
+import contacto from '../../assets/images/contacto.gif';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -162,28 +163,33 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Sección Soporte Técnico */}
       <div className="contact-section">
-        <h1 className="right-title">Soporte Técnico</h1>
-        <div className="title-underline"></div>
-        <div className="contact-items">
-          <div className="contact-item">
-            <div className="contact-item-header">
-              <img src={imgMail} alt="icon" className="icon" />
-              <h3 className="contact-item-title">Correo electrónico</h3>
-            </div>
-            <a className="contact-item-text" href="mailto:admin@fundacionaxio.org">admin@fundacionaxio.org</a>
-          </div>
-
-          <div className="contact-item">
-            <div className="contact-item-header">
-              <img src={imgPhone} alt="icon" className="icon" />
-              <h3 className="contact-item-title">Teléfono</h3>
-            </div>
-            <a className="contact-item-text" href="tel:+52 77171216680">+52 771 7121 6680</a>
-          </div>
+  <div className="left-section">
+    <h1 className="right-title">Soporte Técnico</h1>
+    <div className="title-underline"></div>
+    <div className="contact-items">
+      <div className="contact-item">
+        <div className="contact-item-header">
+          <img src={imgMail} alt="icon" className="icon" />
+          <h3 className="contact-item-title">Correo electrónico</h3>
         </div>
+        <a className="contact-item-text" href="mailto:admin@fundacionaxio.org">
+          admin@fundacionaxio.org
+        </a>
       </div>
+      <div className="contact-item">
+        <div className="contact-item-header">
+          <img src={imgPhone} alt="icon" className="icon" />
+          <h3 className="contact-item-title">Teléfono</h3>
+        </div>
+        <a className="contact-item-text" href="tel:+52 77171216680">
+          +52 771 7121 6680
+        </a>
+      </div>
+    </div>
+  </div>
+  <img src={contacto} alt="icon" className="right-section-image" />
+</div>
     </div>
   );
 };
