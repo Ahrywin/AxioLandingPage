@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import BannerComp from '../Components/BannerComp/BannerComp';
@@ -5,9 +6,17 @@ import CardComp from '../Components/CardComp/CardComp';
 import ImgQuienes from '../assets/images/quienes-1.jpg';
 import ImgMission from '../assets/images/ImgMision.jpg';
 import ImgVision from '../assets/images/ImgVision.jpg';
-import valor1 from '../assets/images/valor1.png';
-import valor2 from '../assets/images/valor2.png';
-import valor3 from '../assets/images/valor3.png';
+import valor1 from '../assets/images/valores/1Veracidad.jpg';
+import valor2 from '../assets/images/valores/2Prudencia.jpg';
+import valor3 from '../assets/images/valores/3Justicia.jpg';
+import valor4 from '../assets/images/valores/4Legalidad.jpg';
+import valor5 from '../assets/images/valores/5Estudiosidad.jpg';
+import valor6 from '../assets/images/valores/6Respeto.jpg';
+import valor7 from '../assets/images/valores/7Fidelidad.jpg';
+import valor8 from '../assets/images/valores/8Perseverancia.png';
+import valor9 from '../assets/images/valores/9Gratitud.jpg';
+import valor10 from '../assets/images/valores/10Honradez.jpg';
+
 
 const About = () => {
   const cardsRef = useRef(null);
@@ -29,37 +38,37 @@ const About = () => {
       descripcion: 'Reconocemos que las buenas relaciones se construyen trabajando para que cada quien reciba lo que merece.',
     },
     {
-      icono: valor1,
+      icono: valor4,
       titulo: 'Legalidad',
       descripcion: 'Somos respetuosos de las leyes y normas que regulan nuestro actuar.',
     },
     {
-      icono: valor2,
+      icono: valor5,
       titulo: 'Estudiosidad',
       descripcion: 'Reconocemos que la eficacia de nuestra labor depende de la veracidad de nuestros pensamientos, por ello, buscamos formarnos permanentemente para ofrecer los mejores servicios.',
     },
     {
-      icono: valor3,
+      icono: valor6,
       titulo: 'Respeto',
       descripcion: 'Reconocemos la valiosa esencia humana que compartimos hombres y mujeres y evitamos cualquier acto de discriminación o atentado a su dignidad.',
     },
     {
-      icono: valor1,
+      icono: valor7,
       titulo: 'Fidelidad',
       descripcion: 'Cumplimos a cabalidad los compromisos contraídos sin excusas ni demoras. ¡Nuestra palabra vale mucho!',
     },
     {
-      icono: valor2,
+      icono: valor8,
       titulo: 'Perseverancia',
       descripcion: 'Reconocemos que los grandes objetivos implican grandes obstáculos y trabajamos duro para superarlos.',
     },
     {
-      icono: valor3,
+      icono: valor9,
       titulo: 'Gratitud',
       descripcion: 'Agradecemos sinceramente todo lo bueno y lo malo que de diferente manera nos reta a superarnos.',
     },
     {
-      icono: valor1,
+      icono: valor10,
       titulo: 'Honradez',
       descripcion: 'Somos profundamente respetuosos de la propiedad privada y de la confianza que otras personas nos brindan.',
     },
