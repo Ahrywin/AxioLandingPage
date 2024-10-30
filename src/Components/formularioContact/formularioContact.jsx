@@ -9,7 +9,7 @@ import xIcon from '../../assets/images/xIcon.png';
 import ytIcon from '../../assets/images/yticon.png';
 import contacto from '../../assets/images/contacto.gif';
 import emailjs from 'emailjs-com';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer'
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
