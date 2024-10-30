@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     margin-left: 10%;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 .certif-section-a p{
@@ -72,6 +72,110 @@
   .mediotxt{
     margin-top: 5%;
   }
+
+  .imgn1{
+    margin-left: 16%;
+  }
+
+
+.minbanner {
+    width: 100%; /* Define un ancho pequeño */
+    height: 420px; /* Define una altura mayor */
+    filter: brightness(0.5);
+    object-fit: cover; /* Ajusta la imagen sin estirarla */
+    object-position: center; /* Centra la imagen */
+}
+
+.banner-text {
+
+}
+.titulo{
+    font-size: 50px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    text-align: 10%;
+    line-height: 1; 
+}
+.txt{
+    font-size: 23px;
+    position: absolute;
+    top: 45%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 520px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    position: relative;
+    top: -150px; /* Mueve las cartas hacia arriba para superponerlas */
+    z-index: 1; /* Asegura que estén por encima de la imagen */
+}
+
+.card {
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    width: 50px; /* Ajustar el ancho de la tarjeta para alinearla al texto */
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+    font-family: "Poppins", sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 50px;
+    color: #007bff;
+    position: absolute;
+    top: -30px; /* Hace que el icono sobresalga de la carta */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el ícono */
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4; /* Line-height ajustado */
+    font-family: "Poppins", sans-serif;
+}
 
 
 

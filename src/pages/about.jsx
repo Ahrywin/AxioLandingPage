@@ -51,7 +51,7 @@ const About = () => {
     updateVisibleCards(startIndex);
     const interval = setInterval(() => {
       updateVisibleCards((startIndex + 1) % totalCards.length);
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [startIndex]);
