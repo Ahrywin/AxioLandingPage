@@ -10,7 +10,7 @@ import ImgLap from '../assets/images/laptop.png';
 import etica from '../assets/images/etica.png';
 import valores from '../assets/images/valores.png';
 import intemo from '../assets/images/inteligencia_emocional.png';
-import Footer from '../Components/Footer/Footer.jsx';
+import Footer from '../Components/Footer/Footer';
 
 const Digital = () => {
   return (
