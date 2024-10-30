@@ -6,6 +6,7 @@ import { LottieAnim } from '../Components/LottieComp/LottieAnim';
 import animacion2 from '../Components/LottieComp/animations/animation2.json';
 import animacion3 from '../Components/LottieComp/animations/animation3.json';
 import VideoPlayer from '../Components/VideoComp/VideoPlayer'
+import Footer from '../Components/Footer/Footer';
 
 const Home = () => {
   return (
@@ -52,6 +53,7 @@ const Home = () => {
       <div className='videohome vhcontenedor-video '>
        <VideoPlayer videoSrc="../src/assets/videos/video6.mp4"/>
        </div>
+      <Footer/>
     </div>
   );
 }

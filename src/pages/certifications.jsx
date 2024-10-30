@@ -5,6 +5,7 @@ import GobiernoVal from '../Components/GobiernoVal/GobiernoVal'
 import GestionVal from '../Components/GestionVal/GestionVal'
 import CertifVal from '../Components/Eticaprof/Eticaprof'
 import ImgCertif1 from '../assets/images/certif-1.png'
+import Footer from '../Components/Footer/Footer';
 
 const certifications = () => {
   const [activeSection, setActiveSection] = useState('educacionConValores')
@@ -40,6 +41,7 @@ const certifications = () => {
         {activeSection === 'gestionPorValores' && <GestionVal />}
         {activeSection === 'certificacionIndividual' && <CertifVal />}
       </div>
+      <Footer/>
     </div>
   )
 }

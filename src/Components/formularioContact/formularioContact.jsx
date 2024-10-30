@@ -9,6 +9,7 @@ import xIcon from '../../assets/images/xIcon.png';
 import ytIcon from '../../assets/images/yticon.png';
 import contacto from '../../assets/images/contacto.gif';
 import emailjs from 'emailjs-com';
+import Footer from '../Footer/Footer';
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
@@ -190,6 +191,7 @@ const ContactForm = () => {
   </div>
   <img src={contacto} alt="icon" className="right-section-image" />
 </div>
+<Footer/>
     </div>
   );
 };

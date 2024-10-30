@@ -4,7 +4,7 @@ import './quiz.css';
 import ImgDigital1 from '../assets/images/eco.jpg';
 
 import BannerComp from '../Components/BannerComp/BannerComp'
-
+import Footer from '../Components/Footer/Footer';
 function Quiz() {
   const questions = [
     {
@@ -256,6 +256,7 @@ const getCategory = (questionValue) => {
         </div>
       )}
     </div>
+    <Footer/>
     </div>
   );
 }
