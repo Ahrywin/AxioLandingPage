@@ -41,7 +41,7 @@ const certifications = () => {
         {activeSection === 'gestionPorValores' && <GestionVal />}
         {activeSection === 'certificacionIndividual' && <CertifVal />}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
