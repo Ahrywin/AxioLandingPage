@@ -121,37 +121,44 @@
     height: 520px;
 }
 
-.cards-container {
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 520px;
+}
+
+.cardets-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
     padding: 0 20px;
     position: relative;
-    top: -150px; /* Mueve las cartas hacia arriba para superponerlas */
+    top: -90px; /* Mueve las cartas hacia arriba para superponerlas */
     z-index: 1; /* Asegura que estén por encima de la imagen */
 }
 
-.card {
+.cardet {
     background-color: white;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
-    width: 50px; /* Ajustar el ancho de la tarjeta para alinearla al texto */
+    padding: 50px 10px; /* Ajustar padding para reducir el ancho */
+    width: 400px; /* Ajustar el ancho de la tarjeta para alinearla al texto */
     text-align: center;
     position: relative;
     transition: transform 0.2s;
     font-family: "Poppins", sans-serif;
 }
 
-.card:hover {
+.cardet:hover {
     transform: translateY(-5px);
 }
 
-.card-icon {
+.cardet-icon {
     font-size: 50px;
     color: #007bff;
+    background-color: #007bff;
     position: absolute;
     top: -30px; /* Hace que el icono sobresalga de la carta */
     left: 50%;
@@ -162,20 +169,21 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el ícono */
 }
 
-.card-title {
-    font-size: 20px;
+.cardet-title {
+    font-size: 25px;
     font-weight: bold;
     color: #333;
     margin: 20px 0 10px;
     font-family: "Poppins", sans-serif;
 }
 
-.card-text {
+.cardet-text {
     font-size: 16px;
     color: #666;
     line-height: 1.4; /* Line-height ajustado */
     font-family: "Poppins", sans-serif;
 }
+
 
 
 

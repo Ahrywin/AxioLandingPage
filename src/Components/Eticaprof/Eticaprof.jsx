@@ -36,24 +36,24 @@ const Eticaprof = () => {
         <p className="titulo">En Fundación Axio hemos<br/>desarrollado</p>
         <p className="txt">Un programa formativo integral y<br/>una certificación en “Ética profesional”.</p>
 
-<div className="cards-container">
-    <div className="card">
-        <div className="card-icon">🎯</div>
+<div className="cardets-container">
+    <div className="cardet">
+        <div className="cardet-icon">🎯</div>
         <br/>
-        <h3 className="card-title">OBJETIVO</h3>
-        <p className="card-text">Nuestro objetivo es formar integralmente a futuros y actuales profesionales para que el desempeño de sus responsabilidades lo hagan con estricto apego a los principios éticos universales.</p>
+        <h3 className="cardet-title">OBJETIVO</h3>
+        <p className="cardet-text">Nuestro objetivo es formar integralmente a futuros y actuales profesionales para que el desempeño de sus responsabilidades lo hagan con estricto apego a los principios éticos universales.</p>
     </div>
-    <div className="card">
-        <div className="card-icon">⚙️</div>
+    <div className="cardet">
+        <div className="cardet-icon">⚙️</div>
         <br/>
-        <h3 className="card-title">PROCESO FORMATIVO</h3>
-        <p className="card-text">Nuestro proceso formativo parte de los principios teóricos de la ética para traducirlos a acciones concretas en beneficio personal y organizacional.</p>
+        <h3 className="cardet-title">PROCESO FORMATIVO</h3>
+        <p className="cardet-text">Nuestro proceso formativo parte de los principios teóricos de la ética para traducirlos a acciones concretas en beneficio personal y organizacional.</p>
     </div>
-    <div className="card">
-        <div className="card-icon">📜</div>
+    <div className="cardet">
+        <div className="cardet-icon">📜</div>
         <br/>
-        <h3 className="card-title">CERTIFICACIÓN</h3>
-        <p className="card-text">Nuestra certificación es una herramienta de superación personal, de plenitud y de compromiso social en un mercado laboral competitivo.</p>
+        <h3 className="cardet-title">CERTIFICACIÓN</h3>
+        <p className="cardet-text">Nuestra certificación es una herramienta de superación personal, de plenitud y de compromiso social en un mercado laboral competitivo.</p>
     </div>
 </div>
 </div>
