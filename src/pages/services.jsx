@@ -10,7 +10,7 @@ import etica from '../assets/images/etica.png';
 import codcoun from '../assets/images/codigo_conducta.png';
 import decvar from '../assets/images/declaracion_valores.png';
 import chs from '../assets/images/chicos.gif';
-import Footer from '../Components/Footer/Footer'
+import Footer from '../Footer'
 
 
 const Services = () => {

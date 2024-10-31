@@ -4,7 +4,7 @@ import './quiz.css';
 import ImgDigital1 from '../assets/images/eco.jpg';
 
 import BannerComp from '../Components/BannerComp/BannerComp'
-import Footer from '../Components/Footer/Footer'
+import Footer from '../Footer'
 function Quiz() {
   const questions = [
     {
