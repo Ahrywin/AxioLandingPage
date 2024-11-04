@@ -20,11 +20,12 @@ const GestionVal = () => {
             <VideoPlayer videoSrc="../src/assets/videos/video6.mp4" />
       </section>
       <section className="section-gestion-b">
-        <img src={ImgGest} alt="" />
+        
         <p>Una empresa comprometida con una postura ética favorece un clima 
             de satisfacción en los empleados, incrementa la producción y eleva 
             los estándares de calidad y eficacia. Los valores en las organizaciones 
             aportan mucho más que la sola suscripción moral. Definen un crecimiento duradero y sostenido.</p>
+            <img src={ImgGest} alt="" />
       </section>
       <section className="section-gestion-c">
         <div className="gestion-container-a">

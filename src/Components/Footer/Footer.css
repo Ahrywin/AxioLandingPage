@@ -1,0 +1,140 @@
+/* components/Footer.css */
+.footer {
+  background-color: #0072BC;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3%;
+}
+
+.footer-logo img {
+  width: 190px;
+  margin-bottom: 10px;
+}
+
+.social1-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social1-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  width: 40px;
+  height: 40px;
+  background-color: #99c7e4;
+  border-radius: 50%;
+}
+
+.social1-icons a img {
+  width: 25px;
+  margin-top: 20%;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+  margin-left: 8%;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.text22 {
+  margin: 5px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive styles */
+
+/* Medium screens (tablets, 768px or smaller) */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+  }
+
+  .footer-logo img {
+      width: 150px;
+  }
+
+  .footer-section {
+      margin: 20px 0;
+      padding: 0 15px;
+  }
+
+  .social1-icons a {
+      width: 35px;
+      height: 35px;
+  }
+}
+
+/* Small screens (mobile devices, 480px or smaller) */
+@media (max-width: 480px) {
+  .footer-container {
+    
+      padding: 20px;
+  }
+
+  .footer-logo img {
+      width: 120px;
+  }
+
+  .footer-section h3 {
+      font-size: 1em;
+  }
+
+  .footer-section {
+      margin: 10px 0;
+      padding: 0 10px;
+  }
+
+  .social1-icons {
+      gap: 15px;
+  }
+
+  .social1-icons a {
+      width: 30px;
+      height: 30px;
+  }
+
+  .footer-bottom {
+      font-size: 0.8em;
+  }
+}

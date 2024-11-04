@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import facebookIcon from '../src/assets/images/fb.png';
+import fb from '../src/assets/images/fb.png';
 import xIcon from '../src/assets/images/x.png';
 import ytIcon from '../src/assets/images/yt.png';
 import logo from '../src/assets/images/axio2.png'
@@ -10,10 +10,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <img src={logo} alt="Logo de la Fundación" />
+       <img src={logo} alt="Logo de la Fundación" />
           <div className="social1-icons">
           <a href="https://www.facebook.com/axiomexico" target="_blank" rel="noopener noreferrer">
-              <img src={facebookIcon} alt="Facebook" />
+              <img src={fb} alt="Facebook" />
             </a>
             <a href="https://x.com/AxioMexico" target="_blank" rel="noopener noreferrer">
               <img src={xIcon} alt="Twitter" />

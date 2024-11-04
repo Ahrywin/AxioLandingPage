@@ -589,6 +589,7 @@
     justify-content: space-between;
     list-style-type: none; /* Sin puntos en la lista */
     padding: 0;
+    margin-bottom: 80%;
 }
 
 .card-list-temas li {

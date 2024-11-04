@@ -187,17 +187,128 @@
 
 
 
-@media (max-width: 1024px) and (min-width: 768px) {}
+@media (max-width: 1024px) and (min-width: 768px) {
+    .section-individual-a h1 {
+        font-size: 35px;
+    }
+
+    .work-gif {
+        width: 300px;
+        height: auto;
+    }
+
+    .certif-section-a,
+    .section-gestion-b {
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .certif-section-a p,
+    .section-gestion-b p {
+        width: 100%;
+        font-size: 15px;
+    }
+    .imgn1{
+        width: 350px;
+        margin-left: -10%;
+      }
+      .img2{
+        margin-left: 30%;
+      }
+      .titulo{
+        font-size: 30px;
+        top: 25%;
+        left: 30%;
+     
+    }
+    .txt{
+        font-size: 18px;
+        position: absolute;
+        top: 38%;
+        left: 27%;
+
+        
+    }
+    .banner-container {
+    margin-bottom: 20%;
+    }
+    .cardet-text {
+        font-size: 12px;
+
+    }
+    .cardet-title {
+        font-size: 20px;
+
+    }
+    
+    
+}
 
 
 @media (max-width: 480px) and (min-width: 320px) {
-    .section-individual-a h1{
+    .section-individual-a h1 {
         font-size: 25px;
     }
 
-    .work-gif{
+    .work-gif {
         width: 240px;
         height: auto;
     }
 
+    .certif-section-a,
+    .section-gestion-b {
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .certif-section-a p,
+    .section-gestion-b p,
+    .certif-section-b p {
+        width: 100%;
+        font-size: 8px;
+    }
+
+    .imgn1{
+        width: 250px;
+        margin-left: 10%;
+      }
+      .img2{
+        margin-left: 2%;
+      }
+
+      .titulo{
+        font-size: 20px;
+        top: 25%;
+        left: 40%;
+     
+    }
+    .txt{
+        font-size: 15px;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+
+        
+    }
+    .banner-container{
+        margin-bottom: 130%;
+        }
+        .cardets-container {
+            flex-direction: column; /* Las tarjetas se apilan en columna */
+            align-items: center;
+            top: -100px; /* Elimina el desplazamiento hacia arriba en móviles */
+        }
+        .cardet-text {
+            font-size: 10px;
+    
+        }
+        .cardet-title {
+            font-size: 18px;
+        }
+        .cardet {
+            width: 90%; /* Ancho de la tarjeta en pantallas pequeñas */
+           
+        }
 }
