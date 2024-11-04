@@ -1,9 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import fb from '../src/assets/images/fb.png';
-import xIcon from '../src/assets/images/x.png';
-import ytIcon from '../src/assets/images/yt.png';
-import logo from '../src/assets/images/axio2.png'
+
 
 const Footer = () => {
   return (

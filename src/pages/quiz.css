@@ -73,7 +73,7 @@
   input[type="radio"]:checked + label {
     color: #0072BC;
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: 19px;
   }
   
   /* Hover effect for the entire div that contains the radio button and label */
@@ -132,7 +132,7 @@
   
   .qzbutton {
     padding: 13px 23px;
-    font-size: 1rem;
+    font-size: 19px;
     border: none;
     border-radius: 22px;
     cursor: pointer;
@@ -148,14 +148,14 @@
     color: #0072BC;
     border-radius: 22px;
     padding: 13px 23px;
-    font-size: 1rem;
+    font-size: 19px
   }
   .qzbutton:enabled {
   background-color: #0072BC;
   border-radius: 22px;
     color: #ffffff;
     padding: 13px 23px;
-    font-size: 1rem;
+    font-size: 19px;
     font-family: "Poppins", sans-serif;
   }
   
@@ -200,4 +200,66 @@
   
   .email-container input[type="email"]:focus {
     border-color: #0072BC;
+  }
+
+
+  @media (max-width: 768px) {
+
+  }
+  
+  /* Small screens (mobile devices, 480px or smaller) */
+  @media (max-width: 480px) {
+    .divinpt {
+      margin-bottom: 7px;
+      font-size: 12px;
+  }
+
+    /* Change the text and border color on hover */
+    .divinpt:hover input[type="radio"] {
+
+      font-size: 12px;
+     
+    }
+    
+    .divinpt:hover label {
+
+      font-size: 12px;
+
+    }
+    input[type="radio"]:checked + label {
+    
+      font-size: 12px;
+    }
+
+    .qzbutton {
+  
+      font-size: 12px;
+ 
+    }
+
+    .qzbutton:disabled {
+
+      font-size: 12px
+    }
+    .qzbutton:enabled {
+      font-size: 12px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      color: #222;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    h3 {
+      font-size:15px;
+      margin-bottom: 10px;
+      color: #222;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+    
   }
