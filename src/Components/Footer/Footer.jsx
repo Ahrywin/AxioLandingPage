@@ -1,16 +1,19 @@
 import React from 'react';
 import './Footer.css';
-
+import facebookIcon from '../Footer/fb.png'
+import xIcon from '../Footer/x.png';
+import ytIcon from '../Footer/yt.png';
+import logo from '../Footer/axio2.png'
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-       <img src={logo} alt="Logo de la Fundación" />
+          <img src={logo} alt="Logo de la Fundación" />
           <div className="social1-icons">
           <a href="https://www.facebook.com/axiomexico" target="_blank" rel="noopener noreferrer">
-              <img src={fb} alt="Facebook" />
+              <img src={facebookIcon} alt="Facebook" />
             </a>
             <a href="https://x.com/AxioMexico" target="_blank" rel="noopener noreferrer">
               <img src={xIcon} alt="Twitter" />
