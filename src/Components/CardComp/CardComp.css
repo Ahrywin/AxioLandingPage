@@ -84,3 +84,45 @@
 }
 
 
+/* Responsivo */
+@media (max-width: 768px) {
+    .card-component {
+        width: 80%; /* Ancho más ajustado en pantallas medianas */
+        height: auto; /* Permitir que la altura se adapte al contenido */
+    }
+
+    .card-component img {
+        max-width: 120px; /* Reducir el tamaño de la imagen */
+    }
+
+    .card-component h3 {
+        font-size: 20px; /* Reducir el tamaño del título */
+    }
+
+    .card-component p {
+        font-size: 14px; /* Reducir el tamaño del texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-component {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        padding: 16px; /* Reducir el espaciado */
+    }
+
+    .card-component img {
+        max-width: 60px; /* Tamaño más pequeño para la imagen */
+    }
+
+    .card-component h3 {
+        font-size: 16px; /* Tamaño del título más pequeño */
+    }
+
+    .card-component p {
+        font-size: 10px; /* Reducir el tamaño del texto */
+    }
+
+    .navigation-buttons button {
+        font-size: 24px; /* Reducir el tamaño del botón */
+    }
+}
