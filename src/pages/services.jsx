@@ -35,13 +35,13 @@ const Services = () => {
             tomar acciones quirúrgicas y metódicas que permitan el éxito en su transformación.</p>
         </div>
         <div className="container-services-b">
-          <p>Nuestro instrumento SA-92 permite develar la cultura de una organización en 
+          <p>Nuestro instrumento <a href='/quiz'>SA-92</a> permite develar la cultura de una organización en 
             temas de ética e integridad.</p>
-          <p >¡Conoce como puedes diagnosticar tu organización!</p>
+          <p id="dictamenTecnico">¡Conoce como puedes diagnosticar tu organización!</p>
         </div>
       </section>
       <section className="service-section-b">
-        <h2>Dictamen Técnico De Códigos De Ética</h2>
+        <h2 >Dictamen Técnico De Códigos De Ética</h2>
         <p>Con el afán de promover una nueva cultura ética en las organizaciones se han 
             promovido instrumentos de gestión como: </p>
             <div className='servicedumb'>
@@ -75,10 +75,10 @@ const Services = () => {
           mínimas y necesarias para que sin ambigüedades y sólidos fundamentos se constituyan en 
           un referente del actuar basado en la ética.</p>
         <p>El dictamen técnico de estos instrumentos es fundamental para garantizar que cumplan con su objetivo.</p>
-        <p className="distinction-blue">Conoce como puedes dictaminar tu código de ética</p>
+        <p className="distinction-blue" id="Formacion">Conoce como puedes dictaminar tu código de ética</p>
       </section>
       <section className="service-section-c">
-        <h2>Formación</h2>
+        <h2 >Formación</h2>
         <div className="container-service-b">
           <div className="lottie-service-a">
             <LottieAnim animacion={animacionservice1} />
@@ -87,15 +87,15 @@ const Services = () => {
             y sustitución de axiomas erróneos por verdaderos y eso se logra a través de procesos formativos.</p>
         </div>
         <div className="container-service-c">
-          <p>La formación tiene como objetivo trasladar los principios especulativos en los que se fundamenta la ética y 
+          <p id="Temas">La formación tiene como objetivo trasladar los principios especulativos en los que se fundamenta la ética y 
           la axiología a acciones concretas que enriquezcan la toma de decisiones en el plano personal y organizacional</p>
           <div className="lottie-service-b">
-            <LottieAnim animacion={animacionservice2} />
+            <LottieAnim animacion={animacionservice2}  />
           </div>
         </div>
       </section>
       <section className="service-section-d">
-        <h2>Temas</h2>
+        <h2 >Temas</h2>
         <ul className="card-list-temas">
           <li className="word-1">Sistemas Axiomáticos</li>
           <li className="word-1">La Naturaleza de los Valores</li>
@@ -122,12 +122,12 @@ const Services = () => {
           <li className="word-12">El Papel Docente</li>
           <li className="word-12">Desarrollo de la Inteligencia</li>
         </ul>
-        
-      </section>
-      <div className='imajv'>
+        <div className='imajv'>
       <img src={chs}  className="imgjovenes" />
       </div>
-      <br/> <br/> <br/> <br/>
+      </section>
+     
+ <br/> <br/> <br/>
       <Footer/>
     </div>
   );

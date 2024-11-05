@@ -5,7 +5,9 @@ import xIcon from '../Footer/x.png';
 import ytIcon from '../Footer/yt.png';
 import logo from '../Footer/axio2.png'
 
+
 const Footer = () => {
+  
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -52,13 +54,13 @@ const Footer = () => {
         <div className="footer-section">
           <h3>SERVICIOS</h3>
           <br/>
-          <a className="text22">Diagnóstico SA-92</a>
+          <a className="text22" href='/quiz'>Diagnóstico SA-92</a>
           <br/> <br/>
-          <a className="text22">Dictamen Técnico</a>
+          <a className="text22" href='/services#dictamenTecnico'>Dictamen Técnico</a>
           <br/> <br/>
-          <a className="text22">Formación</a>
+          <a className="text22" href='/services#Formacion'>Formación</a>
           <br/> <br/>
-          <a className="text22">Temas</a>   
+          <a className="text22" href='/services#Temas'>Temas</a>     
         </div>
       </div>
       <div className="footer-bottom">

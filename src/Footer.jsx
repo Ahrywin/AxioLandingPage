@@ -3,10 +3,17 @@ import './Footer.css';
 import facebookIcon from '../src/assets/images/fb.png';
 import xIcon from '../src/assets/images/x.png';
 import ytIcon from '../src/assets/images/yt.png';
-import logo from '../src/assets/images/axio2.png'
+import logo from '../src/assets/images/axio2.png';
+
+
+
+
 
 const Footer = () => {
+ 
   return (
+   
+    
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
@@ -52,18 +59,19 @@ const Footer = () => {
         <div className="footer-section">
           <h3>SERVICIOS</h3>
           <br/>
-          <a className="text22">Diagnóstico SA-92</a>
+          <a className="text22" href='/quiz'>Diagnóstico SA-92</a>
           <br/> <br/>
-          <a className="text22">Dictamen Técnico</a>
+          <a className="text22" href='/services#dictamenTecnico'>Dictamen Técnico</a>
           <br/> <br/>
-          <a className="text22">Formación</a>
+          <a className="text22" href='/services#Formacion'>Formación</a>
           <br/> <br/>
-          <a className="text22">Temas</a>   
+          <a className="text22" href='/services#Temas'>Temas</a>   
         </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Fundación Axio - Todos los derechos reservados. Hidalgo | México</p>
       </div>
+      <br/>
     </footer>
   );
 };
