@@ -17,10 +17,10 @@ const BannerDigital = ({title, image}) => {
         <p>Descarga nuestra app ahora y conoce la plataforma de Axio.</p>
         <div className="button-container">
           <a href={googlePlayLink} target="_blank" rel="noopener noreferrer">
-              <img src={googlePlayButton} alt="Disponible en Google Play" className="btn-store"/>
+              <img src={googlePlayButton} alt="Disponible en Google Play" className="btn-store1"/>
           </a>
           <a href={appStoreLink} target="_blank" rel="noopener noreferrer">
-            <img src={appStoreButton} alt="Disponible en App Store" className="btn-store"/>
+            <img src={appStoreButton} alt="Disponible en App Store" className="btn-store2"/>
           </a>
         </div>
       </div>

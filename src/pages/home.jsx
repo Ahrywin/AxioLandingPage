@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Fundación Axio - Haciendo la Diferencia</title>
+        <title>Fundación Axio - Haciendo Vida los Valores</title>
         <meta name="description" content="Fundación Axio es una organización sin fines de lucro que busca crear una mejor sociedad libre de violencia y desigualdad." />
         <meta name="keywords" content="Fundación Axio, organización sin fines de lucro, académicos, investigadores, líderes de opinión, valores sociales" />
         <meta name="author" content="Fundación Axio" />
