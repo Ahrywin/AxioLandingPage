@@ -1,11 +1,12 @@
-import React from 'react'
+import React ,{useRef, useEffect } from 'react';
 import './GobiernoVal.css'
 import { LottieAnim } from '../LottieComp/LottieAnim'
 import animacioncertif3 from '../LottieComp/animations/animationcertif3.json'
-import VideoPlayer from '../VideoComp/VideoPlayer'
+
 
 
 const GobiernoVal = () => {
+
   return (
     <div>
       <section className="section-gob-a">
@@ -16,7 +17,15 @@ const GobiernoVal = () => {
           <p>Prevenir actos de corrupción e ineficacia en el gobierno son 
             las acciones más valoradas por una sociedad cansada de escándalos de abusos y deshonestidad.</p>
         </div>
-        <VideoPlayer videoSrc="../src/assets/videos/gobiernos.mp4" />
+        
+
+        <iframe className='videos23'
+          src="https://www.youtube.com/embed/zjXLuVZ6XwA?autoplay=1&loop=1&playlist=zjXLuVZ6XwA&si=aaHdX56DABshCp3h"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
       </section>
       <section className="section-gob-b">
         <div className="lottie-gob-a">

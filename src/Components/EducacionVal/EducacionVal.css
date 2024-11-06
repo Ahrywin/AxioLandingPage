@@ -15,9 +15,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-.video-player{
+.videv{
     width: 650px;
-    height: 450px;
+    height: 365px;
 }
 
 .certif-section-b{
@@ -258,5 +258,10 @@
     .certif-container-b p{
         font-size: 8px;
         line-height: 150%;
+    }
+
+    .videv{
+        width: 250px;
+        height: 145px;
     }
 }

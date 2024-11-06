@@ -1,9 +1,8 @@
 .section-gob-a{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    
     margin-bottom: 5%;
-    width: 95%;
+    
 }
 
 .section-container-a{
@@ -11,7 +10,12 @@
     margin-left: 10%;
     margin-right: 5%;
     flex-direction: column;
-
+    width: 60%;
+}
+.videos23{
+    width: 850px;
+    height: 325px;
+    margin-right: 10%;
 }
 
 .section-container-a p{
@@ -119,5 +123,8 @@
         width: 180px;
         height: auto;
     }
-    
+    .videos23{
+        width: 150px;
+        height: 86px;
+    }
 }

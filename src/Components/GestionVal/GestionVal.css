@@ -12,7 +12,10 @@
     line-height: 200%;
     font-family: "Poppins", sans-serif;
 }
-
+.videogsv{
+    width: 650px;
+    height: 365px;
+}
 .section-gestion-b{
     display: flex;
     align-items: center;
@@ -120,6 +123,10 @@
     .lottie-gestion-a{
         width: 225px;
         height: auto;
+    }
+    .videogsv{
+        width: 250px;
+        height: 145px;
     }
     
 }

@@ -197,11 +197,22 @@
     outline: none;
     transition: border-color 0.3s ease;
   }
-  
-  .email-container input[type="email"]:focus {
-    border-color: #0072BC;
+
+
+  .organization-select{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #0072BC;
+    outline: none;
+    transition: border-color 0.3s ease;
   }
 
+ 
 
   @media (max-width: 768px) {
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useRef, useEffect } from 'react';
 import './EducacionVal.css'
 import ImgVio from '../../assets/images/ImgVio.png'
 import ImgAdi from '../../assets/images/ImgAdi.png'
@@ -10,16 +10,24 @@ import ImgCertif1 from '../../assets/images/ImgCertif1.png'
 import { LottieAnim } from '../LottieComp/LottieAnim'
 import animacioncertif1 from '../LottieComp/animations/animationcertif1.json'
 import animacioncertif2 from '../LottieComp/animations/animationcertif2.json'
-import VideoPlayer from '../VideoComp/VideoPlayer'
+
  
 const EducacionVal = () => {
+
   return (
     <div>
         <section className="certif-section-a">
             <p className="a">En la educación descansan las esperanzas de un mundo mejor. 
              Un mundo libre del cáncer de la corrupción, del azote de la violencia 
              y de la tragedia de las desigualdades sociales.</p>
-            <VideoPlayer videoSrc="../src/assets/videos/video2.mp4" />
+ 
+             <iframe className='videv'
+                    src="https://www.youtube.com/embed/3cXkyqLfJAQ?autoplay=1&loop=1&playlist=3cXkyqLfJAQ&si=97HouXQ0EVHid7-A"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                    </iframe>
+
         </section>
         <section className="certif-section-b">
             <p>Múltiples y variados diagnósticos develan que los esfuerzos de los sistemas educativos 

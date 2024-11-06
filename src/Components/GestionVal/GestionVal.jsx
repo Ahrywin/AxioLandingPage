@@ -1,11 +1,12 @@
-import React from 'react'
+import React ,{useRef, useEffect } from 'react';
 import './GestionVal.css'
 import ImgGest from '../../assets/images/ImgGestion.png'
 import { LottieAnim } from '../LottieComp/LottieAnim'
 import animationcertif4 from '../LottieComp/animations/animationcertif4.json'
-import VideoPlayer from '../VideoComp/VideoPlayer'
+
 
 const GestionVal = () => {
+
   return (
     <div>
       <section className="certif-section-a">
@@ -17,7 +18,10 @@ const GestionVal = () => {
             no puede reducirse a la producción de riqueza; aporta cultura, desarrollo social y humano.</p>
            
             
-            <VideoPlayer videoSrc="../src/assets/videos/video6.mp4" />
+        <iframe className='videogsv'src="https://www.youtube.com/embed/p2Xe0O1t6Hk?autoplay=1&loop=1&playlistsi=dtkf88IsrtC6ta6C" 
+        title="YouTube video player" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
       </section>
       <section className="section-gestion-b">
         

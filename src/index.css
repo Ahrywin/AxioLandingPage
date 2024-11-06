@@ -88,6 +88,13 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10%;
+    
+}
+.vidh{
+    width: 1000px;
+    height: 565px;
+    margin-left: 20%;
+    margin-top: -8%;
 }
 
 .view-home-container h3{
@@ -610,7 +617,6 @@
 }
 
 
-/* Colores para las diferentes palabras */
 .word-1 {
     color: #FA0224;
 }
@@ -832,6 +838,13 @@
     {
         margin-top: -80%;
         margin-left: -20%;
+    }
+
+    .vidh{
+        width: 450px;
+        height: 255px;
+        margin-left: 25%;
+        margin-top: -10%;
     }
 
  
@@ -1096,49 +1109,13 @@
         margin-top: -150%;
         margin-left: -30%;
     }
+
+    .vidh{
+        width: 245px;
+        height: 140px;
+        margin-left: 20%;
+        margin-top: -8%;
+    }
  
 }
 
-.videohome {
-    display: block;
-    margin: 0 auto; /* Centra horizontalmente */
-    max-width: 100%; /* Asegura que el video no sea más grande que su contenedor */
-    height: auto; /* Mantiene la proporción del video */
-}
-
-.vhcontenedor-video {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Asegura que el contenedor cubra el 100% del viewport */
-    padding: 20px; /* Espacio alrededor en pantallas pequeñas */
-    margin-top: -20%;
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .vhcontenedor-video {
-        height: auto; /* Permite que el contenedor crezca automáticamente en pantallas pequeñas */
-        padding: 10px;
-        margin-top: 0%;
-    }
-
-    .videohome {
-        width: 100%; /* Se asegura de que el video ocupe todo el ancho en pantallas pequeñas */
-        height: auto; /* Mantiene la proporción */
-    }
-}
-
-/* Ajustes para pantallas muy pequeñas, como teléfonos */
-@media (max-width: 480px) {
-    .vhcontenedor-video {
-        padding: 5px;
-        margin-top: 0%;
-    }
-
-    .videohome {
-        width: 100%; /* Ocupa todo el ancho de la pantalla */
-        max-width: 100%; /* Asegura que no se desborde */
-        height: auto;
-    }
-}
