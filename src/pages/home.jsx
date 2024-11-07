@@ -54,6 +54,7 @@ const Home = () => {
         title="YouTube video player" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen></iframe>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
       <Footer />
     </div>
   );
