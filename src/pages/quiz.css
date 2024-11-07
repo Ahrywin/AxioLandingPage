@@ -215,6 +215,11 @@
  
 
   @media (max-width: 768px) {
+    
+    .organization-select {
+      font-size: 0.9rem; /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
+      padding: 8px; /* Reducir el padding en dispositivos pequeños */
+    }
 
   }
   
@@ -272,5 +277,10 @@
       font-weight: bold;
       font-family: "Poppins", sans-serif;
     }
+
     
+    .organization-select {
+      font-size: 0.85rem; /* Ajustar aún más el tamaño de la fuente */
+      padding: 6px; /* Reducir padding en pantallas más pequeñas */
+    }
   }
