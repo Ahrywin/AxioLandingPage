@@ -9,6 +9,7 @@ import Digital from './pages/digital'
 import Services from './pages/services'
 import Contact from './pages/contact'
 import Quiz from './pages/quiz'
+import Finish from './pages/finish'
 function App() {
   
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/quiz' element={<Quiz />} />
+          <Route path='/finish' element={<Finish />} />
         </Routes>
       </BrowserRouter>
   )

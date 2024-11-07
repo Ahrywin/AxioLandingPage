@@ -47,7 +47,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: #ffff; /* Ajusta el color según tu diseño */
+  color: #515151; /* Ajusta el color según tu diseño */
   font-weight: bold;
   padding-bottom: 5px; /* Espacio para la línea azul */
   position: relative; /* Necesario para la línea debajo */
