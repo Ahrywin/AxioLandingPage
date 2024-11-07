@@ -1037,8 +1037,8 @@ function Quiz() {
   ];
 
   const organizations = [
-    { id: 'db4875a9-1587-46c3-a068-12ba39d19250', name: 'ORGANIZACOIN AXIO' },
-  ];
+    { id: 'db4875a9-1587-46c3-a068-12ba39d19250', name: 'ORGANIZACIÓN AXIO' },
+];
 
   const departments = [
     { id: '8760b3a5-d269-462d-8aa9-e6a6931e58ab', name: 'CA-TEE SISTEMAS' },
