@@ -11,6 +11,7 @@ import Quiz from './pages/quiz'
 import Finish from './pages/finish'
 import Footer from './Components/Footer/Footer'
 import Datos from './Components/formularioContact/Datos'
+
 function App() {
   
   return (

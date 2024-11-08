@@ -23,7 +23,7 @@ const ContactForm = () => {
     setRecaptchaValue(value);
   };
 
-  const contactData = window.contactData;
+  const contactData = window.contactData || {};
 
   const handleSubmit = (e) => {
     e.preventDefault();

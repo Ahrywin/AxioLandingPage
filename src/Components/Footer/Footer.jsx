@@ -8,7 +8,7 @@ import logo from '../Footer/axio2.png'
 
 const Footer = () => {
   
-  const contactData = window.contactData;
+  const contactData = window.contactData || {};
   return (
     <footer className="footer">
       <div className="footer-container">
