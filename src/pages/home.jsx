@@ -5,8 +5,7 @@ import BannerHome from '../Components/BannerHome/BannerHome';
 import { LottieAnim } from '../Components/LottieComp/LottieAnim';
 import animacion2 from '../Components/LottieComp/animations/animation2.json';
 import animacion3 from '../Components/LottieComp/animations/animation3.json';
-import Footer from '../Footer';
-
+  
 const Home = () => {
 
   return (
@@ -57,7 +56,7 @@ const Home = () => {
         allowfullscreen></iframe>
         
         <br/><br/><br/><br/><br/><br/><br/><br/>
-      <Footer />
+     
     </div>
   );
 }

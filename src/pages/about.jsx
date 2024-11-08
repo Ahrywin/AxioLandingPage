@@ -16,7 +16,6 @@ import valor7 from '../assets/images/valores/7Fidelidad.jpg';
 import valor8 from '../assets/images/valores/8Perseverancia.png';
 import valor9 from '../assets/images/valores/9Gratitud.jpg';
 import valor10 from '../assets/images/valores/10Honradez.jpg';
-import Footer from '../Footer'
 
 const About = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -108,7 +107,7 @@ const About = () => {
         </div>
       </section>
       <br/>
-      <Footer />
+
     </div>
   );
 }

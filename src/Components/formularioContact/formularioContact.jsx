@@ -23,6 +23,8 @@ const ContactForm = () => {
     setRecaptchaValue(value);
   };
 
+  const contactData = window.contactData;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -121,11 +123,11 @@ const ContactForm = () => {
               </div>
               <a
                 className="contact-item-text"
-                href="https://www.google.com.mx/maps/place/Fundaci%C3%B3n+Axio+A.C./@20.0643619,-98.7873803,19z/data=!3m1!4b1!4m6!3m5!1s0x85d1a1cfee309439:0x8db7350c62bc8224!8m2!3d20.0643619!4d-98.7867366!16s%2Fg%2F11ff0r2yyp?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D"
+                href={`${contactData.addressdireccion}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Privada, Torres de La Fuente, Plaza las Torres, 42082 Pachuca de Soto, Hidalgo, México.
+                {contactData.address}
               </a>
             </div>
 
@@ -134,7 +136,7 @@ const ContactForm = () => {
                 <img src={imgPhone} alt="icon" className="icon" />
                 <h3 className="contact-item-title">Teléfono</h3>
               </div>
-              <a className="contact-item-text" href="tel:+52 77171216680">+52 771 7121 6680</a>
+              <a className="contact-item-text" href={`tel:${contactData.phone1}`}>{contactData.phone1}</a>
             </div>
 
             <div className="contact-item">
@@ -142,7 +144,7 @@ const ContactForm = () => {
                 <img src={imgMail} alt="icon" className="icon" />
                 <h3 className="contact-item-title">Correo electrónico</h3>
               </div>
-              <a className="contact-item-text" href="mailto:contacto@fundacionaxio.org">contacto@fundacionaxio.org</a>
+              <a className="contact-item-text" href={`mailto:${contactData.email1}`}>{contactData.email1}</a>
             </div>
           </div>
         </div>
@@ -174,8 +176,8 @@ const ContactForm = () => {
           <img src={imgMail} alt="icon" className="icon" />
           <h3 className="contact-item-title">Correo electrónico</h3>
         </div>
-        <a className="contact-item-text" href="mailto:admin@fundacionaxio.org">
-          admin@fundacionaxio.org
+        <a className="contact-item-text" href={`mailto:${contactData.email1}`}>
+          {contactData.email2}
         </a>
       </div>
       <div className="contact-item">
@@ -183,15 +185,15 @@ const ContactForm = () => {
           <img src={imgPhone} alt="icon" className="icon" />
           <h3 className="contact-item-title">Teléfono</h3>
         </div>
-        <a className="contact-item-text" href="tel:+52 77171216680">
-          +52 771 7121 6680
+        <a className="contact-item-text" href={`tel:${contactData.phone1}`}> {/*Necesario cambiar el href */}
+          {contactData.phone1}
         </a>
       </div>
     </div>
   </div>
   <img src={contacto} alt="icon" className="right-section-image" />
 </div>
-<Footer/>
+
     </div>
   );
 };

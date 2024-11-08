@@ -6,7 +6,7 @@ import GifWork from '../assets/images/work-progress.gif'
 
 const contact = () => {
   return (
-    <div>
+    <div >
       <BannerComp title={"Contacto"} image={ImgContact}/>
       <section className="contact-section-a">
        
@@ -20,15 +20,9 @@ const contact = () => {
         loading="lazy"
         title="Google Map"
       ></iframe>
-   <ContactForm />
-
-
-
     </div>
+    <ContactForm />
       </section>
-
-     
-  
     </div>
     
   )

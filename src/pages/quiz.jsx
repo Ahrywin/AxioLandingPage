@@ -6,7 +6,7 @@ import './quiz.css';
 import ImgDigital1 from '../assets/images/eco.jpg';
 import { useNavigate } from 'react-router-dom';
 import BannerComp from '../Components/BannerComp/BannerComp';
-import Footer from '../Footer';
+
 
 function Quiz() {
   const questions = [
@@ -1214,7 +1214,6 @@ function Quiz() {
         ))}
       </div>
       </div>
-      <Footer />
     </div>
   );
 }

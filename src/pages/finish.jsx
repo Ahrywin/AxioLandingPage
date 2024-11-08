@@ -1,6 +1,5 @@
 import React from 'react';
 import runner from '../assets/images/runner.png'
-import Footer from '../Footer';
 function Finish() {
   return (
     <div>
@@ -20,7 +19,7 @@ function Finish() {
       </button>
       
     </div>
-    <Footer />
+
     </div>
   );
 }

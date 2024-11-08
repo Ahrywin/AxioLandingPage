@@ -8,6 +8,7 @@ import logo from '../Footer/axio2.png'
 
 const Footer = () => {
   
+  const contactData = window.contactData;
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -28,26 +29,23 @@ const Footer = () => {
         <div className="footer-section">
           <h3>CONTACTANOS</h3>
           <br/>
-          <a  className="text22" href="mailto:contacto@fundacionaxio.org">contacto@fundacionaxio.org</a>
+          <a  className="text22" href={`mailto:${contactData.email1}`}>{contactData.email1}</a>
           <br/>
           <a
                 className="text22"
-                href="https://www.google.com.mx/maps/place/Fundaci%C3%B3n+Axio+A.C./@20.0643619,-98.7873803,19z/data=!3m1!4b1!4m6!3m5!1s0x85d1a1cfee309439:0x8db7350c62bc8224!8m2!3d20.0643619!4d-98.7867366!16s%2Fg%2F11ff0r2yyp?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D"
+                href={`${contactData.addressdireccion}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <br/>
-                Privada, Torres de La Fuente, Plaza las Torres, 42082 Pachuca de Soto, Hidalgo, México.
+                {contactData.address}
               </a>
               <br/>
               <br/>
-              <a className="text22" href="tel:+52 77171216680">+52 771 7121 6680</a>
+              <a className="text22" href={`tel:${contactData.phone1}`}>{contactData.phone1}</a>
         </div>
         <div className="footer-section">
           <h3>PRODUCTOS</h3>
-          <br/>
-          <a className="text22">Axio App</a>
-          <br/>
           <br/>
           <a className="text22" >Plataforma Fundación Axio</a>
         </div>
