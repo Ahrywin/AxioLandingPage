@@ -1122,7 +1122,7 @@ function Quiz() {
 
   return (
     <div>
-      <BannerComp title="Quiz" image={ImgDigital1} />
+      <BannerComp title="SA-92" image={ImgDigital1} />
 
 
 

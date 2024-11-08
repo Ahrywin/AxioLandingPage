@@ -6,7 +6,7 @@ function Finish() {
     <div>
     <div style={styles.container}>
       <h1 style={styles.title}>¡Felicidades!</h1>
-      <p style={styles.subtitle}>haz finalizado el Quiz</p>
+      <p style={styles.subtitle}>haz finalizado el SA-92</p>
       <div style={styles.imageContainer}>
         {/* You can replace this with an <img> tag to include an actual image */}
         <img 

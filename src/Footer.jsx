@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-section">
-          <h3>CONTACTANOS</h3>
+          <h3>CONTACTÁNOS</h3>
           <br/>
           <a  className="text22" href="mailto:contacto@fundacionaxio.org">contacto@fundacionaxio.org</a>
           <br/>
@@ -42,11 +42,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <br/>
-                Privada, Torres de La Fuente, Plaza las Torres, 42082 Pachuca de Soto, Hidalgo, México.
+                Privada, Torres de La Fuente, Plaza las Torres #136, 42082 Pachuca de Soto, Hidalgo, México.
               </a>
               <br/>
               <br/>
-              <a className="text22" href="tel:+52 77171216680">+52 771 7121 6680</a>
+              <a className="text22" href="tel:+52 7717121668">+52 7717121668</a>
         </div>
         <div className="footer-section">
           <h3>PRODUCTOS</h3>
@@ -54,7 +54,6 @@ const Footer = () => {
           <a className="text22">Axio App</a>
           <br/>
           <br/>
-          <a className="text22" >Plataforma Fundación Axio</a>
         </div>
         <div className="footer-section">
           <h3>SERVICIOS</h3>

@@ -17,7 +17,7 @@ const Home = () => {
         <meta name="keywords" content="Fundación Axio, organización sin fines de lucro, académicos, investigadores, líderes de opinión, valores sociales" />
         <meta name="author" content="Fundación Axio" />
         <link rel="canonical" href="https://tu-sitio-web.com/home" />
-      </Helmet>
+         </Helmet>
       <BannerHome />
       <section className='home-container-a'>
         <div className='home-text'>
@@ -29,6 +29,7 @@ const Home = () => {
               en coadyuvar en la creación de una mejor sociedad, libre de violencia,
               corrupción, desigualdad y discriminación.</p>
           </div>
+          
         </div>
         <div className="lottie-animation-a">
           <LottieAnim animacion={animacion2} />
@@ -54,6 +55,7 @@ const Home = () => {
         title="YouTube video player" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen></iframe>
+        
         <br/><br/><br/><br/><br/><br/><br/><br/>
       <Footer />
     </div>
