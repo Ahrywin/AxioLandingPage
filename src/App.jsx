@@ -1,7 +1,6 @@
 import React from 'react'
 import HeaderComp from './Components/Header/HeaderComp'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Datos from './Components/formularioContact/datos'
 import Home from './pages/home'
 import About from './pages/about'
 import Certifications from './pages/certifications'
@@ -11,7 +10,7 @@ import Contact from './pages/contact'
 import Quiz from './pages/quiz'
 import Finish from './pages/finish'
 import Footer from './Components/Footer/Footer'
-
+import Datos from './Components/formularioContact/Datos'
 function App() {
   
   return (
