@@ -8,7 +8,8 @@ import logo from '../Footer/axio2.png'
 
 const Footer = () => {
   
-  const contactData = window.contactData || {};
+  const Data = window.contactData || {};
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -29,20 +30,20 @@ const Footer = () => {
         <div className="footer-section">
           <h3>CONTACTANOS</h3>
           <br/>
-          <a  className="text22" href={`mailto:${contactData.email1}`}>{contactData.email1}</a>
+          <a  className="text22" href={`mailto:${Data.email1}`}>{Data.email1}</a>
           <br/>
           <a
                 className="text22"
-                href={`${contactData.addressdireccion}`}
+                href={`${Data.addressdireccion}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <br/>
-                {contactData.address}
+                {Data.address}
               </a>
               <br/>
               <br/>
-              <a className="text22" href={`tel:${contactData.phone1}`}>{contactData.phone1}</a>
+              <a className="text22" href={`tel:${Data.phone1}`}>{Data.phone1}</a>
         </div>
         <div className="footer-section">
           <h3>PRODUCTOS</h3>
