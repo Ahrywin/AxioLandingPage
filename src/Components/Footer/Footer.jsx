@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Footer.css';
 import facebookIcon from '../Footer/fb.png'
 import xIcon from '../Footer/x.png';
@@ -8,7 +8,14 @@ import logo from '../Footer/axio2.png'
 
 const Footer = () => {
   
-  const Data = window.contactData || {};
+  const [Data, setContactData] = useState(null);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('contactData'));
+    setContactData(data);
+  }, []);
+
+  if (!Data) return null;
 
   return (
     <footer className="footer">

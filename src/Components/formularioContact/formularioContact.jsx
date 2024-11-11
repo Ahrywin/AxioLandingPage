@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import "./formularioContact.css"; // Importamos los estilos del formulario
 import imgGps from '../../assets/images/gps.png';
@@ -9,7 +9,7 @@ import xIcon from '../../assets/images/xIcon.png';
 import ytIcon from '../../assets/images/yticon.png';
 import contacto from '../../assets/images/contacto.gif';
 import emailjs from 'emailjs-com';
-import Footer from '../Footer/Footer'
+
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +23,14 @@ const ContactForm = () => {
     setRecaptchaValue(value);
   };
 
-  const contactData = window.contactData || {};
+  const [contactData, setContactData] = useState(null);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('contactData'));
+    setContactData(data);
+  }, []);
+
+  if (!contactData) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();

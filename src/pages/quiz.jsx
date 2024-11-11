@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import MultipleChoiceQuestion from '../Components/MultipleChoiceQuestion/MultipleChoiceQuestion';
 import Alert from '../Components/Alert/Alert';
@@ -7,13 +7,11 @@ import ImgDigital1 from '../assets/images/eco.jpg';
 import { useNavigate } from 'react-router-dom';
 import BannerComp from '../Components/BannerComp/BannerComp';
 
-
 function Quiz() {
   const questions = [
     {
-      //consejo
       question: 'Es una obligación moral consultar a los expertos antes de decidir.',
-      value: 1, // Value for this question
+      value: 1,
       options: [
         { value: 0, label: 'Indiferente' },
         { value: -2, label: 'Totalmente en desacuerdo' },
@@ -24,7 +22,7 @@ function Quiz() {
     },
     {
       question: 'Antes de tomar una decisión siempre estoy dispuesto a recibir un buen consejo.',
-      value: 2, // Value for this question
+      value: 2,
       options: [
         { value: 0, label: 'Indiferente' },
         { value: -2, label: 'Totalmente en desacuerdo' },
@@ -35,7 +33,7 @@ function Quiz() {
     },
     {
       question: 'La toma de decisiones es un asunto personal y no se requiere el consejo de nadie.',
-      value: 3, // Value for this question
+      value: 3,
       options: [
         { value: 0, label: 'Indiferente' },
         { value: 2, label: 'Totalmente en desacuerdo' },
@@ -46,7 +44,7 @@ function Quiz() {
     },
     {
       question: 'No me interesa el consejo de otras personas, porque nadie conoce la realidad que vivo mejor que yo.',
-      value: 4, // Value for this question
+      value: 4,
       options: [
         { value: 0, label: 'Indiferente' },
         { value: 2, label: 'Totalmente en desacuerdo' },
@@ -1036,20 +1034,20 @@ function Quiz() {
       }, 
   ];
 
-  const organizations = [
-    { id: 'db4875a9-1587-46c3-a068-12ba39d19250', name: 'ORGANIZACIÓN AXIO' },
-];
-
-  const departments = [
-    { id: '8760b3a5-d269-462d-8aa9-e6a6931e58ab', name: 'CA-TEE SISTEMAS' },
-  ];
-
+  const [randomQuestions, setRandomQuestions] = useState([]);
   const [organizationId, setOrganizationId] = useState('');
   const [departmentId, setDepartmentId] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [answers, setAnswers] = useState([]);
   const [alerts, setAlerts] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Baraja las preguntas y reinicia las respuestas cuando el componente se monta
+    const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
+    setRandomQuestions(shuffledQuestions);
+    setAnswers(Array(shuffledQuestions.length).fill(null)); // Reinicia las respuestas
+  }, []); // Esto se ejecuta solo una vez al montar el componente
 
   const showAlert = (type, message) => {
     const id = uuidv4();
@@ -1067,7 +1065,7 @@ function Quiz() {
   };
 
   const handleNext = () => {
-    if (currentStep < questions.length + 1) {
+    if (currentStep < randomQuestions.length + 1) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -1081,7 +1079,7 @@ function Quiz() {
   const handleSubmit = async () => {
     const quizId = uuidv4();
 
-    const results = questions.map((question, index) => ({
+    const results = randomQuestions.map((question, index) => ({
       quizId,
       question: question.value,
       answer1: answers[index],
@@ -1105,31 +1103,27 @@ function Quiz() {
       });
 
       if (response.ok) {
-        showAlert('success', 'Respuestas guardadas con éxito.    ');
+        showAlert('success', 'Respuestas guardadas con éxito.');
         navigate('/finish');
       } else {
-        showAlert('error', 'Error al guardar las respuestas.    ');
-        
+        showAlert('error', 'Error al guardar las respuestas.');
       }
     } catch (error) {
       console.error('Error:', error);
-      showAlert('error', 'Error al guardar las respuestas.  ');      
+      showAlert('error', 'Error al guardar las respuestas.');
     }
   };
 
-  const totalSteps = questions.length + 2;
+  const totalSteps = randomQuestions.length + 2;
   const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
 
   return (
     <div>
       <BannerComp title="SA-92" image={ImgDigital1} />
 
-
-
       <div className="App">
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
 
-        {/* Paso de selección de organización */}
         {currentStep === 0 && (
           <div className="question-container">
             <h3>Selecciona una organización para avanzar</h3>
@@ -1142,16 +1136,11 @@ function Quiz() {
               <option value="" disabled>
                 Selecciona una organización
               </option>
-              {organizations.map((org) => (
-                <option key={org.id} value={org.id}>
-                  {org.name}
-                </option>
-              ))}
+              <option value="db4875a9-1587-46c3-a068-12ba39d19250">ORGANIZACIÓN AXIO</option>
             </select>
           </div>
         )}
 
-        {/* Paso de selección de departamento */}
         {currentStep === 1 && organizationId && (
           <div className="question-container">
             <h3>Selecciona un departamento para avanzar</h3>
@@ -1164,55 +1153,49 @@ function Quiz() {
               <option value="" disabled>
                 Selecciona un departamento
               </option>
-              {departments.map((dept) => (
-                <option key={dept.id} value={dept.id}>
-                  {dept.name}
-                </option>
-              ))}
+              <option value="8760b3a5-d269-462d-8aa9-e6a6931e58ab">CA-TEE SISTEMAS</option>
             </select>
           </div>
         )}
 
-        {/* Mostrar preguntas solo si se ha seleccionado la organización y el departamento */}
         {currentStep >= 2 && organizationId && departmentId && (
           <MultipleChoiceQuestion
-            question={questions[currentStep - 2].question}
-            options={questions[currentStep - 2].options}
+            question={randomQuestions[currentStep - 2].question}
+            options={randomQuestions[currentStep - 2].options}
             onOptionSelect={handleOptionSelect}
             selectedOption={answers[currentStep - 2]}
             questionIndex={currentStep - 2}
           />
         )}
 
-        {/* Botones de navegación */}
         <div className="button-container">
           <button onClick={handlePrevious} disabled={currentStep === 0} className="qzbutton">
             Anterior
           </button>
 
-          {currentStep < questions.length + 1 && (
+          {currentStep < randomQuestions.length + 1 && (
             <button onClick={handleNext} disabled={answers[currentStep - 2] === null} className="qzbutton">
               Siguiente
             </button>
           )}
 
-          {currentStep === questions.length + 1 && (
+          {currentStep === randomQuestions.length + 1 && (
             <button onClick={handleSubmit} disabled={answers[currentStep - 2] === null} className="qzbutton">
               Finalizar
             </button>
           )}
         </div>
-              {/* Contenedor de alertas */}
-      <div className="alert-container">
-        {alerts.map(alert => (
-          <Alert
-            key={alert.id}
-            type={alert.type}
-            message={alert.message}
-            onClose={() => closeAlert(alert.id)}
-          />
-        ))}
-      </div>
+
+        <div className="alert-container">
+          {alerts.map(alert => (
+            <Alert
+              key={alert.id}
+              type={alert.type}
+              message={alert.message}
+              onClose={() => closeAlert(alert.id)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
