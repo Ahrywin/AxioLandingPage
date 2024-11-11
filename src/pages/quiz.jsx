@@ -381,7 +381,7 @@ function Quiz() {
       ]
     },
     {
-      question: 'La espera desespera y termina destruyendo el optimismo.',
+      question: 'La espera desesperada y termina destruyendo el optimismo.',
       value: 35, // Value for this question
       options: [
         { value: 0, label: 'Indiferente' },
@@ -460,7 +460,7 @@ function Quiz() {
       ]
     },
     {
-      question: 'Las normas son valiosas y las respeto porque gracias a ellas cada quien hace lo que debe. ',
+      question: 'Las normas son valiosas y las respeto, porque gracias a ellas cada quien hace lo que debe. ',
       value: 42, // Value for this question
       options: [
         { value: 0, label: 'Indiferente' },
@@ -572,7 +572,7 @@ function Quiz() {
       ]
     },
     {
-      question: 'En cualquier transacción hay que ponerse listo y sacar provecho porque de lo contrario los demás lo harán contigo. ',
+      question: 'En cualquier transacción hay que ponerse listo y sacar provecho, porque de lo contrario los demás lo harán contigo. ',
       value: 52, // Value for this question
       options: [
         { value: 0, label: 'Indiferente' },
@@ -617,7 +617,7 @@ function Quiz() {
       ]
     },
     {
-      question: 'La gente que me ha ayudado no lo hace desinteresadamente, por ello no tengo nada que agradecer. ',
+      question: 'La gente que me ha ayudado no lo hace desinteresadamente. Por ello, no tengo nada que agradecer. ',
       value: 56, // Value for this question
       options: [
         { value: 0, label: 'Indiferente' },
@@ -1011,7 +1011,7 @@ function Quiz() {
         ]
       },
       {
-        question: 'Cada quien tiene su verdad y es igual de valida y respetable que la de cualquier otra persona. ',
+        question: 'Cada quien tiene su verdad y es igual de válida y respetable que la de cualquier otra persona. ',
         value: 91, // Value for this question
         options: [
           { value: 0, label: 'Indiferente' },
