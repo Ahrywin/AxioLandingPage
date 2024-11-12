@@ -1,39 +1,45 @@
 import React from 'react';
-import runner from '../assets/images/runner.png'
-function Finish() {
-  return (
-    <div>
-    <div style={styles.container}>
-      <h1 style={styles.title}>¡Felicidades!</h1>
-      <p style={styles.subtitle}>haz finalizado el SA-92</p>
-      <div style={styles.imageContainer}>
-        {/* You can replace this with an <img> tag to include an actual image */}
-        <img 
-          src={runner} 
-          alt="Runner finishing race" 
-          style={styles.image}
-        />
-      </div>
-      <button style={styles.button} onClick={() => window.location.href = '/'}>
-        Regresar al Inicio
-      </button>
-      
-    </div>
+import runner from '../assets/images/runner.png';
 
+function Finish({ onClose }) {
+  return (
+    <div style={styles.modalOverlay} onClick={onClose}>
+      <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <h1 style={styles.title}>¡Felicidades!</h1>
+        <p style={styles.subtitle}>Haz finalizado el SA-92</p>
+        <div style={styles.imageContainer}>
+          <img src={runner} alt="Runner finishing race" style={styles.image} />
+        </div>
+        <button style={styles.button} onClick={() => window.location.href = '/'}>
+          Regresar al Inicio
+        </button>
+      </div>
     </div>
   );
 }
 
 const styles = {
-  container: {
+  modalOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semitransparente
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100vh',
+    zIndex: 1000,
+  },
+  modalContent: {
+    backgroundColor: '#fff',
     padding: '20px',
+    borderRadius: '10px',
     textAlign: 'center',
-    fontFamily: '"Poppins", sans-serif'
+    width: '90%',
+    maxWidth: '500px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    fontFamily: '"Poppins", sans-serif',
   },
   title: {
     color: '#1E88E5',
@@ -64,37 +70,7 @@ const styles = {
     fontSize: '1rem',
     cursor: 'pointer',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
-  },
-  '@media (max-width: 768px)': {
-    title: {
-      fontSize: '2rem',
-    },
-    subtitle: {
-      fontSize: '1rem',
-    },
-    button: {
-      padding: '8px 20px',
-      fontSize: '0.9rem',
-    },
-    imageContainer: {
-      maxWidth: '300px',
-    },
-  },
-  '@media (max-width: 480px)': {
-    title: {
-      fontSize: '1.8rem',
-    },
-    subtitle: {
-      fontSize: '0.9rem',
-    },
-    button: {
-      padding: '6px 15px',
-      fontSize: '0.8rem',
-    },
-    imageContainer: {
-      maxWidth: '250px',
-    },
-  },
+  }
 };
 
 export default Finish;

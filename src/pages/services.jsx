@@ -5,7 +5,7 @@ import ImgService1 from '../assets/images/service-1.png';
 import { LottieAnim } from '../Components/LottieComp/LottieAnim';
 import animacionservice1 from '../Components/LottieComp/animations/animationservice1.json';
 import animacionservice2 from '../Components/LottieComp/animations/animationservice2.json';
-import animacionservice3 from '../Components/LottieComp/animations/animationservice3.json';
+
 import etica from '../assets/images/etica.png';
 import codcoun from '../assets/images/codigo_conducta.png';
 import decvar from '../assets/images/declaracion_valores.png';

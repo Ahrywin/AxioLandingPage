@@ -5,7 +5,7 @@
     justify-content: center;
     height: 90vh; 
     padding: 30px;
-    
+    margin-top: -5%;
   }
  
   .question-container {
@@ -165,38 +165,7 @@
   }
   
   
-  /* Styles for the email input container */
-  .email-container {
-    padding: 5%;
-    border: 1px solid #ddd;
-    border-radius: 2rem;
-    max-width: 80%;
-    background-color: #fff;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
   
-  .email-container h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #222;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .ema{
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 1rem;
-    margin-top: 10px;
-    background-color: #ffffff;
-    color: #0072BC;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
 
 
   .organization-select{
@@ -211,7 +180,15 @@
     outline: none;
     transition: border-color 0.3s ease;
   }
-
+  .organization-select:hover {
+    background-color: #f0f0f0;  /* Cambia el color de fondo cuando el mouse pasa por encima */
+    color: #005f8c;  /* Cambia el color del texto cuando el mouse pasa por encima */
+    border-color: #0072BC;  /* Cambia el color del borde cuando el mouse pasa por encima */
+  }
+  .organization-select option:hover {
+    background-color: #e0e0e0;  /* Cambia el color de fondo de las opciones al pasar el mouse */
+    color: #0072BC;  /* Cambia el color del texto de las opciones */
+  }
  
 
   @media (max-width: 768px) {
@@ -286,4 +263,91 @@
   }
 
 
+  .instrucciones-container
+  {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+   
+}
+.instrucciones-container p{
+    text-align: justify;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 200%;
+    font-family: "Poppins", sans-serif;
+}
+.instrucciones-container1
+{
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+.instrucciones-container1 h3{
+  font-size:25px;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
 
+@media (max-width: 1200px) {
+  .instrucciones-container,
+  .instrucciones-container1 {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .instrucciones-container p {
+    font-size: 20px; /* Reduce font size on medium screens */
+  }
+
+  .instrucciones-container1 h3 {
+    font-size: 22px; /* Reduce font size on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .instrucciones-container,
+  .instrucciones-container1 {
+    flex-direction: column;
+    align-items: flex-start; /* Stack the items vertically on small screens */
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .instrucciones-container p {
+    font-size: 18px; /* Further reduce font size */
+    text-align: left; /* Align text to the left on smaller screens */
+  }
+
+  .instrucciones-container1 h3 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .instrucciones-container,
+  .instrucciones-container1 {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .instrucciones-container p {
+    font-size: 12px; /* Further reduce font size */
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .instrucciones-container1 h3 {
+    font-size: 15px; /* Adjust font size for very small screens */
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
