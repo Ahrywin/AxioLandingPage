@@ -1,0 +1,27 @@
+// categories.js
+export const categories = [
+    { limit: 4, name: "Consejo" },
+    { limit: 8, name: "Juicio" },
+    { limit: 12, name: "Perio" },
+    { limit: 16, name: "Memoria del pasado" },
+    { limit: 20, name: "Circunspección" },
+    { limit: 24, name: "Cautela" },
+    { limit: 28, name: "Perseverancia" },
+    { limit: 32, name: "Constancia" },
+    { limit: 36, name: "Paciencia" },
+    { limit: 40, name: "Magnanimidad" },
+    { limit: 44, name: "Cultura de la legalidad" },
+    { limit: 48, name: "Justicia distributiva" },
+    { limit: 52, name: "Justicia conmutativa" },
+    { limit: 56, name: "Gratitud" },
+    { limit: 60, name: "Fidelidad" },
+    { limit: 64, name: "Respeto" },
+    { limit: 68, name: "Liberalidad" },
+    { limit: 72, name: "Honestidad" },
+    { limit: 76, name: "Moderación" },
+    { limit: 80, name: "Sobriedad" },
+    { limit: 84, name: "Humildad" },
+    { limit: 88, name: "Simplicidad" },
+    { limit: 90, name: "Estudiosidad" },
+  ];
+  

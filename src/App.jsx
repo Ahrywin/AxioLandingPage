@@ -8,7 +8,7 @@ import Digital from './pages/digital'
 import Services from './pages/services'
 import Contact from './pages/contact'
 import Quiz from './pages/quiz'
-
+import Finish from './pages/finish'
 import Footer from './Components/Footer/Footer'
 import Datos from './Components/formularioContact/Datos'
 
@@ -28,6 +28,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
  
           <Route path='/quiz' element={<Quiz />} />
+          <Route path='/finish' element={<Finish />} />
         </Routes>
         <Datos/>
         <Footer/>
