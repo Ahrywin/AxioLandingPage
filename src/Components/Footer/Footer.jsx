@@ -68,6 +68,11 @@ const Footer = () => {
           <br/> <br/>
           <a className="text22" href='/services#Temas'>Temas</a>     
         </div>
+        <div className="footer-section">
+        <h3>AVISOS DE PRIVACIDAD</h3>
+          <br/>
+          <a className="text22" href='/priv' >Aviso de Privacidad</a>
+        </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Fundación Axio - Todos los derechos reservados. Hidalgo | México</p>

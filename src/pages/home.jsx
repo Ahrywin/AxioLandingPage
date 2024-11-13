@@ -10,6 +10,7 @@ const Home = () => {
 
   return (
     <div>
+        
       <Helmet>
         <title>Fundación Axio - Haciendo Vida los Valores</title>
         <meta name="description" content="Fundación Axio es una organización sin fines de lucro que busca crear una mejor sociedad libre de violencia y desigualdad." />
@@ -17,7 +18,13 @@ const Home = () => {
         <meta name="author" content="Fundación Axio" />
         <link rel="canonical" href="https://tu-sitio-web.com/home" />
          </Helmet>
+       
       <BannerHome />
+      <script id="Cookiebot" 
+          src="https://consent.cookiebot.com/uc.js" 
+          data-cbid="86617621-5cf4-4ed4-803e-abb53cd9cffc" 
+          data-blockingmode="auto" 
+          type="text/javascript"></script>
       <section className='home-container-a'>
         <div className='home-text'>
           <h2 className='home-title'>Fundación Axio</h2>
@@ -38,6 +45,7 @@ const Home = () => {
         <div className="lottie-animation-b">
           <LottieAnim animacion={animacion3} />
         </div>
+        
         <div className='home-text'>
           <div className='text-home-axio-principal'>
             <p>Para cumplir con nuestro objetivo hemos desarrollado diversos instrumentos, 

@@ -377,3 +377,44 @@
     margin-right: 10%;
   }
 }
+
+
+
+.accordion {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #008aca;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-content {
+  padding: 15px;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-header:hover {
+  background-color: #025e9c;
+}
+
+.accordion-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}

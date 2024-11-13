@@ -11,6 +11,7 @@ import Quiz from './pages/quiz'
 import Finish from './pages/finish'
 import Footer from './Components/Footer/Footer'
 import Datos from './Components/formularioContact/Datos'
+import Priv from './pages/priv'
 
 
 function App() {
@@ -26,9 +27,10 @@ function App() {
           <Route path='/digital' element={<Digital />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
- 
+          <Route path='/priv' element={<Priv/>} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/finish' element={<Finish />} />
+          
         </Routes>
         <Datos/>
         <Footer/>
