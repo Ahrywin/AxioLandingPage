@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuizService } from '../Components/MultipleChoiceQuestion/quizService';
 import MultipleChoiceQuestion from '../Components/MultipleChoiceQuestion/MultipleChoiceQuestion';
 import Alert from '../Components/Alert/Alert';
 import './quiz.css';
 import ImgDigital1 from '../assets/images/eco.jpg';
 import BannerComp from '../Components/BannerComp/BannerComp';
+import QuizProgress from '../Components/MultipleChoiceQuestion/QuizProgres';
+import Finish from '../pages/finish' 
 
 function Quiz() {
   const {
@@ -21,9 +23,17 @@ function Quiz() {
     handleSubmit,
     randomQuestions,
     totalSteps,
+    elapsedTime,
     progressPercentage,
   } = useQuizService();
 
+  const [showModal, setShowModal] = useState(false);
+
+  // Función para manejar el envío del formulario y mostrar el modal
+  const handleFinishClick = () => {
+    handleSubmit();  // Mantén la lógica existente de handleSubmit
+    setShowModal(true);  // Muestra el modal después de enviar
+  };
   return (
     <div>
       <BannerComp title="SA-92" image={ImgDigital1} />
@@ -38,6 +48,7 @@ function Quiz() {
       </div>
 
       <div className="App">
+      <QuizProgress elapsedTime={elapsedTime} />
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
 
         {currentStep === 0 && (
@@ -172,11 +183,19 @@ function Quiz() {
             </button>
           )}
 
-          {currentStep === randomQuestions.length + 4 && (
-            <button onClick={handleSubmit} disabled={answers[currentStep - 5] === null} className="qzbutton">
-              Finalizar
-            </button>
-          )}
+      {/* Renderiza el botón "Finalizar" si estás en el paso final */}
+      {currentStep === randomQuestions.length + 4 && (
+        <button
+          onClick={handleFinishClick}  // Llamamos a handleFinishClick en vez de handleSubmit directamente
+          disabled={answers[currentStep - 5] === null}
+          className="qzbutton"
+        >
+          Finalizar
+        </button>
+      )}
+
+      {/* Muestra el modal cuando showModal sea true */}
+      {showModal && <Finish onClose={() => setShowModal(false)} />}
         </div>
 
         <div className="alert-container">

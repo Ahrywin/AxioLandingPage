@@ -164,7 +164,16 @@
     font-family: "Poppins", sans-serif;
   }
   
+  .quiz-progress {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -5%;
+  }
   
+  .quiz-progress h3 {
+    color: #0072BC; 
+  }
   
 
 
@@ -197,11 +206,28 @@
       font-size: 0.9rem; /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
       padding: 8px; /* Reducir el padding en dispositivos pequeños */
     }
-
+    .quiz-progress {
+      font-size: 1.2em; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+      margin-bottom: 15px; /* Ajusta el margen inferior */
+      margin-top: -10%;
+    }
+  
+    .quiz-progress h3 {
+      font-size: 1.3em; /* Ajusta el tamaño del título */
+    }
   }
   
   /* Small screens (mobile devices, 480px or smaller) */
   @media (max-width: 480px) {
+    .quiz-progress {
+      font-size: 1em; /* Reduce aún más el tamaño de la fuente */
+      margin-bottom: 10px; /* Ajusta el margen inferior */
+      margin-top: -60%; /* Ajusta el margen superior */
+    }
+  
+    .quiz-progress h3 {
+      font-size: 1.1em; /* Ajusta el tamaño del título */
+    }
     .divinpt {
       margin-bottom: 7px;
       font-size: 12px;
