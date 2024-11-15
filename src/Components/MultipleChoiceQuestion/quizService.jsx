@@ -4,11 +4,11 @@ import { questions } from './questions';
 import { categories } from './categories';
 
 export function useQuizService() {
-  const [Id] = useState(uuidv4());
+  const [id] = useState(uuidv4());
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [organizationId, setOrganizationId] = useState('');
   const [departmentId, setDepartmentId] = useState('');
-  const [gender, setGender] = useState('');
+  const [gener, setGender] = useState('');
   const [age, setAge] = useState('');
   const [educationLevel, setEducationLevel] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
@@ -16,8 +16,8 @@ export function useQuizService() {
   const [alerts, setAlerts] = useState([]);
   const [setShowFinish] = useState(false);
   const [createdAt, setCreatedAt] = useState(null);
-  const [startTime, setStartTime] = useState(null); // Estado para el inicio del quiz
-  const [elapsedTime, setElapsedTime] = useState(0); // Estado para el tiempo transcurrido
+  const [startTime, setStartTime] = useState(null);
+  const [elapsedTime, setElapsedTime] = useState(0);
 
   useEffect(() => {
     const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
@@ -28,10 +28,9 @@ export function useQuizService() {
   useEffect(() => {
     if (startTime) {
       const timer = setInterval(() => {
-        setElapsedTime(Math.floor((Date.now() - startTime) / 1000)); // Actualiza el tiempo cada segundo
+        setElapsedTime(Math.floor((Date.now() - startTime) / 1000));
       }, 1000);
 
-      // Limpiar el intervalo cuando el quiz termine
       return () => clearInterval(timer);
     }
   }, [startTime]);
@@ -46,8 +45,8 @@ export function useQuizService() {
   };
 
   const handleOptionSelect = (selectedValue) => {
-    if (!createdAt) setCreatedAt(new Date().toISOString()); // Registra el inicio si aún no está establecido
-    if (!startTime) setStartTime(Date.now()); // Inicia el contador de tiempo solo la primera vez que se selecciona una respuesta
+    if (!createdAt) setCreatedAt(new Date().toISOString());
+    if (!startTime) setStartTime(Date.now());
 
     const newAnswers = [...answers];
     newAnswers[currentStep - 5] = selectedValue;
@@ -72,28 +71,33 @@ export function useQuizService() {
 
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
       const category = categories.find(cat => question.value <= cat.limit).name;
-      if (!acc[category]) acc[category] = { category, answers: [], score: 0 };
+      if (!acc[category]) acc[category] = { category, score: 0 };
       const answerValue = answers[index] || 0;
-      acc[category].answers.push(answerValue);
       acc[category].score += answerValue;
       return acc;
     }, {});
 
+    const formattedAnswers = Object.values(sectionResults).map(section => ({
+      category: section.category,
+      score: section.score,  // `score` como un entero
+      quizId: id,  // Agrega `quizId` a cada categoría
+    }));
+
     const body = {
-      Id,
+      id,
       organizationId,
       departmentId,
-      gender,
+      gener,
       age,
       educationLevel,
-      sectionResults: Object.values(sectionResults),
-      createdAt, // Utiliza el valor establecido al inicio del quiz
+      createdAt,
       finishAt,
-      elapsedTime, // Agrega el tiempo transcurrido
+      elapsedTime,
+      answers: formattedAnswers,
     };
 
     try {
-      const response = await fetch('http://localhost:3001/saveAnswers', {
+      const response = await fetch('https://axiobk-001-site2.ktempurl.com/api/quiz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
@@ -115,10 +119,10 @@ export function useQuizService() {
   const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
 
   return {
-    Id,
+    id,
     organizationId, setOrganizationId,
     departmentId, setDepartmentId,
-    gender, setGender,
+    gener, setGender,
     age, setAge,
     educationLevel, setEducationLevel,
     currentStep, setCurrentStep,
@@ -131,6 +135,6 @@ export function useQuizService() {
     randomQuestions,
     totalSteps,
     progressPercentage,
-    elapsedTime, // Devuelve el tiempo transcurrido
+    elapsedTime,
   };
 }

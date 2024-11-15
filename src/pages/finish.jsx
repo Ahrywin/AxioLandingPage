@@ -1,9 +1,16 @@
 import React from 'react';
-import runner from '../assets/images/runner.png'
+import runner from '../assets/images/runner.png';
 
 function Finish({ onClose }) {
+  const handleOverlayClick = () => {
+    // Redirige a la página de inicio
+    window.location.href = '/';
+    // Cierra el modal
+    onClose();
+  };
+
   return (
-    <div style={styles.overlay} onClick={onClose}>
+    <div style={styles.overlay} onClick={handleOverlayClick}>
       <div style={styles.container} onClick={(e) => e.stopPropagation()}>
         <h1 style={styles.title}>¡Felicidades!</h1>
         <p style={styles.subtitle}>has finalizado el SA-92</p>
@@ -17,9 +24,9 @@ function Finish({ onClose }) {
         <button 
           style={styles.button} 
           onClick={() => {
-            // Tu acción aquí (por ejemplo, redirigir al inicio)
+            // Redirige a la página de inicio
             window.location.href = '/';
-            // Luego cerrar el modal
+            // Cierra el modal
             onClose();
           }}
         >
@@ -29,6 +36,7 @@ function Finish({ onClose }) {
     </div>
   );
 }
+
 const styles = {
   overlay: {
     position: 'fixed',
@@ -36,13 +44,12 @@ const styles = {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',  // Fondo oscuro semi-transparente
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 1000,  // Asegúrate de que esté encima de otros elementos
-     fontFamily: '"Poppins", sans-serif'
-    
+    zIndex: 1000,
+    fontFamily: '"Poppins", sans-serif'
   },
   container: {
     backgroundColor: '#fff',
@@ -52,7 +59,7 @@ const styles = {
     maxWidth: '500px',
     width: '100%',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-     fontFamily: '"Poppins", sans-serif'
+    fontFamily: '"Poppins", sans-serif'
   },
   title: {
     color: '#1E88E5',
