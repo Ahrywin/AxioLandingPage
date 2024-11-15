@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Confetti from 'react-confetti';
 import runner from '../assets/images/runner.png';
 
 function Finish({ onClose }) {
+  const [showConfetti, setShowConfetti] = useState(true);
+
   const handleOverlayClick = () => {
     // Redirige a la página de inicio
     window.location.href = '/';
@@ -9,20 +12,34 @@ function Finish({ onClose }) {
     onClose();
   };
 
+  useEffect(() => {
+    // Detener confeti después de 5 segundos
+    const timer = setTimeout(() => setShowConfetti(false), 10000);
+    return () => clearTimeout(timer); // Limpia el temporizador
+  }, []);
+
   return (
     <div style={styles.overlay} onClick={handleOverlayClick}>
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={300}
+          gravity={0.2}
+        />
+      )}
       <div style={styles.container} onClick={(e) => e.stopPropagation()}>
         <h1 style={styles.title}>¡Felicidades!</h1>
         <p style={styles.subtitle}>has finalizado el SA-92</p>
         <div style={styles.imageContainer}>
-          <img 
-            src={runner} 
-            alt="Runner finishing race" 
+          <img
+            src={runner}
+            alt="Runner finishing race"
             style={styles.image}
           />
         </div>
-        <button 
-          style={styles.button} 
+        <button
+          style={styles.button}
           onClick={() => {
             // Redirige a la página de inicio
             window.location.href = '/';
@@ -49,7 +66,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1000,
-    fontFamily: '"Poppins", sans-serif'
+    fontFamily: '"Poppins", sans-serif',
   },
   container: {
     backgroundColor: '#fff',
@@ -59,7 +76,7 @@ const styles = {
     maxWidth: '500px',
     width: '100%',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-    fontFamily: '"Poppins", sans-serif'
+    fontFamily: '"Poppins", sans-serif',
   },
   title: {
     color: '#1E88E5',
@@ -90,36 +107,6 @@ const styles = {
     fontSize: '1rem',
     cursor: 'pointer',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-  },
-  '@media (max-width: 768px)': {
-    title: {
-      fontSize: '2rem',
-    },
-    subtitle: {
-      fontSize: '1rem',
-    },
-    button: {
-      padding: '8px 20px',
-      fontSize: '0.9rem',
-    },
-    imageContainer: {
-      maxWidth: '300px',
-    },
-  },
-  '@media (max-width: 480px)': {
-    title: {
-      fontSize: '1.8rem',
-    },
-    subtitle: {
-      fontSize: '0.9rem',
-    },
-    button: {
-      padding: '6px 15px',
-      fontSize: '0.8rem',
-    },
-    imageContainer: {
-      maxWidth: '250px',
-    },
   },
 };
 

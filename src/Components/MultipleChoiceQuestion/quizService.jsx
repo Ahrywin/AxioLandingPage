@@ -66,31 +66,40 @@ export function useQuizService() {
     }
   };
 
+  const validateForm = () => {
+    if (!organizationId || !departmentId || !age || !educationLevel || !gener) {
+      showAlert('warning', 'Por favor, completa toda la información requerida antes de continuar.');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async () => {
+    if (!validateForm()) return;
+
     const finishAt = new Date().toISOString();
-  
+
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
       const categoryObj = categories.find(cat => question.value <= cat.limit);
-      
-      // Validar si se encontró la categoría
+
       if (!categoryObj) {
         console.error(`No se encontró una categoría para la pregunta con valor ${question.value}`);
-        return acc; // Ignora esta pregunta
+        return acc;
       }
-  
+
       const category = categoryObj.name;
       if (!acc[category]) acc[category] = { category, score: 0 };
       const answerValue = answers[index] || 0;
       acc[category].score += answerValue;
       return acc;
     }, {});
-  
+
     const formattedAnswers = Object.values(sectionResults).map(section => ({
-      quizId: id, 
+      quizId: id,
       category: section.category,
-      score: section.score,  // `score` como un entero
+      score: section.score,
     }));
-  
+
     const body = {
       id,
       organizationId,
@@ -103,28 +112,35 @@ export function useQuizService() {
       elapsedTime,
       answers: formattedAnswers,
     };
-  
+
     try {
       const response = await fetch('https://axiobk-001-site2.ktempurl.com/api/quiz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-  
+
       if (response.ok) {
         showAlert('success', 'Respuestas guardadas con éxito.');
         setShowFinish(true);
       } else {
-        showAlert('error', 'Error al guardar las respuestas.');
+        const errorText = await response.text();
+        showAlert('error', `Error al guardar las respuestas: ${errorText}`);
       }
     } catch (error) {
       console.error('Error:', error);
-      showAlert('error', 'Error al guardar las respuestas.');
+      showAlert('error', 'Error al guardar las respuestas. Por favor, inténtalo de nuevo más tarde.');
     }
   };
-  
+
   const totalSteps = randomQuestions.length + 5;
-  const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
+  const progressPercentage = Math.min(((currentStep + 1) / totalSteps) * 100, 100);
+
+  useEffect(() => {
+    if (showFinish && startTime) {
+      clearInterval(elapsedTime);
+    }
+  }, [showFinish, startTime]);
 
   return {
     id,
