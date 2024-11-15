@@ -78,9 +78,9 @@ export function useQuizService() {
     }, {});
 
     const formattedAnswers = Object.values(sectionResults).map(section => ({
+      quizId: id, 
       category: section.category,
       score: section.score,  // `score` como un entero
-      quizId: id,  // Agrega `quizId` a cada categoría
     }));
 
     const body = {
