@@ -14,7 +14,7 @@ export function useQuizService() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [alerts, setAlerts] = useState([]);
-  const [setShowFinish] = useState(false);
+  const [showFinish, setShowFinish] = useState(false);
   const [createdAt, setCreatedAt] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);

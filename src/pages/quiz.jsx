@@ -27,13 +27,13 @@ function Quiz() {
     progressPercentage,
   } = useQuizService();
 
-  const [showModal, setShowModal] = useState(false);
+  const [showFinish, setShowFinish] = useState(false);  // Fix here: properly define showFinish state
 
   // Función para manejar el envío del formulario y mostrar el modal solo si el envío fue exitoso
   const handleFinishClick = async () => {
     const success = await handleSubmit();  // Espera el resultado de handleSubmit
     if (success) {
-      setShowModal(true);  // Muestra el modal solo si las respuestas se enviaron con éxito
+      setShowFinish(true);  // Muestra el finish screen solo si las respuestas se enviaron con éxito
     }
   };
 
@@ -197,8 +197,8 @@ function Quiz() {
             </button>
           )}
 
-          {/* Muestra el modal cuando showModal sea true */}
-          {showModal && <Finish onClose={() => setShowModal(false)} />}
+          {/* Muestra el finish screen cuando showFinish sea true */}
+          {showFinish && <Finish onClose={() => setShowFinish(false)} />}
         </div>
 
         <div className="alert-container">
