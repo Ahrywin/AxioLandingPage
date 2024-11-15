@@ -68,21 +68,29 @@ export function useQuizService() {
 
   const handleSubmit = async () => {
     const finishAt = new Date().toISOString();
-
+  
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
-      const category = categories.find(cat => question.value <= cat.limit).name;
+      const categoryObj = categories.find(cat => question.value <= cat.limit);
+      
+      // Validar si se encontró la categoría
+      if (!categoryObj) {
+        console.error(`No se encontró una categoría para la pregunta con valor ${question.value}`);
+        return acc; // Ignora esta pregunta
+      }
+  
+      const category = categoryObj.name;
       if (!acc[category]) acc[category] = { category, score: 0 };
       const answerValue = answers[index] || 0;
       acc[category].score += answerValue;
       return acc;
     }, {});
-
+  
     const formattedAnswers = Object.values(sectionResults).map(section => ({
       quizId: id, 
       category: section.category,
       score: section.score,  // `score` como un entero
     }));
-
+  
     const body = {
       id,
       organizationId,
@@ -95,14 +103,14 @@ export function useQuizService() {
       elapsedTime,
       answers: formattedAnswers,
     };
-
+  
     try {
       const response = await fetch('https://axiobk-001-site2.ktempurl.com/api/quiz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-
+  
       if (response.ok) {
         showAlert('success', 'Respuestas guardadas con éxito.');
         setShowFinish(true);
@@ -114,7 +122,7 @@ export function useQuizService() {
       showAlert('error', 'Error al guardar las respuestas.');
     }
   };
-
+  
   const totalSteps = randomQuestions.length + 5;
   const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
 
