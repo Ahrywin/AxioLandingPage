@@ -31,12 +31,12 @@ function Quiz() {
 
   // Función para manejar el envío del formulario y mostrar el modal solo si el envío fue exitoso
   const handleFinishClick = async () => {
-    const success = await handleSubmit();  // Espera el resultado de handleSubmit
+    const success = await handleSubmit();
     if (success) {
-      setShowFinish(true);  // Muestra el finish screen solo si las respuestas se enviaron con éxito
+      setShowFinish(true);  // Muestra la pantalla de finalización
     }
   };
-
+  
   return (
     <div>
       <BannerComp title="SA-92" image={ImgDigital1} />
