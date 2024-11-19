@@ -12,7 +12,7 @@ import Finish from './pages/finish'
 import Footer from './Components/Footer/Footer'
 import Datos from './Components/formularioContact/Datos'
 import Priv from './pages/priv'
-
+import Mnt from './Components/Mantenimiento/mantenimiento'
 
 function App() {
   
@@ -30,7 +30,7 @@ function App() {
           <Route path='/priv' element={<Priv/>} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/finish' element={<Finish />} />
-          
+          <Route path='/mantenimiento' element={<Mnt/>} />
         </Routes>
         <Datos/>
         <Footer/>

@@ -7,8 +7,19 @@ import ImgDigital1 from '../assets/images/eco.jpg';
 import BannerComp from '../Components/BannerComp/BannerComp';
 import QuizProgress from '../Components/MultipleChoiceQuestion/QuizProgres';
 import Finish from '../pages/finish';
+import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
+
+
 
 function Quiz() {
+
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true); // Estado para alternar modo mantenimiento
+
+  if (isMaintenanceMode) {
+    return <MaintenancePage />; // Muestra la página de mantenimiento
+  }
+
+  
   const {
     organizationId, setOrganizationId,
     departmentId, setDepartmentId,
@@ -186,7 +197,7 @@ function Quiz() {
             </button>
           )}
 
-          {/* Renderiza el botón "Finalizar" si estás en el paso final */}
+          
           {currentStep === randomQuestions.length + 4 && (
             <button
               onClick={handleFinishClick}  // Llamamos a handleFinishClick en vez de handleSubmit directamente
@@ -197,7 +208,7 @@ function Quiz() {
             </button>
           )}
 
-          {/* Muestra el finish screen cuando showFinish sea true */}
+          
           {showFinish && <Finish onClose={() => setShowFinish(false)} />}
         </div>
 
@@ -214,6 +225,7 @@ function Quiz() {
       </div>
     </div>
   );
+  
 }
 
 export default Quiz;
