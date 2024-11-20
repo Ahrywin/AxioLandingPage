@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-section">
-          <h3>CONTACTÁNOS</h3>
+          <h3>CONTÁCTANOS</h3>
           <br/>
           <a  className="text22" href={`mailto:${Data.email1}`}>{Data.email1}</a>
           <br/>
