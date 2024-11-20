@@ -18,7 +18,7 @@ const Eticaprof = () => {
       </section>
 
       <section className="section-gestion-b"> 
-      
+      <img src={imgn2} alt="icon" className='img2'/>
       <p>
       La mejor evaluación de nuestros modelos
        educativos es la realidad. Si los desafíos 
@@ -27,8 +27,9 @@ const Eticaprof = () => {
        educativos contemporáneos y priorizar una formación 
        integral que atienda las causas y logremos altos niveles
         de bienestar para toda la sociedad. 
-        <img src={imgn2} alt="icon" className='img2'/>
+        
       </p>
+    
       </section>
       <div className="banner-container">
     <img src={banner1} alt="icon" className="minbanner" />
