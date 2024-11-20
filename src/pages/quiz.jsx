@@ -13,7 +13,7 @@ import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
 
 function Quiz() {
 
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true); // Estado para alternar modo mantenimiento
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false); // Estado para alternar modo mantenimiento
 
   if (isMaintenanceMode) {
     return <MaintenancePage />; // Muestra la página de mantenimiento
