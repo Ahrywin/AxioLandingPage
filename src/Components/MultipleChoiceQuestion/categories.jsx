@@ -22,6 +22,6 @@ export const categories = [
     { limit: 80, name: "Sobriedad" },
     { limit: 84, name: "Humildad" },
     { limit: 88, name: "Simplicidad" },
-    { limit: 90, name: "Estudiosidad" },
+    { limit: 92, name: "Estudiosidad" },
   ];
   
