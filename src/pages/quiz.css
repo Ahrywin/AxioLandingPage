@@ -418,3 +418,42 @@
   list-style-type: disc;
   padding-left: 20px;
 }
+
+/* Reglas responsivas */
+@media (max-width: 768px) {
+  .accordion {
+    max-width: 70%; /* Reducir el ancho máximo */
+    margin-top: 10%; /* Aumentar el espacio superior */
+    margin-bottom: 5%; /* Reducir el espacio inferior */
+  }
+
+  .accordion-header {
+    padding: 12px; /* Aumentar el padding para mejorar clicabilidad */
+    font-size: 12px; /* Ajustar el tamaño del texto */
+  }
+
+  .accordion-content {
+    padding: 8px; /* Reducir el padding interno */
+    font-size: 10px; /* Ajustar el tamaño del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion {
+    max-width: 60%; /* Ajustar para pantallas aún más pequeñas */
+  }
+
+  .accordion-header {
+    font-size: 12px; /* Texto más pequeño */
+    padding: 8px; /* Ajustar el padding */
+  }
+
+  .accordion-content {
+    font-size: 10px; /* Reducir el tamaño del texto */
+    padding: 6px; /* Menor padding interno */
+  }
+
+  .accordion-content ul {
+    padding-left: 15px; /* Ajustar indentación de listas */
+  }
+}
