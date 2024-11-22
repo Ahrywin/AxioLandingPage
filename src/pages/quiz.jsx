@@ -8,12 +8,11 @@ import BannerComp from '../Components/BannerComp/BannerComp';
 import QuizProgress from '../Components/MultipleChoiceQuestion/QuizProgres';
 import Finish from '../pages/finish';
 import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
-
-
+import { Helmet } from 'react-helmet';
 
 function Quiz() {
 
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false); // Estado para alternar modo mantenimiento
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true); // Estado para alternar modo mantenimiento
 
   if (isMaintenanceMode) {
     return <MaintenancePage />; // Muestra la página de mantenimiento
@@ -50,6 +49,13 @@ function Quiz() {
   
   return (
     <div>
+       <Helmet>
+        <title>Servicios - Fundación Axio</title>
+        <meta name="description" content="Descubre los servicios de la Fundación Axio, incluyendo diagnóstico de cultura de integridad, formación y más." />
+        <meta name="keywords" content="Servicios, Fundación Axio, ética, formación, cultura de integridad, desarrollo organizacional" />
+        <meta name="author" content="Fundación Axio" />
+        <link rel="canonical" href="https://tu-sitio-web.com/services" />
+      </Helmet>
       <BannerComp title="SA-92" image={ImgDigital1} />
       <div className="instrucciones-container1">
         <h3>INSTRUCCIONES:</h3>
