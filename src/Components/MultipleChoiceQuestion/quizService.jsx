@@ -78,50 +78,53 @@ export function useQuizService() {
 
   const handleSubmit = async () => {
     if (!validateForm()) return false;
-
+  
     const finishAt = new Date().toISOString();
-
+  
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
       const categoryObj = categories.find((cat) => question.value <= cat.limit);
-
+  
       if (!categoryObj) {
         console.warn(`No se encontró una categoría para la pregunta con valor ${question.value}`);
         return acc;
       }
-
+  
       const category = categoryObj.name;
       if (!acc[category]) acc[category] = { category, score: 0 };
       const answerValue = answers[index] || 0;
       acc[category].score += answerValue;
       return acc;
     }, {});
-
+  
     const formattedAnswers = Object.values(sectionResults).map((section) => ({
       quizId: id,
       category: section.category,
       score: section.score,
     }));
-
+  
     const body = {
-      id,
-      organizationId,
-      departmentId,
-      gener,
-      age,
-      educationLevel,
-      createdAt,
-      finishAt,
-      elapsedTime,
-      answers: formattedAnswers,
+      newQuiz: { // Agregamos el campo requerido
+        id,
+        organizationId,
+        departmentId,
+        gener,
+        age,
+        educationLevel,
+        createdAt,
+        finishAt,
+        elapsedTime: elapsedTime.toString(), // Convertimos a string
+        answers: formattedAnswers,
+      }
     };
-
+  
     try {
-      const response = await fetch('https://axiobk-001-site1.ktempurl.com/api/Quiz', {
+      console.log('Body enviado al servidor:', JSON.stringify(body, null, 2)); // Inspección
+      const response = await fetch('https://axiobk-001-site1.ktempurl.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-
+  
       if (response.ok) {
         showAlert('success', 'Respuestas guardadas con éxito.');
         setShowFinish(true);
@@ -137,7 +140,7 @@ export function useQuizService() {
       return false;
     }
   };
-
+  
   const totalSteps = randomQuestions.length + 5;
   const progressPercentage = Math.min(((currentStep + 1) / totalSteps) * 100, 100);
 
