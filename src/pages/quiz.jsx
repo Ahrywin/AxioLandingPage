@@ -11,18 +11,16 @@ import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
 import { Helmet } from 'react-helmet';
 
 function Quiz() {
-
   const [isMaintenanceMode, setIsMaintenanceMode] = useState(false); // Estado para alternar modo mantenimiento
 
   if (isMaintenanceMode) {
     return <MaintenancePage />; // Muestra la página de mantenimiento
   }
 
-  
   const {
     organizationId, setOrganizationId,
     departmentId, setDepartmentId,
-    gener, setGender,  // Cambiado `gender` a `gener`
+    gener, setGener, // Usamos gener en lugar de gender
     age, setAge,
     educationLevel, setEducationLevel,
     currentStep,
@@ -37,19 +35,18 @@ function Quiz() {
     progressPercentage,
   } = useQuizService();
 
-  const [showFinish, setShowFinish] = useState(false);  // Fix here: properly define showFinish state
+  const [showFinish, setShowFinish] = useState(false); // Fix para el estado de finalización
 
-  // Función para manejar el envío del formulario y mostrar el modal solo si el envío fue exitoso
   const handleFinishClick = async () => {
     const success = await handleSubmit();
     if (success) {
-      setShowFinish(true);  // Muestra la pantalla de finalización
+      setShowFinish(true);
     }
   };
-  
+
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Servicios - Fundación Axio</title>
         <meta name="description" content="Descubre los servicios de la Fundación Axio, incluyendo diagnóstico de cultura de integridad, formación y más." />
         <meta name="keywords" content="Servicios, Fundación Axio, ética, formación, cultura de integridad, desarrollo organizacional" />
@@ -79,7 +76,7 @@ function Quiz() {
               onChange={(e) => {
                 setOrganizationId(e.target.value);
                 if (e.target.value) {
-                  handleNext(); // Avanzar automáticamente
+                  handleNext();
                 }
               }}
               required
@@ -99,7 +96,7 @@ function Quiz() {
               onChange={(e) => {
                 setDepartmentId(e.target.value);
                 if (e.target.value) {
-                  handleNext(); // Avanzar automáticamente
+                  handleNext();
                 }
               }}
               required
@@ -115,11 +112,11 @@ function Quiz() {
           <div className="question-container">
             <h3>Selecciona tu género para avanzar</h3>
             <select
-              value={gener}  // Usar `gener` aquí
+              value={gener}
               onChange={(e) => {
-                setGender(e.target.value);  // Usar `setGender` aquí
+                setGener(e.target.value);
                 if (e.target.value) {
-                  handleNext(); // Avanzar automáticamente
+                  handleNext();
                 }
               }}
               required
@@ -141,7 +138,7 @@ function Quiz() {
               onChange={(e) => {
                 setAge(e.target.value);
                 if (e.target.value) {
-                  handleNext(); // Avanzar automáticamente
+                  handleNext();
                 }
               }}
               required
@@ -164,7 +161,7 @@ function Quiz() {
               onChange={(e) => {
                 setEducationLevel(e.target.value);
                 if (e.target.value) {
-                  handleNext(); // Avanzar automáticamente
+                  handleNext();
                 }
               }}
               required
@@ -203,10 +200,9 @@ function Quiz() {
             </button>
           )}
 
-          
           {currentStep === randomQuestions.length + 4 && (
             <button
-              onClick={handleFinishClick}  // Llamamos a handleFinishClick en vez de handleSubmit directamente
+              onClick={handleFinishClick}
               disabled={answers[currentStep - 5] === null}
               className="qzbutton"
             >
@@ -214,12 +210,11 @@ function Quiz() {
             </button>
           )}
 
-          
           {showFinish && <Finish onClose={() => setShowFinish(false)} />}
         </div>
 
         <div className="alert-container">
-          {alerts.map(alert => (
+          {alerts.map((alert) => (
             <Alert
               key={alert.id}
               type={alert.type}
@@ -231,7 +226,6 @@ function Quiz() {
       </div>
     </div>
   );
-  
 }
 
 export default Quiz;

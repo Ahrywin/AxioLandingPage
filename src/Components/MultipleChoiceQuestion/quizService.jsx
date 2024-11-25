@@ -8,7 +8,7 @@ export function useQuizService() {
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [organizationId, setOrganizationId] = useState('');
   const [departmentId, setDepartmentId] = useState('');
-  const [gender, setGender] = useState('');
+  const [gener, setGener] = useState(''); // Estado del género
   const [age, setAge] = useState('');
   const [educationLevel, setEducationLevel] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
@@ -33,7 +33,7 @@ export function useQuizService() {
         setElapsedTime(Math.floor((Date.now() - startTime) / 1000));
       }, 1000);
 
-      return () => clearInterval(timer); // Clear interval on unmount or finish
+      return () => clearInterval(timer);
     }
   }, [startTime, showFinish]);
 
@@ -51,7 +51,7 @@ export function useQuizService() {
     if (!startTime) setStartTime(Date.now());
 
     const updatedAnswers = [...answers];
-    updatedAnswers[currentStep - 5] = selectedValue; // Index offset for initial steps
+    updatedAnswers[currentStep - 5] = selectedValue;
     setAnswers(updatedAnswers);
     handleNext();
   };
@@ -69,7 +69,7 @@ export function useQuizService() {
   };
 
   const validateForm = () => {
-    if (!organizationId || !departmentId || !age || !educationLevel || !gender) {
+    if (!organizationId || !departmentId || !age || !educationLevel || !gener) {
       showAlert('warning', 'Por favor, completa toda la información requerida antes de continuar.');
       return false;
     }
@@ -81,7 +81,6 @@ export function useQuizService() {
 
     const finishAt = new Date().toISOString();
 
-    // Calculate section results
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
       const categoryObj = categories.find((cat) => question.value <= cat.limit);
 
@@ -107,7 +106,7 @@ export function useQuizService() {
       id,
       organizationId,
       departmentId,
-      gender,
+      gener,
       age,
       educationLevel,
       createdAt,
@@ -126,16 +125,16 @@ export function useQuizService() {
       if (response.ok) {
         showAlert('success', 'Respuestas guardadas con éxito.');
         setShowFinish(true);
-        return true; // Éxito
+        return true;
       } else {
         const errorText = await response.text();
         showAlert('error', `Error al guardar las respuestas: ${errorText}`);
-        return false; // Error
+        return false;
       }
     } catch (error) {
       console.error('Error:', error);
       showAlert('error', 'Error al guardar las respuestas. Por favor, inténtalo de nuevo más tarde.');
-      return false; // Error
+      return false;
     }
   };
 
@@ -146,7 +145,7 @@ export function useQuizService() {
     id,
     organizationId, setOrganizationId,
     departmentId, setDepartmentId,
-    gender, setGender,
+    gener, setGener, // Cambiado a gener
     age, setAge,
     educationLevel, setEducationLevel,
     currentStep, setCurrentStep,
