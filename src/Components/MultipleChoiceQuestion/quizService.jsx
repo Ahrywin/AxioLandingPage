@@ -117,7 +117,7 @@ export function useQuizService() {
     };
 
     try {
-      const response = await fetch('https://axiobk-001-site2.ktempurl.com/api/quiz', {
+      const response = await fetch('https://axiobk-001-site1.ktempurl.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
