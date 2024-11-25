@@ -8,12 +8,12 @@ export function useQuizService() {
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [organizationId, setOrganizationId] = useState('');
   const [departmentId, setDepartmentId] = useState('');
-  const [gener, setGener] = useState(''); // Estado del género
+  const [gener, setGener] = useState('');
   const [age, setAge] = useState('');
   const [educationLevel, setEducationLevel] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [alerts, setAlerts] = useState([]);
+  const [alerts, setAlerts] = useState([]); // Manejo de alertas
   const [showFinish, setShowFinish] = useState(false);
   const [createdAt, setCreatedAt] = useState(null);
   const [startTime, setStartTime] = useState(null);
@@ -38,12 +38,21 @@ export function useQuizService() {
   }, [startTime, showFinish]);
 
   const showAlert = (type, message) => {
+    // Verifica si ya hay una alerta activa antes de agregar una nueva
+    if (alerts.length > 0) {
+      closeAlert(alerts[0].id); // Elimina la alerta activa
+    }
+
     const id = uuidv4();
-    setAlerts((prevAlerts) => [...prevAlerts, { id, type, message }]);
+    setAlerts([{ id, type, message }]); // Solo mantiene una alerta activa
   };
 
-  const closeAlert = (id) => {
-    setAlerts((prevAlerts) => prevAlerts.filter((alert) => alert.id !== id));
+  const closeAlert = (id = null) => {
+    if (id) {
+      setAlerts((prevAlerts) => prevAlerts.filter((alert) => alert.id !== id));
+    } else {
+      setAlerts([]); // Limpia todas las alertas
+    }
   };
 
   const handleOptionSelect = (selectedValue) => {
@@ -78,32 +87,32 @@ export function useQuizService() {
 
   const handleSubmit = async () => {
     if (!validateForm()) return false;
-  
+
     const finishAt = new Date().toISOString();
-  
+
     const sectionResults = randomQuestions.reduce((acc, question, index) => {
       const categoryObj = categories.find((cat) => question.value <= cat.limit);
-  
+
       if (!categoryObj) {
         console.warn(`No se encontró una categoría para la pregunta con valor ${question.value}`);
         return acc;
       }
-  
+
       const category = categoryObj.name;
       if (!acc[category]) acc[category] = { category, score: 0 };
       const answerValue = answers[index] || 0;
       acc[category].score += answerValue;
       return acc;
     }, {});
-  
+
     const formattedAnswers = Object.values(sectionResults).map((section) => ({
       quizId: id,
       category: section.category,
       score: section.score,
     }));
-  
+
     const body = {
-      newQuiz: { // Agregamos el campo requerido
+      newQuiz: {
         id,
         organizationId,
         departmentId,
@@ -114,9 +123,9 @@ export function useQuizService() {
         finishAt,
         elapsedTime: elapsedTime.toString(), // Convertimos a string
         answers: formattedAnswers,
-      }
+      },
     };
-  
+
     try {
       console.log('Body enviado al servidor:', JSON.stringify(body, null, 2)); // Inspección
       const response = await fetch('https://axiobk-001-site1.ktempurl.com/api/Quiz', {
@@ -124,39 +133,52 @@ export function useQuizService() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-  
+
       if (response.ok) {
         showAlert('success', 'Respuestas guardadas con éxito.');
         setShowFinish(true);
         return true;
       } else {
         const errorText = await response.text();
-        showAlert('error', `Error al guardar las respuestas: ${errorText}`);
+        console.error('Error del servidor:', errorText);
+        closeAlert(); // Cierra cualquier alerta previa
+        showAlert('error', `Error al guardar las respuestas: ${errorText}`); // Muestra solo una alerta
         return false;
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error de conexión:', error);
+      closeAlert(); // Cierra cualquier alerta previa
       showAlert('error', 'Error al guardar las respuestas. Por favor, inténtalo de nuevo más tarde.');
       return false;
     }
   };
-  
+
   const totalSteps = randomQuestions.length + 5;
   const progressPercentage = Math.min(((currentStep + 1) / totalSteps) * 100, 100);
 
   return {
     id,
-    organizationId, setOrganizationId,
-    departmentId, setDepartmentId,
-    gener, setGener, // Cambiado a gener
-    age, setAge,
-    educationLevel, setEducationLevel,
-    currentStep, setCurrentStep,
-    answers, setAnswers,
-    alerts, setAlerts,
-    showAlert, closeAlert,
+    organizationId,
+    setOrganizationId,
+    departmentId,
+    setDepartmentId,
+    gener,
+    setGener,
+    age,
+    setAge,
+    educationLevel,
+    setEducationLevel,
+    currentStep,
+    setCurrentStep,
+    answers,
+    setAnswers,
+    alerts,
+    setAlerts,
+    showAlert,
+    closeAlert,
     handleOptionSelect,
-    handleNext, handlePrevious,
+    handleNext,
+    handlePrevious,
     handleSubmit,
     randomQuestions,
     totalSteps,
