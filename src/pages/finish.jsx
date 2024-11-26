@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Confetti from 'react-confetti';
 import runner from '../assets/images/runner.png';
 
-function Finish({ onClose }) {
+function Finish({ onClose, organizationId, quizData }) {
   const [showConfetti, setShowConfetti] = useState(true);
+  const [quizCount, setQuizCount] = useState(0); // Estado para el contador
+  const [organizationName, setOrganizationName] = useState(''); // Estado para el nombre de la organización
 
   const handleOverlayClick = () => {
     // Redirige a la página de inicio
@@ -13,10 +15,33 @@ function Finish({ onClose }) {
   };
 
   useEffect(() => {
-    // Detener confeti después de 5 segundos
+    // Detener confeti después de 10 segundos
     const timer = setTimeout(() => setShowConfetti(false), 10000);
     return () => clearTimeout(timer); // Limpia el temporizador
   }, []);
+
+  useEffect(() => {
+    // Obtén el total de quizzes generados y el nombre de la organización
+    const fetchQuizCount = async () => {
+      try {
+        const response = await fetch('https://axiobk-001-site1.ktempurl.com/api/Quiz/totalCount');
+        const data = await response.json();
+        // Filtra los datos según la organización seleccionada
+        const filteredCount = data.filter(quiz => quiz.OrganizationID === organizationId).length;
+        setQuizCount(filteredCount);
+
+        // Encuentra el nombre de la organización en los datos de `quizData`
+        const organization = quizData.find(org => org.OrganizationID === organizationId);
+        setOrganizationName(organization ? organization.OrganizationName : 'Organización no encontrada');
+      } catch (error) {
+        console.error('Error fetching quiz count or organization name:', error);
+      }
+    };
+
+    if (organizationId) {
+      fetchQuizCount();
+    }
+  }, [organizationId, quizData]);
 
   return (
     <div style={styles.overlay} onClick={handleOverlayClick}>
@@ -30,7 +55,10 @@ function Finish({ onClose }) {
       )}
       <div style={styles.container} onClick={(e) => e.stopPropagation()}>
         <h1 style={styles.title}>¡Felicidades!</h1>
-        <p style={styles.subtitle}>has finalizado el SA-92</p>
+        <p style={styles.subtitle}>Has finalizado el SA-92</p>
+        <p style={styles.quizCount}>
+      Gracias por tu tiempo. Eres la persona número  <strong>{quizCount}</strong> en responder de parte de  " <strong>{organizationName}</strong> ".
+        </p>
         <div style={styles.imageContainer}>
           <img
             src={runner}
@@ -87,6 +115,11 @@ const styles = {
   subtitle: {
     fontSize: '1.2rem',
     color: '#333',
+    marginBottom: '20px',
+  },
+  quizCount: {
+    fontSize: '1.2rem',
+    color: '#555',
     marginBottom: '20px',
   },
   imageContainer: {

@@ -12,6 +12,9 @@ import { Helmet } from 'react-helmet';
 
 function Quiz() {
   const [isMaintenanceMode, setIsMaintenanceMode] = useState(false); // Estado para alternar modo mantenimiento
+  const [quizData, setQuizData] = useState([]);
+const [departments, setDepartments] = useState([]);
+
 
   if (isMaintenanceMode) {
     return <MaintenancePage />; // Muestra la página de mantenimiento
@@ -44,6 +47,21 @@ function Quiz() {
     }
   };
 
+  useEffect(() => {
+    const fetchQuizData = async () => {
+      try {
+        const response = await fetch('https://axiobk-001-site1.ktempurl.com/api/Quiz/GetQuizActive');
+        const data = await response.json();
+        setQuizData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchQuizData();
+  }, []);
+  
+
   return (
     <div>
       <Helmet>
@@ -75,6 +93,10 @@ function Quiz() {
               value={organizationId}
               onChange={(e) => {
                 setOrganizationId(e.target.value);
+                const selectedDepartments = quizData
+                  .filter(item => item.OrganizationID === e.target.value)
+                  .map(item => ({ id: item.DepartamentID, name: item.DepartamentName }));
+                setDepartments(selectedDepartments);
                 if (e.target.value) {
                   handleNext();
                 }
@@ -83,30 +105,41 @@ function Quiz() {
               className="organization-select"
             >
               <option value="" disabled>Selecciona una organización</option>
-              <option value="db4875a9-1587-46c3-a068-12ba39d19250">ORGANIZACIÓN AXIO</option>
+              {quizData
+                .map((item) => (
+                  <option key={item.OrganizationID} value={item.OrganizationID}>
+                    {item.OrganizationName}
+                  </option>
+                ))}
             </select>
+
           </div>
         )}
 
-        {currentStep === 1 && organizationId && (
-          <div className="question-container">
-            <h3>Selecciona un departamento para avanzar</h3>
-            <select
-              value={departmentId}
-              onChange={(e) => {
-                setDepartmentId(e.target.value);
-                if (e.target.value) {
-                  handleNext();
-                }
-              }}
-              required
-              className="organization-select"
-            >
-              <option value="" disabled>Selecciona un departamento</option>
-              <option value="8760b3a5-d269-462d-8aa9-e6a6931e58ab">CA-TEE SISTEMAS</option>
-            </select>
-          </div>
-        )}
+          {currentStep === 1 && organizationId && (
+            <div className="question-container">
+              <h3>Selecciona un departamento para avanzar</h3>
+              <select
+                value={departmentId}
+                onChange={(e) => {
+                  setDepartmentId(e.target.value);
+                  if (e.target.value) {
+                    handleNext();
+                  }
+                }}
+                required
+                className="organization-select"
+              >
+                <option value="" disabled>Selecciona un departamento</option>
+                {departments.map((dept) => (
+                  <option key={dept.id} value={dept.id}>
+                    {dept.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
 
         {currentStep === 2 && organizationId && departmentId && (
           <div className="question-container">

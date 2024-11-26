@@ -5,7 +5,7 @@
     justify-content: center;
     height: 90vh; 
     padding: 30px;
-    margin-top: -5%;
+    margin-top: 8%;
   }
  
   .question-container {
@@ -209,7 +209,7 @@
     .quiz-progress {
       font-size: 1.2em; /* Reduce el tamaño de la fuente en pantallas pequeñas */
       margin-bottom: 15px; /* Ajusta el margen inferior */
-      margin-top: -10%;
+      margin-top: 8%;
     }
   
     .quiz-progress h3 {
@@ -222,7 +222,7 @@
     .quiz-progress {
       font-size: 1em; /* Reduce aún más el tamaño de la fuente */
       margin-bottom: 10px; /* Ajusta el margen inferior */
-      margin-top: -60%; /* Ajusta el margen superior */
+      margin-top: -5%; /* Ajusta el margen superior */
     }
   
     .quiz-progress h3 {
