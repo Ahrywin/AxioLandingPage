@@ -11,19 +11,18 @@ import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
 import { Helmet } from 'react-helmet';
 
 function Quiz() {
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false); // Estado para alternar modo mantenimiento
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false);
   const [quizData, setQuizData] = useState([]);
-const [departments, setDepartments] = useState([]);
-
+  const [departments, setDepartments] = useState([]);
 
   if (isMaintenanceMode) {
-    return <MaintenancePage />; // Muestra la página de mantenimiento
+    return <MaintenancePage />;
   }
 
   const {
     organizationId, setOrganizationId,
     departamentId, setDepartmentId,
-    gener, setGener, // Usamos gener en lugar de gender
+    gener, setGener,
     age, setAge,
     educationLevel, setEducationLevel,
     currentStep,
@@ -33,12 +32,11 @@ const [departments, setDepartments] = useState([]);
     handleNext, handlePrevious,
     handleSubmit,
     randomQuestions,
-    totalSteps,
     elapsedTime,
     progressPercentage,
   } = useQuizService();
 
-  const [showFinish, setShowFinish] = useState(false); // Fix para el estado de finalización
+  const [showFinish, setShowFinish] = useState(false);
 
   const handleFinishClick = async () => {
     const success = await handleSubmit();
@@ -57,10 +55,9 @@ const [departments, setDepartments] = useState([]);
         console.error("Error fetching data:", error);
       }
     };
-  
+
     fetchQuizData();
   }, []);
-  
 
   return (
     <div>
@@ -98,48 +95,45 @@ const [departments, setDepartments] = useState([]);
                   .map(item => ({ id: item.DepartamentID, name: item.DepartamentName }));
                 setDepartments(selectedDepartments);
                 if (e.target.value) {
-                  handleNext();
+                  handleNext(); // Avanza automáticamente al seleccionar una organización
                 }
               }}
               required
               className="organization-select"
             >
               <option value="" disabled>Selecciona una organización</option>
-              {quizData
-                .map((item) => (
-                  <option key={item.OrganizationID} value={item.OrganizationID}>
-                    {item.OrganizationName}
-                  </option>
-                ))}
+              {quizData.map((item) => (
+                <option key={item.OrganizationID} value={item.OrganizationID}>
+                  {item.OrganizationName}
+                </option>
+              ))}
             </select>
-
           </div>
         )}
 
-          {currentStep === 1 && organizationId && (
-            <div className="question-container">
-              <h3>Selecciona un departamento para avanzar</h3>
-              <select
-                value={departamentId}
-                onChange={(e) => {
-                  setDepartmentId(e.target.value);
-                  if (e.target.value) {
-                    handleNext();
-                  }
-                }}
-                required
-                className="organization-select"
-              >
-                <option value="" disabled>Selecciona un departamento</option>
-                {departments.map((dept) => (
-                  <option key={dept.id} value={dept.id}>
-                    {dept.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
-
+        {currentStep === 1 && organizationId && (
+          <div className="question-container">
+            <h3>Selecciona un departamento para avanzar</h3>
+            <select
+              value={departamentId}
+              onChange={(e) => {
+                setDepartmentId(e.target.value);
+                if (e.target.value) {
+                  handleNext(); // Avanza automáticamente al seleccionar un departamento
+                }
+              }}
+              required
+              className="organization-select"
+            >
+              <option value="" disabled>Selecciona un departamento</option>
+              {departments.map((dept) => (
+                <option key={dept.id} value={dept.id}>
+                  {dept.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {currentStep === 2 && organizationId && departamentId && (
           <div className="question-container">
@@ -149,7 +143,7 @@ const [departments, setDepartments] = useState([]);
               onChange={(e) => {
                 setGener(e.target.value);
                 if (e.target.value) {
-                  handleNext();
+                  handleNext(); // Avanza automáticamente al seleccionar un género
                 }
               }}
               required
@@ -171,7 +165,7 @@ const [departments, setDepartments] = useState([]);
               onChange={(e) => {
                 setAge(e.target.value);
                 if (e.target.value) {
-                  handleNext();
+                  handleNext(); // Avanza automáticamente al seleccionar una edad
                 }
               }}
               required
@@ -194,7 +188,7 @@ const [departments, setDepartments] = useState([]);
               onChange={(e) => {
                 setEducationLevel(e.target.value);
                 if (e.target.value) {
-                  handleNext();
+                  handleNext(); // Avanza automáticamente al seleccionar un nivel educativo
                 }
               }}
               required
@@ -210,9 +204,11 @@ const [departments, setDepartments] = useState([]);
               <option value="postDoctorado">Post doctorado</option>
             </select>
           </div>
+
+
         )}
 
-        {currentStep >= 5 && organizationId && departamentId && gener && age && educationLevel && (
+        {currentStep >= 5 && currentStep < randomQuestions.length + 5 && (
           <MultipleChoiceQuestion
             question={randomQuestions[currentStep - 5].question}
             options={randomQuestions[currentStep - 5].options}
@@ -227,8 +223,28 @@ const [departments, setDepartments] = useState([]);
             Anterior
           </button>
 
-          {currentStep < randomQuestions.length + 4 && (
-            <button onClick={handleNext} disabled={answers[currentStep - 5] === null} className="qzbutton">
+          {currentStep < 5 && (
+            <button
+              onClick={handleNext}
+              disabled={
+                (currentStep === 0 && !organizationId) ||
+                (currentStep === 1 && !departamentId) ||
+                (currentStep === 2 && !gener) ||
+                (currentStep === 3 && !age) ||
+                (currentStep === 4 && !educationLevel)
+              }
+              className="qzbutton"
+            >
+              Siguiente
+            </button>
+          )}
+
+          {currentStep >= 5 && currentStep < randomQuestions.length + 5 && (
+            <button
+              onClick={handleNext}
+              disabled={answers[currentStep - 5] === null}
+              className="qzbutton"
+            >
               Siguiente
             </button>
           )}
