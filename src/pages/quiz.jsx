@@ -22,7 +22,7 @@ const [departments, setDepartments] = useState([]);
 
   const {
     organizationId, setOrganizationId,
-    departmentId, setDepartmentId,
+    departamentId, setDepartmentId,
     gener, setGener, // Usamos gener en lugar de gender
     age, setAge,
     educationLevel, setEducationLevel,
@@ -120,7 +120,7 @@ const [departments, setDepartments] = useState([]);
             <div className="question-container">
               <h3>Selecciona un departamento para avanzar</h3>
               <select
-                value={departmentId}
+                value={departamentId}
                 onChange={(e) => {
                   setDepartmentId(e.target.value);
                   if (e.target.value) {
@@ -141,7 +141,7 @@ const [departments, setDepartments] = useState([]);
           )}
 
 
-        {currentStep === 2 && organizationId && departmentId && (
+        {currentStep === 2 && organizationId && departamentId && (
           <div className="question-container">
             <h3>Selecciona tu género para avanzar</h3>
             <select
@@ -212,7 +212,7 @@ const [departments, setDepartments] = useState([]);
           </div>
         )}
 
-        {currentStep >= 5 && organizationId && departmentId && gener && age && educationLevel && (
+        {currentStep >= 5 && organizationId && departamentId && gener && age && educationLevel && (
           <MultipleChoiceQuestion
             question={randomQuestions[currentStep - 5].question}
             options={randomQuestions[currentStep - 5].options}

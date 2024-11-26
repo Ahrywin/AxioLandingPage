@@ -7,7 +7,7 @@ export function useQuizService() {
   const [id] = useState(uuidv4());
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [organizationId, setOrganizationId] = useState('');
-  const [departmentId, setDepartmentId] = useState('');
+  const [departamentId, setDepartmentId] = useState('');
   const [gener, setGener] = useState('');
   const [age, setAge] = useState('');
   const [educationLevel, setEducationLevel] = useState('');
@@ -78,7 +78,7 @@ export function useQuizService() {
   };
 
   const validateForm = () => {
-    if (!organizationId || !departmentId || !age || !educationLevel || !gener) {
+    if (!organizationId || !departamentId || !age || !educationLevel || !gener) {
       showAlert('warning', 'Por favor, completa toda la información requerida antes de continuar.');
       return false;
     }
@@ -115,7 +115,7 @@ export function useQuizService() {
       newQuiz: {
         id,
         organizationId,
-        departmentId,
+        departamentId,
         gener,
         age,
         educationLevel,
@@ -160,7 +160,7 @@ export function useQuizService() {
     id,
     organizationId,
     setOrganizationId,
-    departmentId,
+    departamentId,
     setDepartmentId,
     gener,
     setGener,
