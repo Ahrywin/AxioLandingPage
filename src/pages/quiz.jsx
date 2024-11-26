@@ -59,6 +59,18 @@ function Quiz() {
     fetchQuizData();
   }, []);
 
+  // Función para centralizar las condiciones de habilitación del botón
+  const isNextDisabled = () => {
+    if (currentStep === 0) return !organizationId;
+    if (currentStep === 1) return !departamentId;
+    if (currentStep === 2) return !gener;
+    if (currentStep === 3) return !age;
+    if (currentStep === 4) return !educationLevel;
+    if (currentStep >= 5 && currentStep < randomQuestions.length + 5)
+      return answers[currentStep - 5] === null;
+    return false;
+  };
+
   return (
     <div>
       <Helmet>
@@ -83,6 +95,7 @@ function Quiz() {
         <QuizProgress elapsedTime={elapsedTime} />
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
 
+        {/* Preguntas iniciales */}
         {currentStep === 0 && (
           <div className="question-container">
             <h3>Selecciona una organización para avanzar</h3>
@@ -94,9 +107,7 @@ function Quiz() {
                   .filter(item => item.OrganizationID === e.target.value)
                   .map(item => ({ id: item.DepartamentID, name: item.DepartamentName }));
                 setDepartments(selectedDepartments);
-                if (e.target.value) {
-                  handleNext(); // Avanza automáticamente al seleccionar una organización
-                }
+                if (e.target.value) handleNext();
               }}
               required
               className="organization-select"
@@ -118,9 +129,7 @@ function Quiz() {
               value={departamentId}
               onChange={(e) => {
                 setDepartmentId(e.target.value);
-                if (e.target.value) {
-                  handleNext(); // Avanza automáticamente al seleccionar un departamento
-                }
+                if (e.target.value) handleNext();
               }}
               required
               className="organization-select"
@@ -142,9 +151,7 @@ function Quiz() {
               value={gener}
               onChange={(e) => {
                 setGener(e.target.value);
-                if (e.target.value) {
-                  handleNext(); // Avanza automáticamente al seleccionar un género
-                }
+                if (e.target.value) handleNext();
               }}
               required
               className="organization-select"
@@ -164,9 +171,7 @@ function Quiz() {
               value={age}
               onChange={(e) => {
                 setAge(e.target.value);
-                if (e.target.value) {
-                  handleNext(); // Avanza automáticamente al seleccionar una edad
-                }
+                if (e.target.value) handleNext();
               }}
               required
               className="organization-select"
@@ -187,9 +192,7 @@ function Quiz() {
               value={educationLevel}
               onChange={(e) => {
                 setEducationLevel(e.target.value);
-                if (e.target.value) {
-                  handleNext(); // Avanza automáticamente al seleccionar un nivel educativo
-                }
+                if (e.target.value) handleNext();
               }}
               required
               className="organization-select"
@@ -204,10 +207,9 @@ function Quiz() {
               <option value="postDoctorado">Post doctorado</option>
             </select>
           </div>
-
-
         )}
 
+        {/* Preguntas del quiz */}
         {currentStep >= 5 && currentStep < randomQuestions.length + 5 && (
           <MultipleChoiceQuestion
             question={randomQuestions[currentStep - 5].question}
@@ -218,38 +220,22 @@ function Quiz() {
           />
         )}
 
+        {/* Botones de navegación */}
         <div className="button-container">
           <button onClick={handlePrevious} disabled={currentStep === 0} className="qzbutton">
             Anterior
           </button>
 
-          {currentStep < 5 && (
+          {/* Botón Siguiente o Finalizar */}
+          {currentStep < randomQuestions.length + 4 ? (
             <button
               onClick={handleNext}
-              disabled={
-                (currentStep === 0 && !organizationId) ||
-                (currentStep === 1 && !departamentId) ||
-                (currentStep === 2 && !gener) ||
-                (currentStep === 3 && !age) ||
-                (currentStep === 4 && !educationLevel)
-              }
+              disabled={isNextDisabled()}
               className="qzbutton"
             >
               Siguiente
             </button>
-          )}
-
-          {currentStep >= 5 && currentStep < randomQuestions.length + 5 && (
-            <button
-              onClick={handleNext}
-              disabled={answers[currentStep - 5] === null}
-              className="qzbutton"
-            >
-              Siguiente
-            </button>
-          )}
-
-          {currentStep === randomQuestions.length + 4 && (
+          ) : (
             <button
               onClick={handleFinishClick}
               disabled={answers[currentStep - 5] === null}
@@ -262,6 +248,7 @@ function Quiz() {
           {showFinish && <Finish onClose={() => setShowFinish(false)} />}
         </div>
 
+        {/* Alertas */}
         <div className="alert-container">
           {alerts.map((alert) => (
             <Alert
