@@ -111,8 +111,9 @@ export function useQuizService() {
       score: section.score,
     }));
 
-    const body = {
-      newQuiz: {
+    const body = 
+    {
+       
         id,
         organizationId,
         departamentId,
@@ -123,7 +124,7 @@ export function useQuizService() {
         finishAt,
         elapsedTime: elapsedTime.toString(), // Convertimos a string
         answers: formattedAnswers,
-      },
+      
     };
 
     try {
