@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useQuizService } from '../Components/MultipleChoiceQuestion/quizService';
 import MultipleChoiceQuestion from '../Components/MultipleChoiceQuestion/MultipleChoiceQuestion';
-import Alert from '../Components/Alert/Alert';
-import './quiz.css';
-import ImgDigital1 from '../assets/images/eco.jpg';
 import BannerComp from '../Components/BannerComp/BannerComp';
 import QuizProgress from '../Components/MultipleChoiceQuestion/QuizProgres';
 import Finish from '../pages/finish';
-import MaintenancePage from '../Components/Mantenimiento/mantenimiento';
+import './quiz.css';
 import { Helmet } from 'react-helmet';
+import ImgDigital1 from '../assets/images/eco.jpg';
 
 function Quiz() {
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false);
   const [quizData, setQuizData] = useState([]);
   const [departments, setDepartments] = useState([]);
+  const [showFinish, setShowFinish] = useState(false);
 
-  if (isMaintenanceMode) {
-    return <MaintenancePage />;
-  }
+  // Estado temporal para guardar el departamento seleccionado
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
 
   const {
     organizationId, setOrganizationId,
@@ -26,8 +23,7 @@ function Quiz() {
     age, setAge,
     educationLevel, setEducationLevel,
     currentStep,
-    answers, alerts,
-    showAlert, closeAlert,
+    answers,
     handleOptionSelect,
     handleNext, handlePrevious,
     handleSubmit,
@@ -35,8 +31,6 @@ function Quiz() {
     elapsedTime,
     progressPercentage,
   } = useQuizService();
-
-  const [showFinish, setShowFinish] = useState(false);
 
   const handleFinishClick = async () => {
     const success = await handleSubmit();
@@ -52,14 +46,13 @@ function Quiz() {
         const data = await response.json();
         setQuizData(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching quiz data:", error);
       }
     };
 
     fetchQuizData();
   }, []);
 
-  // Función para centralizar las condiciones de habilitación del botón
   const isNextDisabled = () => {
     if (currentStep === 0) return !organizationId;
     if (currentStep === 1) return !departamentId;
@@ -90,12 +83,10 @@ function Quiz() {
           Tus respuestas son totalmente anónimas y solo solicitamos datos generales con fines estadísticos. El instrumento <strong>NO</strong> pretende evaluar a nadie en lo personal, por lo que te rogamos respondas con total honestidad.
         </p>
       </div>
-
       <div className="App">
         <QuizProgress elapsedTime={elapsedTime} />
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
 
-        {/* Preguntas iniciales */}
         {currentStep === 0 && (
           <div className="question-container">
             <h3>Selecciona una organización para avanzar</h3>
@@ -109,7 +100,6 @@ function Quiz() {
                 setDepartments(selectedDepartments);
                 if (e.target.value) handleNext();
               }}
-              required
               className="organization-select"
             >
               <option value="" disabled>Selecciona una organización</option>
@@ -128,10 +118,12 @@ function Quiz() {
             <select
               value={departamentId}
               onChange={(e) => {
-                setDepartmentId(e.target.value);
-                if (e.target.value) handleNext();
+                const departmentId = e.target.value;
+                setDepartmentId(departmentId);
+                setSelectedDepartment(departmentId); // Guarda temporalmente el departamento
+                console.log('Departamento seleccionado (selectedDepartment):', departmentId);
+                if (departmentId) handleNext();
               }}
-              required
               className="organization-select"
             >
               <option value="" disabled>Selecciona un departamento</option>
@@ -153,7 +145,6 @@ function Quiz() {
                 setGener(e.target.value);
                 if (e.target.value) handleNext();
               }}
-              required
               className="organization-select"
             >
               <option value="" disabled>Selecciona tu género</option>
@@ -173,7 +164,6 @@ function Quiz() {
                 setAge(e.target.value);
                 if (e.target.value) handleNext();
               }}
-              required
               className="organization-select"
             >
               <option value="" disabled>Selecciona tu edad</option>
@@ -194,7 +184,6 @@ function Quiz() {
                 setEducationLevel(e.target.value);
                 if (e.target.value) handleNext();
               }}
-              required
               className="organization-select"
             >
               <option value="" disabled>Selecciona tu nivel de estudios</option>
@@ -204,12 +193,10 @@ function Quiz() {
               <option value="superior">Superior</option>
               <option value="maestria">Maestría</option>
               <option value="doctorado">Doctorado</option>
-              <option value="postDoctorado">Post doctorado</option>
             </select>
           </div>
         )}
 
-        {/* Preguntas del quiz */}
         {currentStep >= 5 && currentStep < randomQuestions.length + 5 && (
           <MultipleChoiceQuestion
             question={randomQuestions[currentStep - 5].question}
@@ -220,13 +207,11 @@ function Quiz() {
           />
         )}
 
-        {/* Botones de navegación */}
         <div className="button-container">
           <button onClick={handlePrevious} disabled={currentStep === 0} className="qzbutton">
             Anterior
           </button>
 
-          {/* Botón Siguiente o Finalizar */}
           {currentStep < randomQuestions.length + 4 ? (
             <button
               onClick={handleNext}
@@ -245,19 +230,14 @@ function Quiz() {
             </button>
           )}
 
-          {showFinish && <Finish onClose={() => setShowFinish(false)} />}
-        </div>
-
-        {/* Alertas */}
-        <div className="alert-container">
-          {alerts.map((alert) => (
-            <Alert
-              key={alert.id}
-              type={alert.type}
-              message={alert.message}
-              onClose={() => closeAlert(alert.id)}
+          {showFinish && (
+            <Finish
+              onClose={() => setShowFinish(false)}
+              organizationId={organizationId}
+              departamentId={selectedDepartment} // Usamos el estado temporal
+              quizData={quizData}
             />
-          ))}
+          )}
         </div>
       </div>
     </div>
