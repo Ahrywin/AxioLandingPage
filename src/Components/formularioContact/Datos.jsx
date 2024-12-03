@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 const Datos = () => {
   useEffect(() => {
     const contactData = {
-      email1: "contacto@fundacionaxio.org",
+      email1: "contacto.fundacionaxio@gmail.com",
       email2: "admin@fundacionaxio.org",
       phone1: "+52 7717121668",
       phone2: "098-765-4321",

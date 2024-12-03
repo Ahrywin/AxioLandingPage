@@ -55,7 +55,8 @@ const Footer = () => {
         <div className="footer-section">
           <h3>PRODUCTOS</h3>
           <br/>
-          <a className="text22" href={Data.axioone} target="_blank" rel="noopener noreferrer" >{Data.axioonenombre}</a>
+          <a className="text22" href={Data.axioone} target="_blank" rel="noopener noreferrer"
+           >{Data.axioonenombre}</a>
         </div>
         <div className="footer-section">
           <h3>SERVICIOS</h3>
