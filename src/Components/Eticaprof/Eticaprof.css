@@ -184,6 +184,9 @@
     font-family: "Poppins", sans-serif;
 }
 
+.btncertificacionmodular{
+font-size: 30px;
+}
 
 
 
@@ -240,6 +243,13 @@
     .cardet-title {
         font-size: 20px;
 
+    }
+    
+    .btncertificacionmodular{
+        font-size: 10px;
+}
+.btncertificacionmodular{
+    font-size: 15px;
     }
     
     
@@ -311,4 +321,39 @@
             width: 90%; /* Ancho de la tarjeta en pantallas pequeñas */
            
         }
+
+        .btncertificacionmodular{
+         font-size: 10px;
+         font-size: 10px;
+    }
+
+    .btncert{
+        margin-top: 0%;
+        margin-bottom: 0%;
+        margin-left: -50%;
+        
+
+    }
+}
+
+.btncertificacionmodular{
+        background-color: #0072BC;
+        color: white;
+        padding: 5px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 500;
+        border-radius: 30px;
+        border-width: 0;
+        cursor: pointer;
+        margin-top: 5px;
+        font-family: "Poppins", sans-serif;
+        margin-left: 42%;   
+        width: 50%;
+}
+.btncert{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: -50%;
 }

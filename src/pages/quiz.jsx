@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useQuizService } from '../Components/MultipleChoiceQuestion/quizService';
-import MultipleChoiceQuestion from '../Components/MultipleChoiceQuestion/MultipleChoiceQuestion';
-import BannerComp from '../Components/BannerComp/BannerComp';
-import QuizProgress from '../Components/MultipleChoiceQuestion/QuizProgres';
-import Finish from '../pages/finish';
-import './quiz.css';
-import { Helmet } from 'react-helmet';
-import ImgDigital1 from '../assets/images/eco.jpg';
+import React, { useEffect, useState } from "react";
+import { useQuizService } from "../Components/MultipleChoiceQuestion/quizService";
+import MultipleChoiceQuestion from "../Components/MultipleChoiceQuestion/MultipleChoiceQuestion";
+import BannerComp from "../Components/BannerComp/BannerComp";
+import QuizProgress from "../Components/MultipleChoiceQuestion/QuizProgres";
+import Finish from "../pages/finish";
+import { Helmet } from "react-helmet";
+import ImgDigital1 from "../assets/images/eco.jpg";
+import "./quiz.css";
+import Mantenance from "../Components/Mantenimiento/mantenimiento"
+
 
 function Quiz() {
   const [quizData, setQuizData] = useState([]);
@@ -17,15 +19,21 @@ function Quiz() {
   const [selectedDepartment, setSelectedDepartment] = useState(null);
 
   const {
-    organizationId, setOrganizationId,
-    departamentId, setDepartmentId,
-    gener, setGener,
-    age, setAge,
-    educationLevel, setEducationLevel,
+    organizationId,
+    setOrganizationId,
+    departamentId,
+    setDepartmentId,
+    gener,
+    setGener,
+    age,
+    setAge,
+    educationLevel,
+    setEducationLevel,
     currentStep,
     answers,
     handleOptionSelect,
-    handleNext, handlePrevious,
+    handleNext,
+    handlePrevious,
     handleSubmit,
     randomQuestions,
     elapsedTime,
@@ -42,7 +50,9 @@ function Quiz() {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await fetch('https://axiobk-001-site1.ktempurl.com/api/Quiz/GetQuizActive');
+        const response = await fetch(
+          "https://axiobk-001-site1.ktempurl.com/api/Quiz/GetQuizActive"
+        );
         const data = await response.json();
         setQuizData(data);
       } catch (error) {
@@ -64,12 +74,27 @@ function Quiz() {
     return false;
   };
 
+  // Verificar si mostrar la pantalla de mantenimiento
+  if (!organizationId || !departamentId) {
+    return (
+      <div>
+        <Mantenance/>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Helmet>
         <title>Servicios - Fundación Axio</title>
-        <meta name="description" content="Descubre los servicios de la Fundación Axio, incluyendo diagnóstico de cultura de integridad, formación y más." />
-        <meta name="keywords" content="Servicios, Fundación Axio, ética, formación, cultura de integridad, desarrollo organizacional" />
+        <meta
+          name="description"
+          content="Descubre los servicios de la Fundación Axio, incluyendo diagnóstico de cultura de integridad, formación y más."
+        />
+        <meta
+          name="keywords"
+          content="Servicios, Fundación Axio, ética, formación, cultura de integridad, desarrollo organizacional"
+        />
         <meta name="author" content="Fundación Axio" />
         <link rel="canonical" href="https://tu-sitio-web.com/services" />
       </Helmet>
@@ -79,8 +104,11 @@ function Quiz() {
       </div>
       <div className="instrucciones-container">
         <p>
-          El presente cuestionario tiene como objetivo develar la cultura organizacional asociada a la ética y los valores en las organizaciones.
-          Tus respuestas son totalmente anónimas y solo solicitamos datos generales con fines estadísticos. El instrumento <strong>NO</strong> pretende evaluar a nadie en lo personal, por lo que te rogamos respondas con total honestidad.
+          El presente cuestionario tiene como objetivo develar la cultura organizacional asociada a
+          la ética y los valores en las organizaciones. Tus respuestas son totalmente anónimas y
+          solo solicitamos datos generales con fines estadísticos. El instrumento <strong>NO</strong>{" "}
+          pretende evaluar a nadie en lo personal, por lo que te rogamos respondas con total
+          honestidad.
         </p>
       </div>
       <div className="App">
@@ -95,14 +123,19 @@ function Quiz() {
               onChange={(e) => {
                 setOrganizationId(e.target.value);
                 const selectedDepartments = quizData
-                  .filter(item => item.OrganizationID === e.target.value)
-                  .map(item => ({ id: item.DepartamentID, name: item.DepartamentName }));
+                  .filter((item) => item.OrganizationID === e.target.value)
+                  .map((item) => ({
+                    id: item.DepartamentID,
+                    name: item.DepartamentName,
+                  }));
                 setDepartments(selectedDepartments);
                 if (e.target.value) handleNext();
               }}
               className="organization-select"
             >
-              <option value="" disabled>Selecciona una organización</option>
+              <option value="" disabled>
+                Selecciona una organización
+              </option>
               {quizData.map((item) => (
                 <option key={item.OrganizationID} value={item.OrganizationID}>
                   {item.OrganizationName}
@@ -121,12 +154,14 @@ function Quiz() {
                 const departmentId = e.target.value;
                 setDepartmentId(departmentId);
                 setSelectedDepartment(departmentId); // Guarda temporalmente el departamento
-                console.log('Departamento seleccionado (selectedDepartment):', departmentId);
+                console.log("Departamento seleccionado (selectedDepartment):", departmentId);
                 if (departmentId) handleNext();
               }}
               className="organization-select"
             >
-              <option value="" disabled>Selecciona un departamento</option>
+              <option value="" disabled>
+                Selecciona un departamento
+              </option>
               {departments.map((dept) => (
                 <option key={dept.id} value={dept.id}>
                   {dept.name}
@@ -147,7 +182,9 @@ function Quiz() {
               }}
               className="organization-select"
             >
-              <option value="" disabled>Selecciona tu género</option>
+              <option value="" disabled>
+                Selecciona tu género
+              </option>
               <option value="male">Masculino</option>
               <option value="female">Femenino</option>
               <option value="other">Otro</option>
@@ -166,7 +203,9 @@ function Quiz() {
               }}
               className="organization-select"
             >
-              <option value="" disabled>Selecciona tu edad</option>
+              <option value="" disabled>
+                Selecciona tu edad
+              </option>
               <option value="18-25">18 a 25</option>
               <option value="26-30">26 a 30</option>
               <option value="31-50">31 a 50</option>
@@ -186,7 +225,9 @@ function Quiz() {
               }}
               className="organization-select"
             >
-              <option value="" disabled>Selecciona tu nivel de estudios</option>
+              <option value="" disabled>
+                Selecciona tu nivel de estudios
+              </option>
               <option value="primaria">Primaria</option>
               <option value="secundaria">Secundaria</option>
               <option value="preparatoria">Preparatoria</option>

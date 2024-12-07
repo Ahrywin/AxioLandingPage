@@ -4,6 +4,7 @@ import GifWork from '../../assets/images/work-progress.gif'
 import imgn1 from '../../assets/images/eticaprof.gif';
 import imgn2 from '../../assets/images/eticaprof2.gif';
 import banner1 from '../../assets/images/minbanform.png';
+import { Link } from 'react-router-dom' // Importa Link de react-router-dom
 const Eticaprof = () => {
   return (
     <div>
@@ -29,8 +30,16 @@ const Eticaprof = () => {
         de bienestar para toda la sociedad. 
         
       </p>
-    
+
       </section>
+  
+      
+      <div className='btncert' >
+      <Link src="https://axio-one-2c81d.web.app/auth/login" target="_blank" rel="noopener noreferrer">
+      <p className='btncertificacionmodular'>  Academia Axio</p>
+      </Link>
+      </div>
+
       <div className="banner-container">
     <img src={banner1} alt="icon" className="minbanner" />
     <div className="banner-text">
