@@ -51,20 +51,25 @@ function Quiz() {
       try {
         setIsFetching(true);
         setIsError(false);
-
+    
         const response = await fetch(
           "https://axiobk-001-site1.ktempurl.com/api/Quiz/GetQuizActive"
         );
         if (!response.ok) {
           throw new Error("Error en la respuesta de la API");
         }
-
+    
         const data = await response.json();
-        if (!data || data.length === 0) {
-          throw new Error("No se encontraron datos");
+        console.log("Fetched data:", data);
+    
+        // Extract the Content field and verify it's an array
+        const quizContent = data.Content;
+        if (!Array.isArray(quizContent) || quizContent.length === 0) {
+          throw new Error("Content is not a valid array or is empty");
         }
-
-        setQuizData(data);
+    
+        // Set the extracted Content as quizData
+        setQuizData(quizContent);
       } catch (error) {
         console.error("Error fetching quiz data:", error);
         setIsError(true);
@@ -86,12 +91,7 @@ function Quiz() {
     return <Maintenance />;
   }
 
-  // Verificar si faltan organización o departamento
-  if (!organizationId || !departamentId) {
-    return (
-     <Maintenance />
-    );
-  }
+
 
   const isNextDisabled = () => {
     if (currentStep === 0) return !organizationId;
