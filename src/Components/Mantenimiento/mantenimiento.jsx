@@ -1,16 +1,26 @@
 import React from 'react';
-import img from '../../assets/images/work-progress.gif';
+import img from '../../assets/images/waitquiz.png';
+import { Link } from 'react-router-dom' 
+import '../../Components/BannerHome/BannerHome.css'
 
 const MaintenancePage = () => {
   return (
     <div style={styles.container}>
+      <div style={styles.top2}> 
+    <h1 style={styles.text}>¡Ups! No encontramos quizzes activos en este momento.</h1>
+    <p style={styles.subtext}>Si necesitas activar uno, contáctanos haciendo clic en el botón a continuación.</p>
+    <div style={styles.contabtn}>
+      <Link to="/contacto">
+          <button className="banner-home-btn">Contacto</button>
+        </Link>
+        </div>
       <img
         src={img}
-        alt="Página en mantenimiento"
+        alt="Quiz Activo"
         style={styles.image}
       />
-      <h1 style={styles.text}>¡Estamos trabajando para ti!</h1>
-      <p style={styles.subtext}>Regresa pronto. Estamos mejorando nuestra página.</p>
+        
+        </div>
     </div>
   );
 };
@@ -30,7 +40,7 @@ const styles = {
       boxSizing: 'border-box',
     },
     image: {
-      maxWidth: '90%', // Reducir un poco el ancho en pantallas pequeñas
+      maxWidth: '40%', // Reducir un poco el ancho en pantallas pequeñas
       height: 'auto',
       marginBottom: '20px',
     },
@@ -44,6 +54,13 @@ const styles = {
       color: '#6c757d',
       marginTop: '10px',
     },
+    top2:{
+      marginTop: '20%',
+      marginBottom: '15%'
+    },
+    contabtn:{
+      marginBottom: '-5%'
+    }
   };
   
 
