@@ -49,9 +49,7 @@ const BannerHome = () => {
         <h1>¡Bienvenido!</h1>
         <p>Explora y descubre nuestras certificaciones</p>
         {/* Usa Link para redireccionar */}
-        <Link to="/certifications"
-        
-        >
+        <Link to="/certifications">
           <button className="banner-home-btn">Descubrir</button>
         </Link>
       </div>

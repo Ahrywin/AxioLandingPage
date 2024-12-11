@@ -1,0 +1,106 @@
+/* BannerHome.css */
+.maintenance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+    font-family: "Poppins", sans-serif;
+    color: #1e88e5;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 3%;
+  }
+  
+  .maintenance-top2 {
+    margin-top: 20%;
+    margin-bottom: 15%;
+  }
+  
+  .maintenance-text {
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .maintenance-subtext {
+    font-size: clamp(16px, 4vw, 18px);
+    color: #6c757d;
+    margin-top: 10px;
+  }
+  
+  .maintenance-image {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .maintenance-contabtn {
+    margin-bottom: 5%;
+    margin-top: -7%;
+  }
+  
+  .banner-home-btn {
+    background-color: #0072bc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .banner-home-btn:hover {
+    background-color: #0689e1;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .maintenance-container {
+      padding: 10px;
+    }
+  
+    .maintenance-text {
+      font-size: 20px; /* Reduce slightly for smaller screens */
+    }
+  
+    .maintenance-subtext {
+      font-size: 14px; /* Smaller subtext */
+    }
+  
+    .maintenance-image {
+      max-width: 60%; /* Increase size for better visibility */
+    }
+  
+    .banner-home-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .maintenance-container {
+      height: auto;
+    }
+  
+    .maintenance-text {
+      font-size: 18px; /* Smaller text on very small screens */
+    }
+  
+    .maintenance-subtext {
+      font-size: 12px;
+    }
+  
+    .maintenance-image {
+      max-width: 80%; /* Make image fill more space */
+    }
+  
+    .banner-home-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
