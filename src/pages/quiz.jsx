@@ -250,7 +250,14 @@ function Quiz() {
             </button>
           )}
 
-          {showFinish && <Finish onClose={() => setShowFinish(false)} />}
+{showFinish && (
+  <Finish
+    onClose={() => setShowFinish(false)}
+    departamentId={departamentId} // Pasamos el departamentId seleccionado
+    organizationId={organizationId} // Pasamos el organizationId seleccionado
+    quizData={quizData} // Pasamos todos los datos para referencia
+  />
+)}
         </div>
 
         {/* Alertas */}
