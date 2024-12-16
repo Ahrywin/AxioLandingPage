@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../../assets/images/work-progress.gif';
 
+
 const MaintenancePage = () => {
   return (
     <div style={styles.container}>
