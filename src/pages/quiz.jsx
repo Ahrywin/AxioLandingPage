@@ -15,6 +15,10 @@ function Quiz() {
   const [quizData, setQuizData] = useState([]); // Datos de organizaciones y departamentos
   const [departments, setDepartments] = useState([]); // Departamentos filtrados
 
+  if (isMaintenanceMode) {
+    return <MaintenancePage />;
+  }
+
   const {
     organizationId, setOrganizationId,
     departamentId, setDepartmentId,
