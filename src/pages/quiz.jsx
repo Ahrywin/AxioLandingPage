@@ -15,10 +15,6 @@ function Quiz() {
   const [quizData, setQuizData] = useState([]); // Datos de organizaciones y departamentos
   const [departments, setDepartments] = useState([]); // Departamentos filtrados
 
-  if (isMaintenanceMode) {
-    return <MaintenancePage />;
-  }
-
   const {
     organizationId, setOrganizationId,
     departamentId, setDepartmentId,
@@ -52,18 +48,21 @@ function Quiz() {
         const data = await response.json();
 
         if (data.Content && Array.isArray(data.Content) && data.Content.length > 0) {
-          setQuizData(data.Content); // Guarda las organizaciones y departamentos
+          setQuizData(data.Content);
         } else {
-          setIsMaintenanceMode(true); // Modo mantenimiento si no hay datos
+          setIsMaintenanceMode(true);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
-        setIsMaintenanceMode(true); // Si hay un error, activar modo mantenimiento
+        setIsMaintenanceMode(true);
       }
     };
-
     fetchQuizData();
   }, []);
+
+  if (isMaintenanceMode) {
+    return <MaintenancePage />;
+  }
 
   // Función para centralizar las condiciones de habilitación del botón
   const isNextDisabled = () => {
@@ -150,7 +149,7 @@ function Quiz() {
           </div>
         )}
 
-          {currentStep === 2 && organizationId && departamentId && (
+        {currentStep === 2 && organizationId && departamentId && (
           <div className="question-container">
             <h3>Selecciona tu género para avanzar</h3>
             <select
@@ -250,14 +249,14 @@ function Quiz() {
             </button>
           )}
 
-{showFinish && (
-  <Finish
-    onClose={() => setShowFinish(false)}
-    departamentId={departamentId} // Pasamos el departamentId seleccionado
-    organizationId={organizationId} // Pasamos el organizationId seleccionado
-    quizData={quizData} // Pasamos todos los datos para referencia
-  />
-)}
+          {showFinish && (
+            <Finish
+              onClose={() => setShowFinish(false)}
+              departamentId={departamentId} // Pasamos el departamentId seleccionado
+              organizationId={organizationId} // Pasamos el organizationId seleccionado
+              quizData={quizData} // Pasamos todos los datos para referencia
+            />
+          )}
         </div>
 
         {/* Alertas */}
